@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id              String   @id
+  title           String
+  category        String
+  location        String
+  year            String
+  description     String
+  fullDescription String
+  image           String
+  gallery         String   // JSON stringifié : ["url1","url2",...]
+  specSurface     String   @map("spec_surface")
+  specDuration    String   @map("spec_duration")
+  specBudget      String   @map("spec_budget")
+  specTeam        String   @map("spec_team")
+  featured        Boolean  @default(false)
+  color           String   @default("#2d3a2e")
+  displayOrder    Int      @default(0) @map("display_order")
+  model3d         String?  @map("model_3d")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+}
