@@ -30,7 +30,7 @@ export default function AboutTeaser() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative overflow-hidden" style={{ height: "600px" }}>
+            <div className="relative overflow-hidden rounded-sm" style={{ height: "600px" }}>
               <motion.div style={{ y: imageY }} className="absolute inset-0">
                 <Image
                   src="https://www.premierart.be/assets/img/property-11.jpg"
@@ -40,8 +40,8 @@ export default function AboutTeaser() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </motion.div>
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/40 to-transparent" />
+              {/* Overlay subtil */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/30 to-transparent" />
             </div>
 
             {/* Floating card */}
@@ -50,16 +50,16 @@ export default function AboutTeaser() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -bottom-8 -right-8 bg-[#111111] border border-white/5 p-8 max-w-[220px]"
+              className="absolute -bottom-8 -right-8 bg-[#1e3530] border border-white/5 p-8 max-w-[220px]"
             >
               <span
-                className="block text-5xl font-light text-[#c8a97e] mb-1"
+                className="block text-5xl font-light text-[#8aaf9f] mb-1"
                 style={{ fontFamily: "var(--font-cormorant)" }}
               >
                 2005
               </span>
               <span
-                className="text-[10px] tracking-[0.3em] uppercase text-[#666055]"
+                className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/60"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Fondé à Bruxelles
@@ -75,9 +75,9 @@ export default function AboutTeaser() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-4 mb-6"
             >
-              <span className="block w-8 h-px bg-[#c8a97e]" />
+              <span className="block w-8 h-px bg-[#2c4a3e]" />
               <span
-                className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Le Bureau
@@ -93,14 +93,14 @@ export default function AboutTeaser() {
                 style={{
                   fontFamily: "var(--font-cormorant)",
                   fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                  color: "#f0ece4",
+                  color: "#1a1a1a",
                 }}
               >
                 Un bureau engagé dans
                 <br />
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #c8a97e 0%, #e8d4a8 50%, #c8a97e 100%)",
+                    background: "linear-gradient(135deg, #2c4a3e 0%, #4a7c68 50%, #2c4a3e 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -118,13 +118,13 @@ export default function AboutTeaser() {
               className="space-y-5"
             >
               <p
-                className="text-[#c8c2b8] leading-relaxed"
+                className="text-[#4a4a4a] leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
               >
                 Notre bureau développe une architecture contemporaine, sobre et contextualisée, au service de projets variés en Belgique. Nous cherchons à produire des réponses justes, fonctionnelles et durables, en conciliant ambition architecturale, faisabilité et qualité d'usage.
               </p>
               <p
-                className="text-[#666055] leading-relaxed"
+                className="text-[#7a7a72] leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
               >
                 Transformation, extension, construction neuve ou réaffectation — nous accompagnons particuliers, investisseurs, promoteurs et entreprises de l'idée initiale jusqu'à la réalisation.
@@ -136,7 +136,7 @@ export default function AboutTeaser() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-3 gap-6 my-10 pt-10 border-t border-white/5"
+              className="grid grid-cols-3 gap-6 my-10 pt-10 border-t border-[#2c4a3e]/10"
             >
               {[
                 { label: "Rigueur", desc: "Méthode & précision" },
@@ -145,13 +145,13 @@ export default function AboutTeaser() {
               ].map((v) => (
                 <div key={v.label}>
                   <span
-                    className="block text-[#f0ece4] font-light mb-1"
+                    className="block text-[#1a1a1a] font-light mb-1"
                     style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.25rem" }}
                   >
                     {v.label}
                   </span>
                   <span
-                    className="text-[11px] text-[#666055]"
+                    className="text-[11px] text-[#7a7a72]"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {v.desc}
@@ -167,7 +167,7 @@ export default function AboutTeaser() {
             >
               <Link
                 href="/le-bureau"
-                className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#f0ece4] border border-white/15 px-8 py-4 hover:border-[#c8a97e] hover:text-[#c8a97e] transition-all duration-400"
+                className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] border border-[#2c4a3e]/30 px-8 py-4 hover:border-[#2c4a3e] hover:bg-[#2c4a3e] hover:text-[#f7f5f0] transition-all duration-400"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Découvrir le Bureau

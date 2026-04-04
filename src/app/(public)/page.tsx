@@ -5,6 +5,7 @@ import AboutTeaser from "@/components/sections/AboutTeaser";
 import ServicesSection from "@/components/sections/ServicesSection";
 import Testimonials from "@/components/sections/Testimonials";
 import ContactCTA from "@/components/sections/ContactCTA";
+import MarqueeBand from "@/components/ui/MarqueeBand";
 import { getFeaturedProjects } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -15,8 +16,10 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <MarqueeBand dark />
       <Manifesto />
       <FeaturedProjects featured={featured} />
+      <MarqueeBand dark={false} slow />
       <AboutTeaser />
       <ServicesSection />
       <Testimonials />

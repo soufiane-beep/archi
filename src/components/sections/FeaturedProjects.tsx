@@ -25,9 +25,9 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-4 mb-4"
           >
-            <span className="block w-8 h-px bg-[#c8a97e]" />
+            <span className="block w-8 h-px bg-[#2c4a3e]" />
             <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Réalisations
@@ -42,7 +42,7 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(2.5rem, 6vw, 5rem)",
-                color: "#f0ece4",
+                color: "#1a1a1a",
                 lineHeight: 1.1,
               }}
             >
@@ -57,17 +57,17 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
         >
           <Link
             href="/projects"
-            className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#c8a97e] hover:text-[#f0ece4] transition-colors duration-300"
+            className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] hover:text-[#1a1a1a] transition-colors duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Voir tous les projets
-            <span className="w-8 h-px bg-[#c8a97e] group-hover:w-12 transition-all duration-400" />
+            <span className="w-8 h-px bg-[#2c4a3e] group-hover:w-12 transition-all duration-400" />
           </Link>
         </motion.div>
       </div>
 
-      {/* Projects grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      {/* Projects grid — asymétrique avec décalage vertical */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Large featured project */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -84,8 +84,8 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
           />
         </motion.div>
 
-        {/* Two smaller projects */}
-        <div className="lg:col-span-5 flex flex-col gap-6">
+        {/* Two smaller projects — décalés vers le bas */}
+        <div className="lg:col-span-5 flex flex-col gap-6 lg:mt-16">
           {featured.slice(1, 3).map((project, i) => (
             <motion.div
               key={project.id}
@@ -124,8 +124,8 @@ function ProjectCard({
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="group block relative overflow-hidden"
-      style={{ height: large ? "clamp(400px, 60vh, 700px)" : "clamp(180px, 25vh, 320px)" }}
+      className="group block relative overflow-hidden rounded-sm"
+      style={{ height: large ? "clamp(480px, 65vh, 780px)" : "clamp(230px, 30vh, 380px)" }}
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
     >
@@ -136,11 +136,11 @@ function ProjectCard({
         className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
         sizes={large ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 1024px) 100vw, 42vw"}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/90 via-[#080808]/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/90 via-[#1e3530]/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
 
       <div className="absolute top-6 left-6 z-10">
         <span
-          className="text-[9px] tracking-[0.35em] uppercase text-[#c8a97e] bg-[#080808]/60 backdrop-blur-sm px-3 py-1.5"
+          className="text-[9px] tracking-[0.35em] uppercase text-[#8aaf9f] bg-[#1e3530]/70 backdrop-blur-sm px-3 py-1.5"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           {project.category}
@@ -152,21 +152,21 @@ function ProjectCard({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isHovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="w-10 h-10 bg-[#c8a97e] flex items-center justify-center"
+          className="w-10 h-10 bg-[#2c4a3e] flex items-center justify-center"
         >
-          <ArrowUpRight size={16} className="text-[#080808]" />
+          <ArrowUpRight size={16} className="text-[#f7f5f0]" />
         </motion.div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
         <p
-          className="text-[10px] tracking-[0.3em] uppercase text-[#c8a97e] mb-2"
+          className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-2"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           {project.location} · {project.year}
         </p>
         <h3
-          className={`font-light text-[#f0ece4] leading-tight transition-all duration-500 ${
+          className={`font-light text-[#f7f5f0] leading-tight transition-all duration-500 ${
             large ? "text-4xl md:text-5xl" : "text-2xl md:text-3xl"
           }`}
           style={{ fontFamily: "var(--font-cormorant)" }}
@@ -178,7 +178,7 @@ function ProjectCard({
             initial={{ opacity: 0, y: 10 }}
             animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.4 }}
-            className="mt-3 text-sm text-[#c8c2b8] leading-relaxed max-w-md"
+            className="mt-3 text-sm text-[#d6d1c7] leading-relaxed max-w-md"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {project.description}

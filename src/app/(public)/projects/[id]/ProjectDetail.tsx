@@ -36,14 +36,14 @@ export default function ProjectDetail({
         {project.model3d ? (
           <>
             {/* Dark gradient background */}
-            <div className="absolute inset-0 bg-[#080808]" />
+            <div className="absolute inset-0 bg-[#f7f5f0]" />
             {/* Subtle grid pattern */}
             <div
               className="absolute inset-0 opacity-[0.04]"
               style={{
                 backgroundImage: `
-                  linear-gradient(#c8a97e 1px, transparent 1px),
-                  linear-gradient(90deg, #c8a97e 1px, transparent 1px)
+                  linear-gradient(#2c4a3e 1px, transparent 1px),
+                  linear-gradient(90deg, #2c4a3e 1px, transparent 1px)
                 `,
                 backgroundSize: "60px 60px",
               }}
@@ -55,7 +55,7 @@ export default function ProjectDetail({
               </Suspense>
             </div>
             {/* Bottom fade */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/20 via-transparent to-[#080808]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/20 via-transparent to-[#1e3530]" />
           </>
         ) : (
           <>
@@ -69,7 +69,7 @@ export default function ProjectDetail({
                 sizes="100vw"
               />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/50 via-[#080808]/20 to-[#080808]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/50 via-[#1e3530]/20 to-[#1e3530]" />
           </>
         )}
 
@@ -77,7 +77,7 @@ export default function ProjectDetail({
         <div className="absolute top-28 left-8 z-10">
           <Link
             href="/projects"
-            className="group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#c8c2b8] hover:text-[#c8a97e] transition-colors duration-300"
+            className="group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#4a4a4a] hover:text-[#2c4a3e] transition-colors duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-300" />
@@ -94,7 +94,7 @@ export default function ProjectDetail({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-block text-[10px] tracking-[0.35em] uppercase text-[#c8a97e] bg-[#c8a97e]/10 border border-[#c8a97e]/30 px-4 py-2 mb-6"
+            className="inline-block text-[10px] tracking-[0.35em] uppercase text-[#8aaf9f] bg-[#1e3530]/30 border border-[#8aaf9f]/40 px-4 py-2 mb-6"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {project.category}
@@ -104,7 +104,7 @@ export default function ProjectDetail({
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f0ece4]"
+              className="font-light text-[#f7f5f0]"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(3rem, 9vw, 8rem)",
@@ -120,13 +120,13 @@ export default function ProjectDetail({
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex items-center gap-6 mt-6"
           >
-            <span className="flex items-center gap-2 text-[11px] text-[#c8c2b8]" style={{ fontFamily: "var(--font-inter)" }}>
-              <MapPin size={12} className="text-[#c8a97e]" />
+            <span className="flex items-center gap-2 text-[11px] text-[#d6d1c7]" style={{ fontFamily: "var(--font-inter)" }}>
+              <MapPin size={12} className="text-[#8aaf9f]" />
               {project.location}
             </span>
-            <span className="text-[#3d3a36]">·</span>
-            <span className="flex items-center gap-2 text-[11px] text-[#c8c2b8]" style={{ fontFamily: "var(--font-inter)" }}>
-              <Calendar size={12} className="text-[#c8a97e]" />
+            <span className="text-[#8aaf9f]/50">·</span>
+            <span className="flex items-center gap-2 text-[11px] text-[#d6d1c7]" style={{ fontFamily: "var(--font-inter)" }}>
+              <Calendar size={12} className="text-[#8aaf9f]" />
               {project.year}
             </span>
           </motion.div>
@@ -144,9 +144,9 @@ export default function ProjectDetail({
               transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-8"
             >
-              <span className="block w-8 h-px bg-[#c8a97e]" />
+              <span className="block w-8 h-px bg-[#2c4a3e]" />
               <span
-                className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Le Projet
@@ -156,7 +156,7 @@ export default function ProjectDetail({
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-light text-[#c8c2b8] mb-8"
+              className="font-light text-[#4a4a4a] mb-8"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
@@ -169,7 +169,7 @@ export default function ProjectDetail({
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[#666055] leading-relaxed"
+              className="text-[#7a7a72] leading-relaxed"
               style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
             >
               {project.fullDescription}
@@ -183,9 +183,9 @@ export default function ProjectDetail({
             transition={{ duration: 0.8, delay: 0.3 }}
             className="lg:col-span-5"
           >
-            <div className="border border-white/5 p-8 bg-[#0d0d0d]">
+            <div className="border border-[#2c4a3e]/10 p-8 bg-[#ebe8e0]">
               <h3
-                className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e] mb-8"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e] mb-8"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Données du Projet
@@ -197,17 +197,17 @@ export default function ProjectDetail({
                   { icon: <MapPin size={14} />, label: "Localisation", value: project.location },
                   { icon: <Users size={14} />, label: "Équipe", value: project.specs.team },
                 ].map((spec) => (
-                  <div key={spec.label} className="flex items-start gap-4 pb-6 border-b border-white/5 last:border-0 last:pb-0">
-                    <span className="text-[#c8a97e] mt-0.5">{spec.icon}</span>
+                  <div key={spec.label} className="flex items-start gap-4 pb-6 border-b border-[#2c4a3e]/10 last:border-0 last:pb-0">
+                    <span className="text-[#2c4a3e] mt-0.5">{spec.icon}</span>
                     <div>
                       <span
-                        className="block text-[10px] tracking-[0.25em] uppercase text-[#3d3a36] mb-1"
+                        className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-1"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {spec.label}
                       </span>
                       <span
-                        className="text-[#f0ece4] font-light"
+                        className="text-[#1a1a1a] font-light"
                         style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.2rem" }}
                       >
                         {spec.value}
@@ -230,17 +230,17 @@ export default function ProjectDetail({
             className="mt-24"
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="block w-8 h-px bg-[#c8a97e]" />
-              <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+              <span className="block w-8 h-px bg-[#2c4a3e]" />
+              <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
                 Plan 3D Interactif
               </span>
             </div>
-            <div className="w-full border border-white/5" style={{ height: "600px" }}>
+            <div className="w-full border border-[#2c4a3e]/10" style={{ height: "600px" }}>
               <Suspense fallback={
-                <div className="w-full h-full bg-[#0d0d0d] flex items-center justify-center">
+                <div className="w-full h-full bg-[#ebe8e0] flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-8 h-8 border border-[#c8a97e] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                    <p className="text-[11px] tracking-[0.3em] uppercase text-[#666055]" style={{ fontFamily: "var(--font-inter)" }}>
+                    <div className="w-8 h-8 border border-[#2c4a3e] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                    <p className="text-[11px] tracking-[0.3em] uppercase text-[#7a7a72]" style={{ fontFamily: "var(--font-inter)" }}>
                       Chargement du modèle
                     </p>
                   </div>
@@ -278,18 +278,18 @@ export default function ProjectDetail({
 
       {/* Related projects */}
       {relatedProjects.length > 0 && (
-        <div className="py-24 border-t border-white/5">
+        <div className="py-24 border-t border-[#2c4a3e]/10">
           <div className="max-w-[1400px] mx-auto px-8">
             <div className="flex items-center justify-between mb-16">
               <h2
-                className="font-light text-[#f0ece4]"
+                className="font-light text-[#1a1a1a]"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3rem)" }}
               >
                 Projets Similaires
               </h2>
               <Link
                 href="/projects"
-                className="text-[11px] tracking-[0.3em] uppercase text-[#c8a97e] hover:text-[#f0ece4] transition-colors duration-300"
+                className="text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] hover:text-[#1a1a1a] transition-colors duration-300"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Voir tout
@@ -306,10 +306,10 @@ export default function ProjectDetail({
                 >
                   <Link href={`/projects/${p.id}`} className="group block relative overflow-hidden" style={{ height: "280px" }}>
                     <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="33vw" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-[9px] tracking-[0.3em] uppercase text-[#c8a97e] mb-1" style={{ fontFamily: "var(--font-inter)" }}>{p.category}</p>
-                      <h3 className="font-light text-[#f0ece4] text-2xl" style={{ fontFamily: "var(--font-cormorant)" }}>{p.title}</h3>
+                      <p className="text-[9px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-1" style={{ fontFamily: "var(--font-inter)" }}>{p.category}</p>
+                      <h3 className="font-light text-[#f7f5f0] text-2xl" style={{ fontFamily: "var(--font-cormorant)" }}>{p.title}</h3>
                     </div>
                   </Link>
                 </motion.div>

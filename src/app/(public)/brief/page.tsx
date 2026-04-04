@@ -27,7 +27,7 @@ export default function BriefPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080808] pt-32 pb-24 px-8 md:px-16">
+    <div className="min-h-screen bg-[#f7f5f0] pt-32 pb-24 px-8 md:px-16">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Title row */}
@@ -38,7 +38,7 @@ export default function BriefPage() {
           className="flex items-center gap-8 mb-20"
         >
           <h1
-            className="shrink-0 font-light tracking-[0.18em] uppercase text-[#f0ece4]"
+            className="shrink-0 font-light tracking-[0.18em] uppercase text-[#1a1a1a]"
             style={{
               fontFamily: "var(--font-cormorant)",
               fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
@@ -51,7 +51,7 @@ export default function BriefPage() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="block flex-1 h-px bg-[#c8a97e] origin-left"
+            className="block flex-1 h-px bg-[#2c4a3e] origin-left"
           />
         </motion.div>
 
@@ -64,25 +64,25 @@ export default function BriefPage() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative border border-white/5 p-16 md:p-24 flex flex-col items-center justify-center text-center min-h-[500px]"
+              className="relative border border-[#2c4a3e]/10 p-16 md:p-24 flex flex-col items-center justify-center text-center min-h-[500px]"
             >
               <CornerMarkers />
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                className="w-14 h-14 border border-[#c8a97e]/40 flex items-center justify-center mb-8"
+                className="w-14 h-14 border border-[#2c4a3e]/40 flex items-center justify-center mb-8"
               >
-                <CheckCircle size={24} className="text-[#c8a97e]" />
+                <CheckCircle size={24} className="text-[#2c4a3e]" />
               </motion.div>
               <h2
-                className="font-light text-[#f0ece4] tracking-[0.15em] uppercase mb-4"
+                className="font-light text-[#1a1a1a] tracking-[0.15em] uppercase mb-4"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.8rem, 4vw, 3rem)" }}
               >
                 Message Reçu
               </h2>
               <p
-                className="text-[#666055] max-w-md leading-relaxed"
+                className="text-[#7a7a72] max-w-md leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem" }}
               >
                 Nous avons bien reçu votre demande. Notre équipe vous contactera sous 24h pour donner suite à votre projet.
@@ -95,8 +95,8 @@ export default function BriefPage() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6 }}
-              className="relative border border-white/15"
-              style={{ borderColor: "rgba(255,255,255,0.12)" }}
+              className="relative border border-[#2c4a3e]/15"
+              style={{ borderColor: "rgba(44,74,62,0.15)" }}
             >
               <CornerMarkers />
 
@@ -104,7 +104,7 @@ export default function BriefPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-0">
 
                   {/* ── LEFT COLUMN — Identité ── */}
-                  <div className="flex flex-col gap-10 pb-10 lg:pb-0 lg:border-r lg:border-white/10 lg:pr-20">
+                  <div className="flex flex-col gap-10 pb-10 lg:pb-0 lg:border-r lg:border-[#2c4a3e]/10 lg:pr-20">
                     <SectionLabel label="Identité" delay={0.1} isInView={isInView} />
 
                     <FormField
@@ -138,7 +138,7 @@ export default function BriefPage() {
                   </div>
 
                   {/* ── RIGHT COLUMN — Votre Vision ── */}
-                  <div className="flex flex-col gap-10 pt-10 lg:pt-0 lg:pl-0 border-t border-white/10 lg:border-t-0">
+                  <div className="flex flex-col gap-10 pt-10 lg:pt-0 lg:pl-0 border-t border-[#2c4a3e]/10 lg:border-t-0">
                     <SectionLabel label="Votre Vision" delay={0.1} isInView={isInView} />
 
                     {/* Type de projet */}
@@ -156,8 +156,8 @@ export default function BriefPage() {
                             onClick={() => setForm({ ...form, type: t })}
                             className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-all duration-300 ${
                               form.type === t
-                                ? "border-[#c8a97e] text-[#c8a97e] bg-[#c8a97e]/8"
-                                : "border-white/20 text-[#888070] hover:border-white/40 hover:text-[#c8c2b8]"
+                                ? "border-[#2c4a3e] text-[#2c4a3e] bg-[#2c4a3e]/8"
+                                : "border-[#2c4a3e]/20 text-[#7a7a72] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
                             }`}
                             style={{ fontFamily: "var(--font-inter)" }}
                           >
@@ -181,11 +181,11 @@ export default function BriefPage() {
                           placeholder="0"
                           value={form.surface}
                           onChange={(e) => setForm({ ...form, surface: e.target.value })}
-                          className="w-full bg-transparent border-b border-white/20 text-[#f0ece4] pb-3 pr-10 text-sm focus:outline-none focus:border-[#c8a97e] transition-colors duration-300 placeholder:text-[#504c46]"
+                          className="w-full bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 pr-10 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#b0aba3]"
                           style={{ fontFamily: "var(--font-inter)" }}
                         />
                         <span
-                          className="absolute right-0 bottom-3 text-[11px] text-[#c8a97e] tracking-widest"
+                          className="absolute right-0 bottom-3 text-[11px] text-[#2c4a3e] tracking-widest"
                           style={{ fontFamily: "var(--font-inter)" }}
                         >
                           m²
@@ -200,40 +200,41 @@ export default function BriefPage() {
                       transition={{ duration: 0.6, delay: 0.34, ease: [0.16, 1, 0.3, 1] }}
                     >
                       <FieldLabel label="Budget" />
-                      <div className="flex flex-col gap-3 mt-4">
+                      <div className="flex flex-col gap-3 mt-4" role="radiogroup" aria-label="Budget">
                         {budgets.map((b) => (
-                          <label
+                          <div
                             key={b}
+                            role="radio"
+                            aria-checked={form.budget === b}
+                            tabIndex={0}
+                            onClick={() => setForm({ ...form, budget: b })}
+                            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setForm({ ...form, budget: b }); } }}
                             className="flex items-center gap-4 cursor-pointer group"
                           >
-                            <button
-                              type="button"
-                              onClick={() => setForm({ ...form, budget: b })}
+                            <span
                               className={`w-4 h-4 rounded-full border transition-all duration-300 shrink-0 flex items-center justify-center ${
                                 form.budget === b
-                                  ? "border-[#c8a97e]"
-                                  : "border-white/25 group-hover:border-white/45"
+                                  ? "border-[#2c4a3e]"
+                                  : "border-[#2c4a3e]/25 group-hover:border-[#2c4a3e]/50"
                               }`}
-                              aria-label={b}
                             >
                               {form.budget === b && (
                                 <motion.span
                                   initial={{ scale: 0 }}
                                   animate={{ scale: 1 }}
-                                  className="block w-1.5 h-1.5 rounded-full bg-[#c8a97e]"
+                                  className="block w-1.5 h-1.5 rounded-full bg-[#2c4a3e]"
                                 />
                               )}
-                            </button>
+                            </span>
                             <span
                               className={`text-sm transition-colors duration-300 ${
-                                form.budget === b ? "text-[#c8a97e]" : "text-[#888070] group-hover:text-[#c8c2b8]"
+                                form.budget === b ? "text-[#2c4a3e]" : "text-[#7a7a72] group-hover:text-[#4a4a4a]"
                               }`}
                               style={{ fontFamily: "var(--font-inter)" }}
-                              onClick={() => setForm({ ...form, budget: b })}
                             >
                               {b}
                             </span>
-                          </label>
+                          </div>
                         ))}
                       </div>
                     </motion.div>
@@ -245,7 +246,7 @@ export default function BriefPage() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.42, ease: [0.16, 1, 0.3, 1] }}
-                  className="mt-14 pt-14 border-t border-white/10"
+                  className="mt-14 pt-14 border-t border-[#2c4a3e]/10"
                 >
                   <FieldLabel label="Décrivez Votre Projet" />
                   <textarea
@@ -254,7 +255,7 @@ export default function BriefPage() {
                     placeholder="Partagez votre vision, vos contraintes, vos inspirations..."
                     value={form.description}
                     onChange={(e) => setForm({ ...form, description: e.target.value })}
-                    className="w-full mt-4 bg-transparent border-b border-white/20 text-[#f0ece4] pb-3 text-sm focus:outline-none focus:border-[#c8a97e] transition-colors duration-300 placeholder:text-[#504c46] resize-none leading-relaxed"
+                    className="w-full mt-4 bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#b0aba3] resize-none leading-relaxed"
                     style={{ fontFamily: "var(--font-inter)" }}
                   />
                 </motion.div>
@@ -268,7 +269,7 @@ export default function BriefPage() {
                 >
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-4 text-[10px] tracking-[0.35em] uppercase font-medium px-10 py-4 bg-[#c8a97e] text-[#080808] hover:bg-[#dfc49a] transition-colors duration-300"
+                    className="group inline-flex items-center gap-4 text-[10px] tracking-[0.35em] uppercase font-medium px-10 py-4 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     Envoyer
@@ -293,13 +294,13 @@ function CornerMarkers() {
   return (
     <>
       {/* Top-left */}
-      <span className="absolute -top-px -left-px w-4 h-4 border-t border-l border-[#c8a97e]" />
+      <span className="absolute -top-px -left-px w-4 h-4 border-t border-l border-[#2c4a3e]" />
       {/* Top-right */}
-      <span className="absolute -top-px -right-px w-4 h-4 border-t border-r border-[#c8a97e]" />
+      <span className="absolute -top-px -right-px w-4 h-4 border-t border-r border-[#2c4a3e]" />
       {/* Bottom-left */}
-      <span className="absolute -bottom-px -left-px w-4 h-4 border-b border-l border-[#c8a97e]" />
+      <span className="absolute -bottom-px -left-px w-4 h-4 border-b border-l border-[#2c4a3e]" />
       {/* Bottom-right */}
-      <span className="absolute -bottom-px -right-px w-4 h-4 border-b border-r border-[#c8a97e]" />
+      <span className="absolute -bottom-px -right-px w-4 h-4 border-b border-r border-[#2c4a3e]" />
     </>
   );
 }
@@ -318,7 +319,7 @@ function SectionLabel({
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="text-[10px] tracking-[0.45em] uppercase text-[#c8a97e] text-right"
+      className="text-[10px] tracking-[0.45em] uppercase text-[#2c4a3e] text-right"
       style={{ fontFamily: "var(--font-inter)" }}
     >
       {label}
@@ -329,7 +330,7 @@ function SectionLabel({
 function FieldLabel({ label }: { label: string }) {
   return (
     <p
-      className="text-[10px] tracking-[0.35em] uppercase text-[#888070]"
+      className="text-[10px] tracking-[0.35em] uppercase text-[#7a7a72]"
       style={{ fontFamily: "var(--font-inter)" }}
     >
       {label}
@@ -369,7 +370,7 @@ function FormField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full mt-4 bg-transparent border-b border-white/20 text-[#f0ece4] pb-3 text-sm focus:outline-none focus:border-[#c8a97e] transition-colors duration-300 placeholder:text-[#504c46]"
+        className="w-full mt-4 bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#b0aba3]"
         style={{ fontFamily: "var(--font-inter)" }}
       />
     </motion.div>

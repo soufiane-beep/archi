@@ -26,7 +26,7 @@ export default function LeBureauPage() {
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/30 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/60 via-[#1e3530]/30 to-[#1e3530]" />
 
         <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -35,8 +35,8 @@ export default function LeBureauPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-[#c8a97e]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#8aaf9f]" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]" style={{ fontFamily: "var(--font-inter)" }}>
               Le Bureau
             </span>
           </motion.div>
@@ -45,7 +45,7 @@ export default function LeBureauPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f0ece4]"
+              className="font-light text-[#f7f5f0]"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95 }}
             >
               Une architecture
@@ -67,18 +67,18 @@ export default function LeBureauPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 0.8 }}
-              className="grid grid-cols-2 gap-px bg-white/5 border border-white/5"
+              className="grid grid-cols-2 gap-px bg-white/5 border border-[#2c4a3e]/10"
             >
               {stats.map((stat) => (
-                <div key={stat.label} className="bg-[#080808] p-8 text-center">
+                <div key={stat.label} className="bg-[#f7f5f0] p-8 text-center">
                   <span
-                    className="block font-light text-[#c8a97e] mb-2"
+                    className="block font-light text-[#2c4a3e] mb-2"
                     style={{ fontFamily: "var(--font-cormorant)", fontSize: "3.5rem" }}
                   >
                     {stat.value}
                   </span>
                   <span
-                    className="text-[10px] tracking-[0.25em] uppercase text-[#666055]"
+                    className="text-[10px] tracking-[0.25em] uppercase text-[#7a7a72]"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {stat.label}
@@ -91,7 +91,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* Pillars section */}
-      <section className="py-24 px-8 bg-[#0d0d0d]">
+      <section className="py-24 px-8 bg-[#ebe8e0]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -99,8 +99,8 @@ export default function LeBureauPage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-12"
           >
-            <span className="block w-8 h-px bg-[#c8a97e]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#2c4a3e]" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
               Ce qui guide nos projets
             </span>
           </motion.div>
@@ -129,15 +129,15 @@ export default function LeBureauPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="border-t border-white/10 pt-8"
+                className="border-t border-[#2c4a3e]/10 pt-8"
               >
                 <h3
-                  className="font-light text-[#f0ece4] mb-4"
+                  className="font-light text-[#1a1a1a] mb-4"
                   style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.8rem" }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-[#666055] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                   {item.text}
                 </p>
               </motion.div>
@@ -154,8 +154,8 @@ export default function LeBureauPage() {
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-4"
         >
-          <span className="block w-8 h-px bg-[#c8a97e]" />
-          <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+          <span className="block w-8 h-px bg-[#2c4a3e]" />
+          <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
             L&apos;Équipe
           </span>
         </motion.div>
@@ -165,7 +165,7 @@ export default function LeBureauPage() {
             whileInView={{ y: "0%" }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="font-light text-[#f0ece4]"
+            className="font-light text-[#1a1a1a]"
             style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
           >
             Les Architectes
@@ -188,21 +188,21 @@ export default function LeBureauPage() {
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/40 to-transparent" />
               </div>
               <h3
-                className="font-light text-[#f0ece4] mb-1"
+                className="font-light text-[#1a1a1a] mb-1"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.6rem" }}
               >
                 {member.name}
               </h3>
               <p
-                className="text-[10px] tracking-[0.25em] uppercase text-[#c8a97e] mb-4"
+                className="text-[10px] tracking-[0.25em] uppercase text-[#2c4a3e] mb-4"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {member.role}
               </p>
-              <p className="text-[#666055] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {member.description}
               </p>
             </motion.div>
@@ -211,13 +211,13 @@ export default function LeBureauPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-8 border-t border-white/5">
+      <section className="py-24 px-8 border-t border-[#2c4a3e]/10">
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-light text-[#f0ece4] mb-6"
+            className="font-light text-[#1a1a1a] mb-6"
             style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
             Parlons de votre projet
@@ -227,7 +227,7 @@ export default function LeBureauPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[#666055] mb-10 max-w-md mx-auto text-sm"
+            className="text-[#7a7a72] mb-10 max-w-md mx-auto text-sm"
             style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}
           >
             Transformation, extension, construction neuve ou réaffectation — chaque projet commence par un premier échange pour comprendre vos besoins et explorer les possibilités.
@@ -240,7 +240,7 @@ export default function LeBureauPage() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#c8a97e] text-[#080808] hover:bg-[#dfc49a] transition-colors duration-300"
+              className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Nous Contacter
@@ -264,8 +264,8 @@ function StoryText() {
         animate={isInView ? { opacity: 1 } : {}}
         className="flex items-center gap-4 mb-8"
       >
-        <span className="block w-8 h-px bg-[#c8a97e]" />
-        <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+        <span className="block w-8 h-px bg-[#2c4a3e]" />
+        <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
           Notre Vision
         </span>
       </motion.div>
@@ -274,7 +274,7 @@ function StoryText() {
           initial={{ y: "100%" }}
           animate={isInView ? { y: "0%" } : {}}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="font-light text-[#f0ece4] leading-tight"
+          className="font-light text-[#1a1a1a] leading-tight"
           style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3rem)" }}
         >
           Concevoir avec vision.
@@ -293,7 +293,7 @@ function StoryText() {
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 + i * 0.1 }}
-            className={`leading-relaxed ${i === 0 ? "text-[#c8c2b8]" : "text-[#666055]"}`}
+            className={`leading-relaxed ${i === 0 ? "text-[#4a4a4a]" : "text-[#7a7a72]"}`}
             style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
           >
             {text}

@@ -70,7 +70,7 @@ export default function MethodePage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/50 via-[#080808]/30 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/50 via-[#1e3530]/30 to-[#1e3530]" />
 
         <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -79,8 +79,8 @@ export default function MethodePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-[#c8a97e]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#8aaf9f]" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]" style={{ fontFamily: "var(--font-inter)" }}>
               Notre Méthode
             </span>
           </motion.div>
@@ -89,7 +89,7 @@ export default function MethodePage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f0ece4]"
+              className="font-light text-[#f7f5f0]"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95 }}
             >
               Un accompagnement
@@ -107,7 +107,7 @@ export default function MethodePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-[#c8c2b8] leading-relaxed"
+            className="text-[#4a4a4a] leading-relaxed"
             style={{ fontFamily: "var(--font-inter)", fontSize: "1rem" }}
           >
             Chaque projet architectural nécessite une approche structurée. Notre méthode de travail repose sur six étapes claires, conçues pour accompagner le maître d'ouvrage avec transparence et rigueur, de la première idée jusqu'à la réalisation.
@@ -125,22 +125,22 @@ export default function MethodePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="border border-white/5 p-10 bg-[#0d0d0d] hover:bg-[#111111] transition-colors duration-500"
+              className="border border-[#2c4a3e]/10 p-10 bg-[#ebe8e0] hover:bg-[#efefea] transition-colors duration-500"
             >
               <span
-                className="block text-[11px] tracking-[0.3em] text-[#c8a97e] mb-5"
+                className="block text-[11px] tracking-[0.3em] text-[#2c4a3e] mb-5"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {step.step}
               </span>
-              <div className="w-10 h-px bg-[#c8a97e]/30 mb-6" />
+              <div className="w-10 h-px bg-[#2c4a3e]/30 mb-6" />
               <h3
-                className="font-light text-[#f0ece4] mb-4"
+                className="font-light text-[#1a1a1a] mb-4"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.7rem" }}
               >
                 {step.title}
               </h3>
-              <p className="text-[#666055] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {step.desc}
               </p>
             </motion.div>
@@ -149,7 +149,7 @@ export default function MethodePage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 px-8 bg-[#0d0d0d]">
+      <section className="py-24 px-8 bg-[#ebe8e0]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -157,8 +157,8 @@ export default function MethodePage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-4"
           >
-            <span className="block w-8 h-px bg-[#c8a97e]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#2c4a3e]" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
               Ce que cela vous apporte
             </span>
           </motion.div>
@@ -168,7 +168,7 @@ export default function MethodePage() {
               whileInView={{ y: "0%" }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f0ece4]"
+              className="font-light text-[#1a1a1a]"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2.5rem, 5vw, 4rem)" }}
             >
               Une méthode au service
@@ -183,15 +183,15 @@ export default function MethodePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="border-t border-white/10 pt-8"
+                className="border-t border-[#2c4a3e]/10 pt-8"
               >
                 <h3
-                  className="font-light text-[#f0ece4] mb-3"
+                  className="font-light text-[#1a1a1a] mb-3"
                   style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.6rem" }}
                 >
                   {b.title}
                 </h3>
-                <p className="text-[#666055] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                   {b.desc}
                 </p>
               </motion.div>
@@ -201,22 +201,22 @@ export default function MethodePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-8 border-t border-white/5 text-center">
+      <section className="py-20 px-8 border-t border-[#2c4a3e]/10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-xl mx-auto"
         >
-          <h2 className="font-light text-[#f0ece4] mb-4" style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.5rem" }}>
+          <h2 className="font-light text-[#1a1a1a] mb-4" style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.5rem" }}>
             Prêt à démarrer votre projet ?
           </h2>
-          <p className="text-[#666055] text-sm mb-8" style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}>
+          <p className="text-[#7a7a72] text-sm mb-8" style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}>
             Contactez-nous pour un premier échange sans engagement. Ensemble, nous définirons le cadre de votre projet et les premières orientations possibles.
           </p>
           <Link
             href="/brief"
-            className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#c8a97e] text-[#080808] hover:bg-[#dfc49a] transition-colors duration-300"
+            className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Parler de votre projet

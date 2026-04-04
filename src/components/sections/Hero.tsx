@@ -31,7 +31,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#080808]">
+    <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#1e3530]">
       {/* Background slides */}
       {slides.map((slide, i) => (
         <div
@@ -49,9 +49,9 @@ export default function Hero() {
             priority={i === 0}
             sizes="100vw"
           />
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/30 to-[#080808]/80" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/50 to-transparent" />
+          {/* Overlay forest green — plus doux que le noir */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/50 via-[#1e3530]/20 to-[#1e3530]/75" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1e3530]/45 to-transparent" />
         </div>
       ))}
 
@@ -65,9 +65,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-12 h-px bg-[#c8a97e]" />
+            <span className="block w-12 h-px bg-[#8aaf9f]" />
             <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Cabinet d'Architecture · Bruxelles
@@ -84,7 +84,7 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
-                color: "#f0ece4",
+                color: "#f7f5f0",
               }}
             >
               {slides[current].title}
@@ -96,11 +96,11 @@ export default function Hero() {
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 1, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light leading-none tracking-tight text-gold-gradient"
+              className="font-light leading-none tracking-tight"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
-                background: "linear-gradient(135deg, #c8a97e 0%, #e8d4a8 50%, #c8a97e 100%)",
+                background: "linear-gradient(135deg, #8aaf9f 0%, #c2d9cf 50%, #8aaf9f 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -122,14 +122,14 @@ export default function Hero() {
           >
             <Link
               href="/brief"
-              className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#f0ece4] font-medium px-8 py-4 bg-[#c8a97e] hover:bg-[#dfc49a] transition-colors duration-400"
+              className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#f7f5f0] font-medium px-8 py-4 bg-[#2c4a3e] hover:bg-[#4a7c68] transition-colors duration-400"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Parler de Votre Projet
             </Link>
             <Link
               href="/projects"
-              className="group text-[11px] tracking-[0.3em] uppercase text-[#c8c2b8] hover:text-[#f0ece4] hover-line transition-colors duration-300"
+              className="group text-[11px] tracking-[0.3em] uppercase text-[#8aaf9f] hover:text-[#f7f5f0] hover-line transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Nos Réalisations
@@ -148,7 +148,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[11px] tracking-[0.3em] text-[#c8a97e] uppercase"
+              className="text-[11px] tracking-[0.3em] text-[#8aaf9f] uppercase"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {slides[current].location}
@@ -160,7 +160,7 @@ export default function Hero() {
                   onClick={() => goTo(i)}
                   className={`transition-all duration-500 ${
                     i === current
-                      ? "w-8 h-px bg-[#c8a97e]"
+                      ? "w-8 h-px bg-[#8aaf9f]"
                       : "w-3 h-px bg-white/30 hover:bg-white/60"
                   }`}
                   aria-label={`Slide ${i + 1}`}
@@ -176,31 +176,31 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={loaded ? { opacity: 1 } : {}}
         transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ArrowDown size={16} className="text-[#c8a97e]" />
-        </motion.div>
         <span
-          className="text-[9px] tracking-[0.4em] uppercase text-[#666055] rotate-90 mt-6 origin-center"
+          className="text-[9px] tracking-[0.4em] uppercase text-[#8aaf9f]/60"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           Scroll
         </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ArrowDown size={16} className="text-[#8aaf9f]" />
+        </motion.div>
       </motion.div>
 
       {/* Vertical text */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-6">
         <span
-          className="text-[9px] tracking-[0.5em] uppercase text-[#3d3a36] [writing-mode:vertical-rl]"
+          className="text-[9px] tracking-[0.5em] uppercase text-[#8aaf9f]/50 [writing-mode:vertical-rl]"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           Architecture · Design · Belgique
         </span>
-        <span className="block w-px h-16 bg-gradient-to-b from-transparent to-[#3d3a36]" />
+        <span className="block w-px h-16 bg-gradient-to-b from-transparent to-[#8aaf9f]/50" />
       </div>
     </section>
   );

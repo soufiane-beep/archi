@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Raleway } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -9,9 +9,9 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const inter = Inter({
+const raleway = Raleway({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["200", "300", "400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -35,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="bg-[#080808] text-[#f0ece4]">
+    <html lang="fr" className={`${cormorant.variable} ${raleway.variable}`}>
+      <body className="bg-[#f7f5f0] text-[#1a1a1a]">
         {children}
       </body>
     </html>

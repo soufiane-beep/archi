@@ -9,17 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#080808",
-        "obsidian-light": "#111111",
-        "obsidian-muted": "#1a1a1a",
-        cream: "#f0ece4",
-        "cream-muted": "#c8c2b8",
-        gold: "#c8a97e",
-        "gold-light": "#dfc49a",
-        "gold-dark": "#a8895e",
-        stone: "#2a2825",
-        "stone-light": "#3d3a36",
-        muted: "#666055",
+        // Base — fond clair
+        obsidian: "#f7f5f0",
+        "obsidian-light": "#efefea",
+        "obsidian-muted": "#e5e2db",
+        // Texte principal
+        cream: "#1a1a1a",
+        "cream-muted": "#4a4a4a",
+        // Accent vert forêt (remplace gold)
+        gold: "#2c4a3e",
+        "gold-light": "#4a7c68",
+        "gold-dark": "#1a2e26",
+        // Pierre claire
+        stone: "#ebe8e0",
+        "stone-light": "#d6d1c7",
+        muted: "#7a7a72",
+        // Vert sauge pour accents subtils
+        sage: "#8aaf9f",
+        // Footer / sections sombres
+        forest: "#1e3530",
+        "forest-light": "#2c4a3e",
       },
       fontFamily: {
         display: ["var(--font-cormorant)", "Georgia", "serif"],

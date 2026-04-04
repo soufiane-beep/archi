@@ -12,19 +12,19 @@ export default function ServicesSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="py-32 px-8 bg-[#0d0d0d]">
+    <section className="py-32 px-8 bg-[#ebe8e0]" style={{ clipPath: "polygon(0 2%, 100% 0%, 100% 100%, 0 100%)" }}>
       <div ref={ref} className="max-w-[1400px] mx-auto">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 pt-8">
           <div className="lg:col-span-8">
             <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               className="flex items-center gap-4 mb-6"
             >
-              <span className="block w-8 h-px bg-[#c8a97e]" />
+              <span className="block w-8 h-px bg-[#2c4a3e]" />
               <span
-                className="text-[10px] tracking-[0.4em] uppercase text-[#c8a97e]"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Expertises
@@ -39,7 +39,7 @@ export default function ServicesSection() {
                 style={{
                   fontFamily: "var(--font-cormorant)",
                   fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
-                  color: "#f0ece4",
+                  color: "#1a1a1a",
                   lineHeight: 1.1,
                 }}
               >
@@ -54,8 +54,8 @@ export default function ServicesSection() {
             className="lg:col-span-4 flex items-end justify-end"
           >
             <Link
-              href="/services"
-              className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#c8a97e] hover:text-[#f0ece4] transition-colors duration-300"
+              href="/domaines"
+              className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] hover:text-[#1a1a1a] transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Toutes nos expertises
@@ -65,7 +65,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services list */}
-        <div className="border-t border-white/5">
+        <div className="border-t border-[#2c4a3e]/10">
           {services.map((service, i) => (
             <motion.div
               key={service.number}
@@ -78,14 +78,14 @@ export default function ServicesSection() {
               }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className={`group flex items-start md:items-center justify-between gap-8 py-8 border-b border-white/5 cursor-default transition-all duration-500 ${
-                hovered === i ? "px-4" : "px-0"
+              className={`group flex items-start md:items-center justify-between gap-8 py-8 pl-4 pr-0 border-b border-[#2c4a3e]/10 cursor-default transition-all duration-500 border-l-2 ${
+                hovered === i ? "border-l-[#2c4a3e]" : "border-l-transparent"
               }`}
             >
               <div className="flex items-start md:items-center gap-8 md:gap-12 flex-1">
                 {/* Number */}
                 <span
-                  className="text-[11px] tracking-[0.2em] text-[#3d3a36] font-light mt-1 md:mt-0 shrink-0"
+                  className="text-[11px] tracking-[0.2em] text-[#7a7a72] font-light mt-1 md:mt-0 shrink-0"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {service.number}
@@ -94,7 +94,7 @@ export default function ServicesSection() {
                 {/* Title */}
                 <h3
                   className={`font-light transition-colors duration-300 ${
-                    hovered === i ? "text-[#c8a97e]" : "text-[#f0ece4]"
+                    hovered === i ? "text-[#2c4a3e]" : "text-[#1a1a1a]"
                   }`}
                   style={{
                     fontFamily: "var(--font-cormorant)",
@@ -109,7 +109,7 @@ export default function ServicesSection() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={hovered === i ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="hidden lg:block text-sm text-[#666055] max-w-md"
+                  className="hidden lg:block text-sm text-[#7a7a72] max-w-md"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {service.description}
@@ -121,9 +121,9 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={hovered === i ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
-                className="w-10 h-10 border border-[#c8a97e] flex items-center justify-center shrink-0"
+                className="w-10 h-10 border border-[#2c4a3e] flex items-center justify-center shrink-0"
               >
-                <ArrowUpRight size={14} className="text-[#c8a97e]" />
+                <ArrowUpRight size={14} className="text-[#2c4a3e]" />
               </motion.div>
             </motion.div>
           ))}
