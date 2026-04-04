@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, MapPin, Calendar, Ruler, Users } from "lucide-react";
 import type { Project } from "@/lib/types";
 
-const ModelViewer = lazy(() => import("@/components/ModelViewer"));
+const ScrollRoomViewer = lazy(() => import("@/components/ScrollRoomViewer"));
 const HeroModel3D = lazy(() => import("@/components/HeroModel3D"));
 
 export default function ProjectDetail({
@@ -246,7 +246,7 @@ export default function ProjectDetail({
                   </div>
                 </div>
               }>
-                <ModelViewer url={project.model3d} />
+                <ScrollRoomViewer url={project.model3d} />
               </Suspense>
             </div>
           </motion.div>
