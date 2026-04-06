@@ -7,7 +7,7 @@ import Link from "next/link";
 import { ArrowLeft, MapPin, Calendar, Ruler, Users } from "lucide-react";
 import type { Project } from "@/lib/types";
 
-const ScrollRoomViewer = lazy(() => import("@/components/ScrollRoomViewer"));
+const ModelViewer = lazy(() => import("@/components/ModelViewer"));
 const HeroModel3D = lazy(() => import("@/components/HeroModel3D"));
 
 export default function ProjectDetail({
@@ -133,7 +133,7 @@ export default function ProjectDetail({
         </motion.div>
       </div>
 
-      {/* Content */}
+      {/* Content: text + specs */}
       <div ref={contentRef} className="max-w-[1400px] mx-auto px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Main text */}
@@ -219,15 +219,17 @@ export default function ProjectDetail({
             </div>
           </motion.div>
         </div>
+      </div>
 
-        {/* 3D Viewer */}
+      {/* Gallery */}
+      <div className="max-w-[1400px] mx-auto px-8 pb-24">
         {project.model3d && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-24"
+            className="mb-24"
           >
             <div className="flex items-center gap-4 mb-8">
               <span className="block w-8 h-px bg-[#2c4a3e]" />
@@ -238,22 +240,15 @@ export default function ProjectDetail({
             <div className="w-full border border-[#2c4a3e]/10" style={{ height: "600px" }}>
               <Suspense fallback={
                 <div className="w-full h-full bg-[#ebe8e0] flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-8 h-8 border border-[#2c4a3e] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                    <p className="text-[11px] tracking-[0.3em] uppercase text-[#7a7a72]" style={{ fontFamily: "var(--font-inter)" }}>
-                      Chargement du modèle
-                    </p>
-                  </div>
+                  <div className="w-8 h-8 border border-[#2c4a3e] border-t-transparent rounded-full animate-spin" />
                 </div>
               }>
-                <ScrollRoomViewer url={project.model3d} />
+                <ModelViewer url={project.model3d} />
               </Suspense>
             </div>
           </motion.div>
         )}
-
-        {/* Gallery */}
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {project.gallery.map((img, i) => (
             <motion.div
               key={i}
