@@ -41,7 +41,7 @@ export default function AboutTeaser() {
                 />
               </motion.div>
               {/* Overlay subtil */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
 
             {/* Floating card */}
@@ -75,9 +75,9 @@ export default function AboutTeaser() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="flex items-center gap-4 mb-6"
             >
-              <span className="block w-8 h-px bg-[#2c4a3e]" />
+              <span className="block w-8 h-px bg-[#253d32]" />
               <span
-                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Le Bureau
@@ -100,7 +100,7 @@ export default function AboutTeaser() {
                 <br />
                 <span
                   style={{
-                    background: "linear-gradient(135deg, #2c4a3e 0%, #4a7c68 50%, #2c4a3e 100%)",
+                    background: "linear-gradient(135deg, #253d32 0%, #3a5e4e 50%, #253d32 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -136,7 +136,7 @@ export default function AboutTeaser() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-3 gap-6 my-10 pt-10 border-t border-[#2c4a3e]/10"
+              className="grid grid-cols-3 gap-6 my-10 pt-10 border-t border-[#253d32]/10"
             >
               {[
                 { label: "Rigueur", desc: "Méthode & précision" },
@@ -167,7 +167,7 @@ export default function AboutTeaser() {
             >
               <Link
                 href="/le-bureau"
-                className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] border border-[#2c4a3e]/30 px-8 py-4 hover:border-[#2c4a3e] hover:bg-[#2c4a3e] hover:text-[#f7f5f0] transition-all duration-400"
+                className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#253d32] border border-[#253d32]/30 px-8 py-4 hover:border-[#253d32] hover:bg-[#253d32] hover:text-[#f9f7f4] transition-all duration-400"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Découvrir le Bureau

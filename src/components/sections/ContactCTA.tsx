@@ -31,8 +31,8 @@ export default function ContactCTA() {
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-[#1e3530]/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/30 via-transparent to-[#1e3530]/30" />
+        <div className="absolute inset-0 bg-[#1e3530]/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e26]/40 via-transparent to-[#1a2e26]/40" />
       </div>
 
       <div ref={textRef} className="relative z-10 max-w-[1400px] mx-auto px-8 text-center">
@@ -77,7 +77,7 @@ export default function ContactCTA() {
             style={{
               fontFamily: "var(--font-cormorant)",
               fontSize: "clamp(3rem, 7vw, 6.5rem)",
-              background: "linear-gradient(135deg, #8aaf9f 0%, #c2d9cf 50%, #8aaf9f 100%)",
+              background: "linear-gradient(135deg, #8aaf9f 0%, #c2d9cf 60%, #8aaf9f 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -92,7 +92,7 @@ export default function ContactCTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[#d6d1c7] max-w-xl mx-auto mb-14 leading-relaxed"
+          className="text-[#f9f7f4]/75 max-w-xl mx-auto mb-14 leading-relaxed"
           style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
         >
           Qu'il s'agisse d'une transformation, d'une extension, d'une construction neuve ou d'une réaffectation, nous vous accompagnons dans le développement d'un projet clair, cohérent et adapté à vos objectifs.
@@ -106,7 +106,7 @@ export default function ContactCTA() {
         >
           <Link
             href="/brief"
-            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#f7f5f0] text-[#1e3530] hover:bg-[#8aaf9f] transition-colors duration-400"
+            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#f9f7f4] text-[#1a2e26] hover:bg-[#8aaf9f] transition-colors duration-400"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Parler de Votre Projet
@@ -114,7 +114,7 @@ export default function ContactCTA() {
           </Link>
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 border border-white/20 text-[#f7f5f0] hover:border-white/50 transition-all duration-400"
+            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 border border-white/20 text-[#f9f7f4] hover:border-white/50 transition-all duration-400"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Voir nos Réalisations

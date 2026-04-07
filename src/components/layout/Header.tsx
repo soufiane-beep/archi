@@ -13,28 +13,10 @@ const navLinks = [
   { label: "Méthode", href: "/methode" },
 ];
 
-// Pages qui ont un hero sombre en haut (logo + nav blancs au chargement)
-const DARK_HERO_ROUTES = ["/", "/le-bureau", "/contact", "/methode", "/domaines"];
-
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [ctaHovered, setCtaHovered] = useState(false);
   const pathname = usePathname();
-
-  // Hero sombre = page connue + non scrollée OU route projet individuel (sauf 3D)
-  const hasDarkHero =
-    DARK_HERO_ROUTES.includes(pathname) ||
-    /^\/projects\/(?!$).+/.test(pathname);
-
-  // Le header est "light" (logo/nav sombres) quand scrollé OU sans hero sombre
-  const light = scrolled || !hasDarkHero;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -47,18 +29,7 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          scrolled
-            ? "py-4 bg-[#f7f5f0]/95 backdrop-blur-md border-b border-[#2c4a3e]/10"
-            : "py-7"
-        }`}
-      >
-        {/* Gradient sombre derrière la nav quand hero photo */}
-        {!scrolled && hasDarkHero && (
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-transparent pointer-events-none" />
-        )}
-
+      <header className="fixed top-0 left-0 right-0 z-50 py-5 bg-[#f9f7f4]/95 backdrop-blur-md border-b border-[#d8d3c8]/60">
         <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" aria-label="Premier Art — Accueil">
@@ -67,10 +38,8 @@ export default function Header() {
               alt="Premier Art Architecture"
               width={120}
               height={120}
-              style={{ width: "auto", height: "68px" }}
-              className={`block transition-all duration-700 ${
-                light ? "" : "brightness-0 invert"
-              }`}
+              style={{ width: "auto", height: "60px" }}
+              className="block"
               priority
             />
           </Link>
@@ -81,22 +50,12 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`group relative text-[11px] tracking-[0.2em] uppercase font-light transition-colors duration-300 ${
-                  light
-                    ? pathname === link.href
-                      ? "text-[#2c4a3e]"
-                      : "text-[#4a4a4a] hover:text-[#1a1a1a]"
-                    : pathname === link.href
-                      ? "text-[#8aaf9f]"
-                      : "text-white hover:text-white"
-                }`}
+                className="group relative text-[11px] tracking-[0.2em] uppercase font-light transition-colors duration-300 text-[#4a4a46] hover:text-[#141414]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-1 left-0 h-px transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                    light ? "bg-[#2c4a3e]" : "bg-[#8aaf9f]"
-                  } ${
+                  className={`absolute -bottom-1 left-0 h-px bg-[#253d32] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                     pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
                   }`}
                 />
@@ -104,15 +63,13 @@ export default function Header() {
             ))}
             <Link
               href="/brief"
-              className={`ml-4 relative overflow-hidden inline-flex items-center text-[10px] tracking-[0.25em] uppercase font-medium px-6 py-3 border ${
-                light ? "border-[#2c4a3e]" : "border-white"
-              }`}
+              className="ml-4 relative overflow-hidden inline-flex items-center text-[10px] tracking-[0.25em] uppercase font-medium px-6 py-3 border border-[#253d32]"
               style={{ fontFamily: "var(--font-inter)" }}
               onMouseEnter={() => setCtaHovered(true)}
               onMouseLeave={() => setCtaHovered(false)}
             >
               <motion.span
-                className={`absolute inset-0 ${light ? "bg-[#2c4a3e]" : "bg-white"}`}
+                className="absolute inset-0 bg-[#253d32]"
                 initial={false}
                 animate={{ scaleX: ctaHovered ? 1 : 0 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
@@ -120,11 +77,7 @@ export default function Header() {
               />
               <motion.span
                 className="relative z-10"
-                animate={{
-                  color: ctaHovered
-                    ? light ? "#f7f5f0" : "#1e3530"
-                    : light ? "#2c4a3e" : "#ffffff",
-                }}
+                animate={{ color: ctaHovered ? "#f9f7f4" : "#253d32" }}
                 transition={{ duration: 0.25, delay: ctaHovered ? 0.1 : 0 }}
               >
                 Votre Projet
@@ -140,25 +93,25 @@ export default function Header() {
             aria-expanded={menuOpen}
           >
             <span
-              className={`block w-6 h-px transition-all duration-500 origin-center ${
-                light ? "bg-[#1a1a1a]" : "bg-[#f7f5f0]"
-              } ${menuOpen ? "rotate-45 translate-y-[8px]" : ""}`}
+              className={`block w-6 h-px bg-[#141414] transition-all duration-500 origin-center ${
+                menuOpen ? "rotate-45 translate-y-[8px]" : ""
+              }`}
             />
             <span
-              className={`block h-px transition-all duration-500 ${
-                light ? "bg-[#2c4a3e]" : "bg-[#f7f5f0]/60"
-              } ${menuOpen ? "opacity-0 w-0" : "w-4"}`}
+              className={`block h-px bg-[#253d32] transition-all duration-500 ${
+                menuOpen ? "opacity-0 w-0" : "w-4"
+              }`}
             />
             <span
-              className={`block w-6 h-px transition-all duration-500 origin-center ${
-                light ? "bg-[#1a1a1a]" : "bg-[#f7f5f0]"
-              } ${menuOpen ? "-rotate-45 -translate-y-[8px]" : ""}`}
+              className={`block w-6 h-px bg-[#141414] transition-all duration-500 origin-center ${
+                menuOpen ? "-rotate-45 -translate-y-[8px]" : ""
+              }`}
             />
           </button>
         </div>
       </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — panel light */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -166,7 +119,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#1e3530] flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-[#f9f7f4] flex flex-col items-center justify-center border-l border-[#d8d3c8]"
           >
             <nav className="flex flex-col items-center gap-8">
               {navLinks.map((link, i) => (
@@ -178,7 +131,7 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
-                    className="font-display text-5xl font-light text-[#f7f5f0] hover:text-[#8aaf9f] transition-colors duration-300"
+                    className="font-display text-5xl font-light text-[#141414] hover:text-[#253d32] transition-colors duration-300"
                     style={{ fontFamily: "var(--font-cormorant)" }}
                   >
                     {link.label}
@@ -192,7 +145,7 @@ export default function Header() {
               >
                 <Link
                   href="/brief"
-                  className="font-display text-5xl font-light text-[#8aaf9f] hover:text-[#f7f5f0] transition-colors duration-300"
+                  className="font-display text-5xl font-light text-[#253d32] hover:text-[#141414] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-cormorant)" }}
                 >
                   Votre Projet
@@ -203,7 +156,7 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="absolute bottom-12 text-[10px] tracking-[0.3em] text-[#8aaf9f]/70 uppercase"
+              className="absolute bottom-12 text-[10px] tracking-[0.3em] text-[#8c8c84] uppercase"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Bruxelles · Belgique

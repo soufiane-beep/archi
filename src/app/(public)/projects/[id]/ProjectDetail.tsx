@@ -35,15 +35,15 @@ export default function ProjectDetail({
       <div ref={heroRef} className="relative h-screen overflow-hidden">
         {project.model3d ? (
           <>
-            {/* Dark gradient background */}
-            <div className="absolute inset-0 bg-[#f7f5f0]" />
+            {/* Background neutre pour le viewer 3D */}
+            <div className="absolute inset-0 bg-[#f1ede6]" />
             {/* Subtle grid pattern */}
             <div
               className="absolute inset-0 opacity-[0.04]"
               style={{
                 backgroundImage: `
-                  linear-gradient(#2c4a3e 1px, transparent 1px),
-                  linear-gradient(90deg, #2c4a3e 1px, transparent 1px)
+                  linear-gradient(#253d32 1px, transparent 1px),
+                  linear-gradient(90deg, #253d32 1px, transparent 1px)
                 `,
                 backgroundSize: "60px 60px",
               }}
@@ -54,10 +54,8 @@ export default function ProjectDetail({
                 <HeroModel3D url={project.model3d} />
               </Suspense>
             </div>
-            {/* Top fade — couvre la nav */}
-            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#1e3530]/80 to-transparent" />
             {/* Bottom fade */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1e3530]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           </>
         ) : (
           <>
@@ -71,7 +69,7 @@ export default function ProjectDetail({
                 sizes="100vw"
               />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/75 via-[#1e3530]/20 to-[#1e3530]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
           </>
         )}
 
@@ -79,7 +77,7 @@ export default function ProjectDetail({
         <div className="absolute top-28 left-8 z-10">
           <Link
             href="/projects"
-            className="group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#4a4a4a] hover:text-[#2c4a3e] transition-colors duration-300"
+            className="group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-[#f9f7f4]/70 hover:text-[#f9f7f4] transition-colors duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-300" />
@@ -96,7 +94,7 @@ export default function ProjectDetail({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="inline-block text-[10px] tracking-[0.35em] uppercase text-[#8aaf9f] bg-[#1e3530]/30 border border-[#8aaf9f]/40 px-4 py-2 mb-6"
+            className="inline-block text-[10px] tracking-[0.35em] uppercase text-[#f9f7f4]/80 bg-black/20 border border-white/20 px-4 py-2 mb-6"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {project.category}
@@ -106,7 +104,7 @@ export default function ProjectDetail({
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f7f5f0]"
+              className="font-light text-[#f9f7f4]"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(3rem, 9vw, 8rem)",
@@ -122,13 +120,13 @@ export default function ProjectDetail({
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex items-center gap-6 mt-6"
           >
-            <span className="flex items-center gap-2 text-[11px] text-[#d6d1c7]" style={{ fontFamily: "var(--font-inter)" }}>
-              <MapPin size={12} className="text-[#8aaf9f]" />
+            <span className="flex items-center gap-2 text-[11px] text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
+              <MapPin size={12} className="text-[#f9f7f4]/60" />
               {project.location}
             </span>
-            <span className="text-[#8aaf9f]/50">·</span>
-            <span className="flex items-center gap-2 text-[11px] text-[#d6d1c7]" style={{ fontFamily: "var(--font-inter)" }}>
-              <Calendar size={12} className="text-[#8aaf9f]" />
+            <span className="text-white/30">·</span>
+            <span className="flex items-center gap-2 text-[11px] text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
+              <Calendar size={12} className="text-[#f9f7f4]/60" />
               {project.year}
             </span>
           </motion.div>
@@ -146,9 +144,9 @@ export default function ProjectDetail({
               transition={{ duration: 0.6 }}
               className="flex items-center gap-4 mb-8"
             >
-              <span className="block w-8 h-px bg-[#2c4a3e]" />
+              <span className="block w-8 h-px bg-[#253d32]" />
               <span
-                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Le Projet
@@ -185,9 +183,9 @@ export default function ProjectDetail({
             transition={{ duration: 0.8, delay: 0.3 }}
             className="lg:col-span-5"
           >
-            <div className="border border-[#2c4a3e]/10 p-8 bg-[#ebe8e0]">
+            <div className="border border-[#2c4a3e]/10 p-8 bg-[#eae6de]">
               <h3
-                className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e] mb-8"
+                className="text-[10px] tracking-[0.4em] uppercase text-[#253d32] mb-8"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Données du Projet
@@ -200,7 +198,7 @@ export default function ProjectDetail({
                   { icon: <Users size={14} />, label: "Équipe", value: project.specs.team },
                 ].map((spec) => (
                   <div key={spec.label} className="flex items-start gap-4 pb-6 border-b border-[#2c4a3e]/10 last:border-0 last:pb-0">
-                    <span className="text-[#2c4a3e] mt-0.5">{spec.icon}</span>
+                    <span className="text-[#253d32] mt-0.5">{spec.icon}</span>
                     <div>
                       <span
                         className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-1"
@@ -234,14 +232,14 @@ export default function ProjectDetail({
             className="mb-24"
           >
             <div className="flex items-center gap-4 mb-8">
-              <span className="block w-8 h-px bg-[#2c4a3e]" />
-              <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
+              <span className="block w-8 h-px bg-[#253d32]" />
+              <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
                 Plan 3D Interactif
               </span>
             </div>
             <div className="w-full border border-[#2c4a3e]/10" style={{ height: "600px" }}>
               <Suspense fallback={
-                <div className="w-full h-full bg-[#ebe8e0] flex items-center justify-center">
+                <div className="w-full h-full bg-[#eae6de] flex items-center justify-center">
                   <div className="w-8 h-8 border border-[#2c4a3e] border-t-transparent rounded-full animate-spin" />
                 </div>
               }>
@@ -286,7 +284,7 @@ export default function ProjectDetail({
               </h2>
               <Link
                 href="/projects"
-                className="text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] hover:text-[#1a1a1a] transition-colors duration-300"
+                className="text-[11px] tracking-[0.3em] uppercase text-[#253d32] hover:text-[#1a1a1a] transition-colors duration-300"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Voir tout
@@ -303,10 +301,10 @@ export default function ProjectDetail({
                 >
                   <Link href={`/projects/${p.id}`} className="group block relative overflow-hidden" style={{ height: "280px" }}>
                     <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="33vw" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/80 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-[9px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-1" style={{ fontFamily: "var(--font-inter)" }}>{p.category}</p>
-                      <h3 className="font-light text-[#f7f5f0] text-2xl" style={{ fontFamily: "var(--font-cormorant)" }}>{p.title}</h3>
+                      <p className="text-[9px] tracking-[0.3em] uppercase text-[#f9f7f4]/60 mb-1" style={{ fontFamily: "var(--font-inter)" }}>{p.category}</p>
+                      <h3 className="font-light text-[#f9f7f4] text-2xl" style={{ fontFamily: "var(--font-cormorant)" }}>{p.title}</h3>
                     </div>
                   </Link>
                 </motion.div>

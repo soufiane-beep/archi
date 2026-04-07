@@ -26,12 +26,12 @@ export default function Manifesto() {
   return (
     <section
       ref={ref}
-      className="relative py-48 px-8 overflow-hidden bg-[#f0ede6]"
+      className="relative py-48 px-8 overflow-hidden bg-[#1e3530]"
     >
       {/* Horizontal lines background texture */}
       <motion.div
         style={{ y }}
-        className="absolute inset-0 opacity-[0.035]"
+        className="absolute inset-0 opacity-[0.06]"
       >
         <div
           className="absolute inset-0"
@@ -40,8 +40,8 @@ export default function Manifesto() {
               0deg,
               transparent,
               transparent 72px,
-              #2c4a3e 72px,
-              #2c4a3e 73px
+              #f9f7f4 72px,
+              #f9f7f4 73px
             )`,
           }}
         />
@@ -57,9 +57,9 @@ export default function Manifesto() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4"
           >
-            <span className="block w-10 h-px bg-[#2c4a3e]" />
+            <span className="block w-10 h-px bg-[#8aaf9f]/60" />
             <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e] lg:[writing-mode:vertical-rl] lg:rotate-180"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f] lg:[writing-mode:vertical-rl] lg:rotate-180"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Notre Philosophie
@@ -83,7 +83,7 @@ export default function Manifesto() {
                     style={{
                       fontFamily: "var(--font-cormorant)",
                       fontSize: "clamp(2.8rem, 6.5vw, 6rem)",
-                      color: line.accent ? "#2c4a3e" : "#1a1a1a",
+                      color: line.accent ? "#8aaf9f" : "#f9f7f4",
                     }}
                   >
                     {line.text}
@@ -96,14 +96,14 @@ export default function Manifesto() {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
               transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-12 w-24 h-px bg-[#2c4a3e]/30 origin-left"
+              className="mt-12 w-24 h-px bg-[#f9f7f4]/15 origin-left"
             />
 
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 text-sm leading-relaxed text-[#7a7a72] max-w-xl"
+              className="mt-6 text-sm leading-relaxed text-[#8aaf9f]/70 max-w-xl"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Particuliers · Investisseurs · Promoteurs · Entreprises — Partout en Belgique
@@ -115,7 +115,7 @@ export default function Manifesto() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 flex lg:flex-col gap-12 lg:gap-14 lg:border-l lg:border-[#2c4a3e]/10 lg:pl-8"
+            className="lg:col-span-2 flex lg:flex-col gap-12 lg:gap-14 lg:border-l lg:border-[#f9f7f4]/10 lg:pl-8"
           >
             {[
               { value: "9+", label: "Projets" },
@@ -124,13 +124,13 @@ export default function Manifesto() {
             ].map((stat) => (
               <div key={stat.label} className="text-center lg:text-right">
                 <span
-                  className="block font-light text-[#2c4a3e] leading-none"
+                  className="block font-light text-[#8aaf9f] leading-none"
                   style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 5vw, 5rem)" }}
                 >
                   {stat.value}
                 </span>
                 <span
-                  className="block mt-1 text-[10px] tracking-[0.3em] uppercase text-[#7a7a72]"
+                  className="block mt-1 text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/50"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {stat.label}

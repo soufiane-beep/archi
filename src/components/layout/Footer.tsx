@@ -14,11 +14,11 @@ export default function Footer() {
   const titleInView = useInView(titleRef, { once: true, margin: "-20%" });
 
   return (
-    <footer className="bg-[#1e3530] border-t border-white/5">
+    <footer className="bg-[#141414] border-t border-white/[0.06]">
       {/* Large display title */}
       <div
         ref={titleRef}
-        className="relative overflow-hidden border-b border-white/5 px-8 pt-16 pb-4"
+        className="relative overflow-hidden border-b border-white/[0.06] px-8 pt-16 pb-4"
       >
         <div className="max-w-[1400px] mx-auto">
           <motion.div
@@ -27,9 +27,9 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-[#8aaf9f]/40" />
+            <span className="block w-8 h-px bg-[#d8d3c8]/30" />
             <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]/50"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#8c8c84]"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Bruxelles · Belgique
@@ -40,7 +40,7 @@ export default function Footer() {
               initial={{ y: "100%" }}
               animate={titleInView ? { y: "0%" } : {}}
               transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-white/[0.07] leading-[0.88] tracking-tight select-none"
+              className="font-light text-white/[0.04] leading-[0.88] tracking-tight select-none"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(5rem, 15vw, 14rem)",
@@ -55,7 +55,7 @@ export default function Footer() {
       {/* Main footer content */}
       <div ref={ref} className="pt-16 pb-10 px-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-14 pb-14 border-b border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-14 pb-14 border-b border-white/[0.08]">
 
             {/* Brand */}
             <motion.div
@@ -70,12 +70,12 @@ export default function Footer() {
                   alt="Premier Art Architecture"
                   width={120}
                   height={120}
-                  style={{ width: "auto", height: "68px" }}
-                  className="block brightness-0 invert"
+                  style={{ width: "auto", height: "60px" }}
+                  className="block brightness-0 invert opacity-90"
                 />
               </div>
               <p
-                className="text-sm text-[#8aaf9f]/90 leading-relaxed max-w-xs"
+                className="text-sm text-[#a0a09a] leading-relaxed max-w-xs"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Cabinet d'architecture belge spécialisé en transformation, extension, construction neuve et réaffectation. Partout en Belgique.
@@ -90,7 +90,7 @@ export default function Footer() {
               className="md:col-span-2"
             >
               <h4
-                className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-6"
+                className="text-[10px] tracking-[0.3em] uppercase text-[#d8d3c8]/60 mb-6"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Navigation
@@ -106,7 +106,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[#8aaf9f]/90 hover:text-[#f7f5f0] transition-colors duration-300"
+                      className="text-sm text-[#a0a09a] hover:text-[#f9f7f4] transition-colors duration-300"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {link.label}
@@ -124,7 +124,7 @@ export default function Footer() {
               className="md:col-span-3"
             >
               <h4
-                className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-6"
+                className="text-[10px] tracking-[0.3em] uppercase text-[#d8d3c8]/60 mb-6"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Domaines
@@ -138,7 +138,7 @@ export default function Footer() {
                 ].map((s) => (
                   <li key={s}>
                     <span
-                      className="text-sm text-[#8aaf9f]/80"
+                      className="text-sm text-[#a0a09a]/80"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {s}
@@ -156,7 +156,7 @@ export default function Footer() {
               className="md:col-span-3"
             >
               <h4
-                className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-6"
+                className="text-[10px] tracking-[0.3em] uppercase text-[#d8d3c8]/60 mb-6"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Contact
@@ -165,19 +165,19 @@ export default function Footer() {
                 className="not-italic space-y-4"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                <p className="text-sm text-[#8aaf9f]/90 leading-relaxed">
+                <p className="text-sm text-[#a0a09a] leading-relaxed">
                   Chaussée de Mons 725<br />
                   1070 Anderlecht, Bruxelles
                 </p>
                 <a
                   href="tel:+32493876106"
-                  className="block text-sm text-[#8aaf9f]/90 hover:text-white transition-colors duration-300"
+                  className="block text-sm text-[#a0a09a] hover:text-[#f9f7f4] transition-colors duration-300"
                 >
                   +32 493 87 61 06
                 </a>
                 <a
                   href="mailto:contact@premierart.be"
-                  className="inline-flex items-center gap-1.5 text-sm text-[#8aaf9f]/90 hover:text-white transition-colors duration-300"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#a0a09a] hover:text-[#f9f7f4] transition-colors duration-300"
                 >
                   contact@premierart.be
                   <ArrowUpRight size={11} />
@@ -189,14 +189,14 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8">
             <p
-              className="text-[11px] text-[#8aaf9f]/60 tracking-widest"
+              className="text-[11px] text-[#8c8c84] tracking-widest"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               © {new Date().getFullYear()} Premier Art Architecture. Tous droits réservés.
             </p>
             <Link
               href="/brief"
-              className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/70 hover:text-white transition-colors duration-300"
+              className="text-[10px] tracking-[0.3em] uppercase text-[#a0a09a] hover:text-[#f9f7f4] transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Parler de Votre Projet →

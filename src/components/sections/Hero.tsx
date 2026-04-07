@@ -31,7 +31,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#1e3530]">
+    <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#141414]">
       {/* Background slides */}
       {slides.map((slide, i) => (
         <div
@@ -49,9 +49,8 @@ export default function Hero() {
             priority={i === 0}
             sizes="100vw"
           />
-          {/* Overlay forest green — plus doux que le noir */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/75 via-[#1e3530]/20 to-[#1e3530]/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1e3530]/45 to-transparent" />
+          {/* Overlay bottom-only pour lisibilité du texte */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
         </div>
       ))}
 
@@ -65,9 +64,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-12 h-px bg-[#8aaf9f]" />
+            <span className="block w-12 h-px bg-[#f9f7f4]/50" />
             <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Cabinet d'Architecture · Bruxelles
@@ -100,7 +99,7 @@ export default function Hero() {
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
-                background: "linear-gradient(135deg, #8aaf9f 0%, #c2d9cf 50%, #8aaf9f 100%)",
+                background: "linear-gradient(135deg, #f9f7f4 0%, #d8d3c8 50%, #f9f7f4 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -122,14 +121,14 @@ export default function Hero() {
           >
             <Link
               href="/brief"
-              className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#f7f5f0] font-medium px-8 py-4 bg-[#2c4a3e] hover:bg-[#4a7c68] transition-colors duration-400"
+              className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#f9f7f4] font-medium px-8 py-4 bg-[#253d32] hover:bg-[#3a5e4e] transition-colors duration-400"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Parler de Votre Projet
             </Link>
             <Link
               href="/projects"
-              className="group text-[11px] tracking-[0.3em] uppercase text-[#8aaf9f] hover:text-[#f7f5f0] hover-line transition-colors duration-300"
+              className="group text-[11px] tracking-[0.3em] uppercase text-[#f9f7f4]/70 hover:text-[#f9f7f4] hover-line transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Nos Réalisations
@@ -148,7 +147,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[11px] tracking-[0.3em] text-[#8aaf9f] uppercase"
+              className="text-[11px] tracking-[0.3em] text-[#f9f7f4]/60 uppercase"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {slides[current].location}
@@ -160,7 +159,7 @@ export default function Hero() {
                   onClick={() => goTo(i)}
                   className={`transition-all duration-500 ${
                     i === current
-                      ? "w-8 h-px bg-[#8aaf9f]"
+                      ? "w-8 h-px bg-white"
                       : "w-3 h-px bg-white/30 hover:bg-white/60"
                   }`}
                   aria-label={`Slide ${i + 1}`}
@@ -179,7 +178,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
         <span
-          className="text-[9px] tracking-[0.4em] uppercase text-[#8aaf9f]/60"
+          className="text-[9px] tracking-[0.4em] uppercase text-[#f9f7f4]/50"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           Scroll
@@ -188,19 +187,19 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown size={16} className="text-[#8aaf9f]" />
+          <ArrowDown size={16} className="text-[#f9f7f4]/60" />
         </motion.div>
       </motion.div>
 
       {/* Vertical text */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-6">
         <span
-          className="text-[9px] tracking-[0.5em] uppercase text-[#8aaf9f]/50 [writing-mode:vertical-rl]"
+          className="text-[9px] tracking-[0.5em] uppercase text-[#f9f7f4]/40 [writing-mode:vertical-rl]"
           style={{ fontFamily: "var(--font-inter)" }}
         >
           Architecture · Design · Belgique
         </span>
-        <span className="block w-px h-16 bg-gradient-to-b from-transparent to-[#8aaf9f]/50" />
+        <span className="block w-px h-16 bg-gradient-to-b from-transparent to-[#f9f7f4]/30" />
       </div>
     </section>
   );

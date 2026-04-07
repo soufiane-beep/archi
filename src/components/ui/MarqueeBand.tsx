@@ -26,7 +26,7 @@ export default function MarqueeBand({
       className={`overflow-hidden py-[18px] border-y ${
         dark
           ? "bg-[#1e3530] border-white/5"
-          : "bg-[#ebe8e0] border-[#2c4a3e]/8"
+          : "bg-[#eae6de] border-[#253d32]/8"
       }`}
     >
       <div
@@ -39,7 +39,7 @@ export default function MarqueeBand({
           >
             <span
               className={`text-[10px] tracking-[0.45em] uppercase px-8 ${
-                dark ? "text-[#8aaf9f]/55" : "text-[#2c4a3e]/50"
+                dark ? "text-[#8aaf9f]/55" : "text-[#253d32]/50"
               }`}
               style={{ fontFamily: "var(--font-inter)" }}
             >
@@ -47,7 +47,7 @@ export default function MarqueeBand({
             </span>
             <span
               className={`text-[8px] ${
-                dark ? "text-[#8aaf9f]/25" : "text-[#2c4a3e]/20"
+                dark ? "text-[#8aaf9f]/25" : "text-[#253d32]/20"
               }`}
             >
               ◆

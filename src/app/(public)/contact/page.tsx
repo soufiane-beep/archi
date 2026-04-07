@@ -43,7 +43,7 @@ export default function ContactPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/80 via-[#1e3530]/40 to-[#1e3530]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
         <div className="absolute bottom-16 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -52,8 +52,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-5"
           >
-            <span className="block w-8 h-px bg-[#8aaf9f]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#f9f7f4]/50" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
               Parlons de Votre Projet
             </span>
           </motion.div>
@@ -62,7 +62,7 @@ export default function ContactPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f7f5f0]"
+              className="font-light text-[#f9f7f4]"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 7vw, 6rem)", lineHeight: 0.95 }}
             >
               Nous Contacter
@@ -228,7 +228,7 @@ export default function ContactPage() {
                     <select
                       value={form.type}
                       onChange={(e) => setForm({ ...form, type: e.target.value })}
-                      className="w-full bg-[#ebe8e0] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 pr-10 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 appearance-none"
+                      className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 pr-10 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 appearance-none"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       <option value="">Sélectionnez un type</option>
@@ -259,7 +259,7 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Décrivez votre projet, vos aspirations, votre budget indicatif..."
-                    className="w-full bg-[#ebe8e0] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 resize-none placeholder:text-[#7a7a72]"
+                    className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 resize-none placeholder:text-[#7a7a72]"
                     style={{ fontFamily: "var(--font-inter)" }}
                   />
                 </div>
@@ -270,7 +270,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
+                    className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] transition-colors duration-300"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     Envoyer le Message
@@ -312,7 +312,7 @@ function FormField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-[#ebe8e0] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#7a7a72]"
+        className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#7a7a72]"
         style={{ fontFamily: "var(--font-inter)" }}
       />
     </div>

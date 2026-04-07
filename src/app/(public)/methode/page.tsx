@@ -70,7 +70,7 @@ export default function MethodePage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/75 via-[#1e3530]/30 to-[#1e3530]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
         <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -79,8 +79,8 @@ export default function MethodePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-[#8aaf9f]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#f9f7f4]/50" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
               Notre Méthode
             </span>
           </motion.div>
@@ -89,7 +89,7 @@ export default function MethodePage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f7f5f0]"
+              className="font-light text-[#f9f7f4]"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95 }}
             >
               Un accompagnement
@@ -125,15 +125,15 @@ export default function MethodePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="border border-[#2c4a3e]/10 p-10 bg-[#ebe8e0] hover:bg-[#efefea] transition-colors duration-500"
+              className="border border-[#2c4a3e]/10 p-10 bg-[#eae6de] hover:bg-[#f1ede6] transition-colors duration-500"
             >
               <span
-                className="block text-[11px] tracking-[0.3em] text-[#2c4a3e] mb-5"
+                className="block text-[11px] tracking-[0.3em] text-[#253d32] mb-5"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {step.step}
               </span>
-              <div className="w-10 h-px bg-[#2c4a3e]/30 mb-6" />
+              <div className="w-10 h-px bg-[#253d32]/30 mb-6" />
               <h3
                 className="font-light text-[#1a1a1a] mb-4"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.7rem" }}
@@ -149,7 +149,7 @@ export default function MethodePage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 px-8 bg-[#ebe8e0]">
+      <section className="py-24 px-8 bg-[#eae6de]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -157,8 +157,8 @@ export default function MethodePage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-4"
           >
-            <span className="block w-8 h-px bg-[#2c4a3e]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#253d32]" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
               Ce que cela vous apporte
             </span>
           </motion.div>
@@ -216,7 +216,7 @@ export default function MethodePage() {
           </p>
           <Link
             href="/brief"
-            className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
+            className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] transition-colors duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Parler de votre projet

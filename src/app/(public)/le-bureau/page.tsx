@@ -26,7 +26,7 @@ export default function LeBureauPage() {
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/80 via-[#1e3530]/30 to-[#1e3530]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
         <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -35,8 +35,8 @@ export default function LeBureauPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-[#8aaf9f]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#f9f7f4]/50" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
               Le Bureau
             </span>
           </motion.div>
@@ -45,7 +45,7 @@ export default function LeBureauPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f7f5f0]"
+              className="font-light text-[#f9f7f4]"
               style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95 }}
             >
               Une architecture
@@ -67,12 +67,12 @@ export default function LeBureauPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 0.8 }}
-              className="grid grid-cols-2 gap-px bg-white/5 border border-[#2c4a3e]/10"
+              className="grid grid-cols-2 gap-px bg-white/5 border border-[#253d32]/10"
             >
               {stats.map((stat) => (
-                <div key={stat.label} className="bg-[#f7f5f0] p-8 text-center">
+                <div key={stat.label} className="bg-[#f9f7f4] p-8 text-center">
                   <span
-                    className="block font-light text-[#2c4a3e] mb-2"
+                    className="block font-light text-[#253d32] mb-2"
                     style={{ fontFamily: "var(--font-cormorant)", fontSize: "3.5rem" }}
                   >
                     {stat.value}
@@ -91,7 +91,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* Pillars section */}
-      <section className="py-24 px-8 bg-[#ebe8e0]">
+      <section className="py-24 px-8 bg-[#eae6de]">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -99,8 +99,8 @@ export default function LeBureauPage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-12"
           >
-            <span className="block w-8 h-px bg-[#2c4a3e]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-[#253d32]" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
               Ce qui guide nos projets
             </span>
           </motion.div>
@@ -129,7 +129,7 @@ export default function LeBureauPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="border-t border-[#2c4a3e]/10 pt-8"
+                className="border-t border-[#253d32]/10 pt-8"
               >
                 <h3
                   className="font-light text-[#1a1a1a] mb-4"
@@ -154,8 +154,8 @@ export default function LeBureauPage() {
           viewport={{ once: true }}
           className="flex items-center gap-4 mb-4"
         >
-          <span className="block w-8 h-px bg-[#2c4a3e]" />
-          <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
+          <span className="block w-8 h-px bg-[#253d32]" />
+          <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
             L&apos;Équipe
           </span>
         </motion.div>
@@ -188,7 +188,7 @@ export default function LeBureauPage() {
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <h3
                 className="font-light text-[#1a1a1a] mb-1"
@@ -197,7 +197,7 @@ export default function LeBureauPage() {
                 {member.name}
               </h3>
               <p
-                className="text-[10px] tracking-[0.25em] uppercase text-[#2c4a3e] mb-4"
+                className="text-[10px] tracking-[0.25em] uppercase text-[#253d32] mb-4"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {member.role}
@@ -211,7 +211,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-8 border-t border-[#2c4a3e]/10">
+      <section className="py-24 px-8 border-t border-[#253d32]/10">
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ export default function LeBureauPage() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
+              className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Nous Contacter
@@ -264,8 +264,8 @@ function StoryText() {
         animate={isInView ? { opacity: 1 } : {}}
         className="flex items-center gap-4 mb-8"
       >
-        <span className="block w-8 h-px bg-[#2c4a3e]" />
-        <span className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]" style={{ fontFamily: "var(--font-inter)" }}>
+        <span className="block w-8 h-px bg-[#253d32]" />
+        <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
           Notre Vision
         </span>
       </motion.div>

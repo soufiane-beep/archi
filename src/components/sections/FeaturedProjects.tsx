@@ -25,9 +25,9 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-4 mb-4"
           >
-            <span className="block w-8 h-px bg-[#2c4a3e]" />
+            <span className="block w-8 h-px bg-[#253d32]" />
             <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
+              className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Réalisations
@@ -57,11 +57,11 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
         >
           <Link
             href="/projects"
-            className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#2c4a3e] hover:text-[#1a1a1a] transition-colors duration-300"
+            className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#253d32] hover:text-[#1a1a1a] transition-colors duration-300"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             Voir tous les projets
-            <span className="w-8 h-px bg-[#2c4a3e] group-hover:w-12 transition-all duration-400" />
+            <span className="w-8 h-px bg-[#253d32] group-hover:w-12 transition-all duration-400" />
           </Link>
         </motion.div>
       </div>
@@ -152,9 +152,9 @@ function ProjectCard({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isHovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="w-10 h-10 bg-[#2c4a3e] flex items-center justify-center"
+          className="w-10 h-10 bg-[#253d32] flex items-center justify-center"
         >
-          <ArrowUpRight size={16} className="text-[#f7f5f0]" />
+          <ArrowUpRight size={16} className="text-[#f9f7f4]" />
         </motion.div>
       </div>
 
@@ -166,7 +166,7 @@ function ProjectCard({
           {project.location} · {project.year}
         </p>
         <h3
-          className={`font-light text-[#f7f5f0] leading-tight transition-all duration-500 ${
+          className={`font-light text-[#f9f7f4] leading-tight transition-all duration-500 ${
             large ? "text-4xl md:text-5xl" : "text-2xl md:text-3xl"
           }`}
           style={{ fontFamily: "var(--font-cormorant)" }}
