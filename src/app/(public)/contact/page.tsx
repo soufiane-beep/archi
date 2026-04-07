@@ -43,7 +43,7 @@ export default function ContactPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/60 via-[#1e3530]/40 to-[#1e3530]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/80 via-[#1e3530]/40 to-[#1e3530]" />
 
         <div className="absolute bottom-16 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div

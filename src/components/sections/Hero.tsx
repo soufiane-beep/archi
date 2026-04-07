@@ -50,7 +50,7 @@ export default function Hero() {
             sizes="100vw"
           />
           {/* Overlay forest green — plus doux que le noir */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/50 via-[#1e3530]/20 to-[#1e3530]/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/75 via-[#1e3530]/20 to-[#1e3530]/75" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#1e3530]/45 to-transparent" />
         </div>
       ))}

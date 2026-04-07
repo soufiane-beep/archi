@@ -75,7 +75,7 @@ export default function Footer() {
                 />
               </div>
               <p
-                className="text-sm text-[#8aaf9f]/60 leading-relaxed max-w-xs"
+                className="text-sm text-[#8aaf9f]/90 leading-relaxed max-w-xs"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Cabinet d'architecture belge spécialisé en transformation, extension, construction neuve et réaffectation. Partout en Belgique.
@@ -106,7 +106,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[#8aaf9f]/55 hover:text-[#f7f5f0] transition-colors duration-300"
+                      className="text-sm text-[#8aaf9f]/90 hover:text-[#f7f5f0] transition-colors duration-300"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {link.label}
@@ -138,7 +138,7 @@ export default function Footer() {
                 ].map((s) => (
                   <li key={s}>
                     <span
-                      className="text-sm text-[#8aaf9f]/40"
+                      className="text-sm text-[#8aaf9f]/80"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {s}
@@ -165,19 +165,19 @@ export default function Footer() {
                 className="not-italic space-y-4"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                <p className="text-sm text-[#8aaf9f]/55 leading-relaxed">
+                <p className="text-sm text-[#8aaf9f]/90 leading-relaxed">
                   Chaussée de Mons 725<br />
                   1070 Anderlecht, Bruxelles
                 </p>
                 <a
                   href="tel:+32493876106"
-                  className="block text-sm text-[#8aaf9f]/55 hover:text-[#8aaf9f] transition-colors duration-300"
+                  className="block text-sm text-[#8aaf9f]/90 hover:text-white transition-colors duration-300"
                 >
                   +32 493 87 61 06
                 </a>
                 <a
                   href="mailto:contact@premierart.be"
-                  className="inline-flex items-center gap-1.5 text-sm text-[#8aaf9f]/55 hover:text-[#8aaf9f] transition-colors duration-300"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#8aaf9f]/90 hover:text-white transition-colors duration-300"
                 >
                   contact@premierart.be
                   <ArrowUpRight size={11} />
@@ -189,14 +189,14 @@ export default function Footer() {
           {/* Bottom bar */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8">
             <p
-              className="text-[11px] text-[#8aaf9f]/30 tracking-widest"
+              className="text-[11px] text-[#8aaf9f]/60 tracking-widest"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               © {new Date().getFullYear()} Premier Art Architecture. Tous droits réservés.
             </p>
             <Link
               href="/brief"
-              className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/40 hover:text-[#8aaf9f] transition-colors duration-300"
+              className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/70 hover:text-white transition-colors duration-300"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Parler de Votre Projet →

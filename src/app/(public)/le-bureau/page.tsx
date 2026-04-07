@@ -26,7 +26,7 @@ export default function LeBureauPage() {
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/60 via-[#1e3530]/30 to-[#1e3530]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/80 via-[#1e3530]/30 to-[#1e3530]" />
 
         <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div

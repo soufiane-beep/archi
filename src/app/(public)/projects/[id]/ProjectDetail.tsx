@@ -54,8 +54,10 @@ export default function ProjectDetail({
                 <HeroModel3D url={project.model3d} />
               </Suspense>
             </div>
+            {/* Top fade — couvre la nav */}
+            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#1e3530]/80 to-transparent" />
             {/* Bottom fade */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/20 via-transparent to-[#1e3530]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#1e3530]" />
           </>
         ) : (
           <>
@@ -69,7 +71,7 @@ export default function ProjectDetail({
                 sizes="100vw"
               />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/50 via-[#1e3530]/20 to-[#1e3530]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1e3530]/75 via-[#1e3530]/20 to-[#1e3530]" />
           </>
         )}
 

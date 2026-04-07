@@ -19,6 +19,7 @@ const DARK_HERO_ROUTES = ["/", "/le-bureau", "/contact", "/methode", "/domaines"
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [ctaHovered, setCtaHovered] = useState(false);
   const pathname = usePathname();
 
   // Hero sombre = page connue + non scrollée OU route projet individuel (sauf 3D)
@@ -53,6 +54,10 @@ export default function Header() {
             : "py-7"
         }`}
       >
+        {/* Gradient sombre derrière la nav quand hero photo */}
+        {!scrolled && hasDarkHero && (
+          <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-transparent pointer-events-none" />
+        )}
 
         <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between">
           {/* Logo */}
@@ -83,7 +88,7 @@ export default function Header() {
                       : "text-[#4a4a4a] hover:text-[#1a1a1a]"
                     : pathname === link.href
                       ? "text-[#8aaf9f]"
-                      : "text-[#f7f5f0]/80 hover:text-[#f7f5f0]"
+                      : "text-white hover:text-white"
                 }`}
                 style={{ fontFamily: "var(--font-inter)" }}
               >
@@ -99,14 +104,31 @@ export default function Header() {
             ))}
             <Link
               href="/brief"
-              className={`ml-4 text-[10px] tracking-[0.25em] uppercase font-medium px-6 py-3 border transition-all duration-300 ${
-                light
-                  ? "border-[#2c4a3e] text-[#2c4a3e] hover:bg-[#2c4a3e] hover:text-[#f7f5f0]"
-                  : "border-[#f7f5f0]/60 text-[#f7f5f0] hover:border-[#f7f5f0] hover:bg-[#f7f5f0]/10"
+              className={`ml-4 relative overflow-hidden inline-flex items-center text-[10px] tracking-[0.25em] uppercase font-medium px-6 py-3 border ${
+                light ? "border-[#2c4a3e]" : "border-white"
               }`}
               style={{ fontFamily: "var(--font-inter)" }}
+              onMouseEnter={() => setCtaHovered(true)}
+              onMouseLeave={() => setCtaHovered(false)}
             >
-              Votre Projet
+              <motion.span
+                className={`absolute inset-0 ${light ? "bg-[#2c4a3e]" : "bg-white"}`}
+                initial={false}
+                animate={{ scaleX: ctaHovered ? 1 : 0 }}
+                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                style={{ transformOrigin: "left", originX: 0 }}
+              />
+              <motion.span
+                className="relative z-10"
+                animate={{
+                  color: ctaHovered
+                    ? light ? "#f7f5f0" : "#1e3530"
+                    : light ? "#2c4a3e" : "#ffffff",
+                }}
+                transition={{ duration: 0.25, delay: ctaHovered ? 0.1 : 0 }}
+              >
+                Votre Projet
+              </motion.span>
             </Link>
           </nav>
 
