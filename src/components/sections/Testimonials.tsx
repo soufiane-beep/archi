@@ -139,7 +139,7 @@ export default function Testimonials() {
         >
           <button
             onClick={prev}
-            className="group w-12 h-12 border border-[#253d32]/15 flex items-center justify-center text-[#7a7a72] hover:border-[#253d32] hover:text-[#253d32] transition-all duration-300"
+            className="group w-12 h-12 border border-[#253d32]/15 flex items-center justify-center text-[#5e5e56] hover:border-[#253d32] hover:text-[#253d32] transition-all duration-300"
             aria-label="Témoignage précédent"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:-translate-x-0.5 transition-transform duration-300">
@@ -148,7 +148,7 @@ export default function Testimonials() {
           </button>
           <button
             onClick={next}
-            className="group w-12 h-12 border border-[#253d32]/15 flex items-center justify-center text-[#7a7a72] hover:border-[#253d32] hover:text-[#253d32] transition-all duration-300"
+            className="group w-12 h-12 border border-[#253d32]/15 flex items-center justify-center text-[#5e5e56] hover:border-[#253d32] hover:text-[#253d32] transition-all duration-300"
             aria-label="Témoignage suivant"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-300">

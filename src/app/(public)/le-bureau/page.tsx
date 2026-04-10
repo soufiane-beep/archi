@@ -78,7 +78,7 @@ export default function LeBureauPage() {
                     {stat.value}
                   </span>
                   <span
-                    className="text-[10px] tracking-[0.25em] uppercase text-[#7a7a72]"
+                    className="text-[10px] tracking-[0.25em] uppercase text-[#5e5e56]"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {stat.label}
@@ -131,13 +131,13 @@ export default function LeBureauPage() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="border-t border-[#253d32]/10 pt-8"
               >
-                <h3
+                <h2
                   className="font-light text-[#1a1a1a] mb-4"
                   style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.8rem" }}
                 >
                   {item.title}
-                </h3>
-                <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                </h2>
+                <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                   {item.text}
                 </p>
               </motion.div>
@@ -202,7 +202,7 @@ export default function LeBureauPage() {
               >
                 {member.role}
               </p>
-              <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {member.description}
               </p>
             </motion.div>
@@ -227,7 +227,7 @@ export default function LeBureauPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[#7a7a72] mb-10 max-w-md mx-auto text-sm"
+            className="text-[#5e5e56] mb-10 max-w-md mx-auto text-sm"
             style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}
           >
             Transformation, extension, construction neuve ou réaffectation — chaque projet commence par un premier échange pour comprendre vos besoins et explorer les possibilités.
@@ -293,7 +293,7 @@ function StoryText() {
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 + i * 0.1 }}
-            className={`leading-relaxed ${i === 0 ? "text-[#4a4a4a]" : "text-[#7a7a72]"}`}
+            className={`leading-relaxed ${i === 0 ? "text-[#4a4a4a]" : "text-[#5e5e56]"}`}
             style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
           >
             {text}

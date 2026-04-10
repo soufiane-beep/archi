@@ -78,18 +78,18 @@ export default function DomainesPage() {
               className="group border border-[#2c4a3e]/10 p-10 hover:border-[#2c4a3e]/30 transition-all duration-500 bg-[#eae6de] hover:bg-[#f1ede6]"
             >
               <span
-                className="block text-[11px] tracking-[0.3em] text-[#7a7a72] mb-6"
+                className="block text-[11px] tracking-[0.3em] text-[#5e5e56] mb-6"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {service.number}
               </span>
-              <h3
+              <h2
                 className="font-light text-[#1a1a1a] mb-4 group-hover:text-[#253d32] transition-colors duration-400"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "2rem" }}
               >
                 {service.title}
-              </h3>
-              <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              </h2>
+              <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {service.description}
               </p>
             </motion.div>
@@ -186,7 +186,7 @@ export default function DomainesPage() {
               >
                 {c.label}
               </h3>
-              <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {c.desc}
               </p>
             </motion.div>
@@ -205,7 +205,7 @@ export default function DomainesPage() {
           <h2 className="font-light text-[#1a1a1a] mb-4" style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.5rem" }}>
             Un Projet à Discuter ?
           </h2>
-          <p className="text-[#7a7a72] text-sm mb-8" style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}>
+          <p className="text-[#5e5e56] text-sm mb-8" style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}>
             Chaque projet commence par un premier échange permettant de comprendre vos besoins, le contexte du site et les premières orientations possibles.
           </p>
           <Link

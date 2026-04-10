@@ -106,7 +106,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-[#7a7a72] text-sm leading-relaxed mb-12"
+              className="text-[#5e5e56] text-sm leading-relaxed mb-12"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Que vous ayez un projet précis ou simplement une envie à explorer, nous sommes là pour vous accompagner. La première consultation est toujours gratuite.
@@ -150,7 +150,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span
-                      className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-1.5"
+                      className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-1.5"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {item.label}
@@ -199,7 +199,7 @@ export default function ContactPage() {
                 >
                   Message Envoyé
                 </h3>
-                <p className="text-[#7a7a72] max-w-md" style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                <p className="text-[#5e5e56] max-w-md" style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", lineHeight: 1.7 }}>
                   Merci pour votre message. Notre équipe vous contactera dans les 24 heures pour donner suite à votre demande.
                 </p>
               </motion.div>
@@ -221,7 +221,7 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <FormField label="Téléphone" placeholder="+32 " value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
                   <div>
-                    <label className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+                    <label className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
                       Type de Projet
                     </label>
                     <div className="relative">
@@ -250,7 +250,7 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+                  <label className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
                     Message *
                   </label>
                   <textarea
@@ -259,13 +259,13 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Décrivez votre projet, vos aspirations, votre budget indicatif..."
-                    className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 resize-none placeholder:text-[#7a7a72]"
+                    className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 resize-none placeholder:text-[#5e5e56]"
                     style={{ fontFamily: "var(--font-inter)" }}
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <p className="text-[10px] text-[#7a7a72]" style={{ fontFamily: "var(--font-inter)" }}>
+                  <p className="text-[10px] text-[#5e5e56]" style={{ fontFamily: "var(--font-inter)" }}>
                     * Champs obligatoires
                   </p>
                   <button
@@ -303,7 +303,7 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+      <label className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
         {label}
       </label>
       <input
@@ -312,7 +312,7 @@ function FormField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#7a7a72]"
+        className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#5e5e56]"
         style={{ fontFamily: "var(--font-inter)" }}
       />
     </div>

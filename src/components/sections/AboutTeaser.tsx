@@ -124,7 +124,7 @@ export default function AboutTeaser() {
                 Notre bureau développe une architecture contemporaine, sobre et contextualisée, au service de projets variés en Belgique. Nous cherchons à produire des réponses justes, fonctionnelles et durables, en conciliant ambition architecturale, faisabilité et qualité d'usage.
               </p>
               <p
-                className="text-[#7a7a72] leading-relaxed"
+                className="text-[#5e5e56] leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
               >
                 Transformation, extension, construction neuve ou réaffectation — nous accompagnons particuliers, investisseurs, promoteurs et entreprises de l'idée initiale jusqu'à la réalisation.
@@ -151,7 +151,7 @@ export default function AboutTeaser() {
                     {v.label}
                   </span>
                   <span
-                    className="text-[11px] text-[#7a7a72]"
+                    className="text-[11px] text-[#5e5e56]"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {v.desc}

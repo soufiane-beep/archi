@@ -134,13 +134,13 @@ export default function MethodePage() {
                 {step.step}
               </span>
               <div className="w-10 h-px bg-[#253d32]/30 mb-6" />
-              <h3
+              <h2
                 className="font-light text-[#1a1a1a] mb-4"
                 style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.7rem" }}
               >
                 {step.title}
-              </h3>
-              <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+              </h2>
+              <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                 {step.desc}
               </p>
             </motion.div>
@@ -191,7 +191,7 @@ export default function MethodePage() {
                 >
                   {b.title}
                 </h3>
-                <p className="text-[#7a7a72] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
                   {b.desc}
                 </p>
               </motion.div>
@@ -211,7 +211,7 @@ export default function MethodePage() {
           <h2 className="font-light text-[#1a1a1a] mb-4" style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.5rem" }}>
             Prêt à démarrer votre projet ?
           </h2>
-          <p className="text-[#7a7a72] text-sm mb-8" style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}>
+          <p className="text-[#5e5e56] text-sm mb-8" style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}>
             Contactez-nous pour un premier échange sans engagement. Ensemble, nous définirons le cadre de votre projet et les premières orientations possibles.
           </p>
           <Link

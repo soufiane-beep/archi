@@ -82,7 +82,7 @@ export default function BriefPage() {
                 Message Reçu
               </h2>
               <p
-                className="text-[#7a7a72] max-w-md leading-relaxed"
+                className="text-[#5e5e56] max-w-md leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem" }}
               >
                 Nous avons bien reçu votre demande. Notre équipe vous contactera sous 24h pour donner suite à votre projet.
@@ -157,7 +157,7 @@ export default function BriefPage() {
                             className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-all duration-300 ${
                               form.type === t
                                 ? "border-[#2c4a3e] text-[#2c4a3e] bg-[#2c4a3e]/8"
-                                : "border-[#2c4a3e]/20 text-[#7a7a72] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
+                                : "border-[#2c4a3e]/20 text-[#5e5e56] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
                             }`}
                             style={{ fontFamily: "var(--font-inter)" }}
                           >
@@ -228,7 +228,7 @@ export default function BriefPage() {
                             </span>
                             <span
                               className={`text-sm transition-colors duration-300 ${
-                                form.budget === b ? "text-[#2c4a3e]" : "text-[#7a7a72] group-hover:text-[#4a4a4a]"
+                                form.budget === b ? "text-[#2c4a3e]" : "text-[#5e5e56] group-hover:text-[#4a4a4a]"
                               }`}
                               style={{ fontFamily: "var(--font-inter)" }}
                             >
@@ -330,7 +330,7 @@ function SectionLabel({
 function FieldLabel({ label }: { label: string }) {
   return (
     <p
-      className="text-[10px] tracking-[0.35em] uppercase text-[#7a7a72]"
+      className="text-[10px] tracking-[0.35em] uppercase text-[#5e5e56]"
       style={{ fontFamily: "var(--font-inter)" }}
     >
       {label}

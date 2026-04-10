@@ -30,7 +30,7 @@ export default async function ProjectsPage() {
           Nos Réalisations
         </h1>
         <p
-          className="max-w-xl text-[#7a7a72]"
+          className="max-w-xl text-[#5e5e56]"
           style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", lineHeight: 1.7 }}
         >
           Vingt années de créations architecturales en Belgique et au-delà. Chaque projet est une histoire unique, une réponse précise à un lieu et à ses habitants.

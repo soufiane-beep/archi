@@ -52,7 +52,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
             className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 transition-all duration-300 ${
               activeCategory === cat
                 ? "bg-[#2c4a3e] text-[#f7f5f0]"
-                : "border border-[#2c4a3e]/20 text-[#7a7a72] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
+                : "border border-[#2c4a3e]/20 text-[#5e5e56] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
             }`}
             style={{ fontFamily: "var(--font-inter)" }}
           >

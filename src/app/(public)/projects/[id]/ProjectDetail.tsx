@@ -169,7 +169,7 @@ export default function ProjectDetail({
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-[#7a7a72] leading-relaxed"
+              className="text-[#5e5e56] leading-relaxed"
               style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
             >
               {project.fullDescription}
@@ -201,7 +201,7 @@ export default function ProjectDetail({
                     <span className="text-[#253d32] mt-0.5">{spec.icon}</span>
                     <div>
                       <span
-                        className="block text-[10px] tracking-[0.25em] uppercase text-[#7a7a72] mb-1"
+                        className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-1"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {spec.label}
