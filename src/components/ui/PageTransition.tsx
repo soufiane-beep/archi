@@ -12,7 +12,7 @@ export default function PageTransition({
   const pathname = usePathname();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   return (
