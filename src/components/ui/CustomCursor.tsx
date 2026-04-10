@@ -43,7 +43,7 @@ export default function CustomCursor() {
       ring.style.transform = "translate(-50%, -50%) scale(1)";
     };
 
-    window.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mousemove", onMouseMove, { capture: true });
     animate();
 
     document.querySelectorAll("a, button, [data-cursor]").forEach((el) => {
@@ -52,7 +52,7 @@ export default function CustomCursor() {
     });
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("mousemove", onMouseMove, { capture: true });
     };
   }, []);
 

@@ -15,10 +15,10 @@ function WireframeModel({ url }: { url: string }) {
     if ((child as THREE.Mesh).isMesh) {
       const mesh = child as THREE.Mesh;
       mesh.material = new THREE.MeshBasicMaterial({
-        color: new THREE.Color("#c8a97e"),
+        color: new THREE.Color("#8aaf9f"),
         wireframe: true,
         transparent: true,
-        opacity: 0.45,
+        opacity: 0.5,
       });
     }
   });
@@ -29,9 +29,9 @@ function WireframeModel({ url }: { url: string }) {
     if ((child as THREE.Mesh).isMesh) {
       const mesh = child as THREE.Mesh;
       mesh.material = new THREE.MeshBasicMaterial({
-        color: new THREE.Color("#1a1612"),
+        color: new THREE.Color("#1a2e26"),
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.65,
         side: THREE.FrontSide,
       });
     }

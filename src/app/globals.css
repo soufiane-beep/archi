@@ -76,6 +76,12 @@
     html {
       cursor: none;
     }
+    canvas {
+      cursor: grab;
+    }
+    canvas:active {
+      cursor: grabbing;
+    }
   }
 
   ::selection {
@@ -152,7 +158,7 @@
   height: 6px;
   background: #253d32;
   border-radius: 50%;
-  z-index: 9999;
+  z-index: 99999;
   transform: translate(-50%, -50%);
   transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
@@ -166,7 +172,7 @@
   height: 32px;
   border: 1px solid rgba(37, 61, 50, 0.4);
   border-radius: 50%;
-  z-index: 9998;
+  z-index: 99998;
   transform: translate(-50%, -50%);
   transition: width 0.35s ease, height 0.35s ease, opacity 0.35s ease;
 }

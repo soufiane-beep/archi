@@ -237,14 +237,8 @@ export default function ProjectDetail({
                 Plan 3D Interactif
               </span>
             </div>
-            <div className="w-full border border-[#2c4a3e]/10" style={{ height: "600px" }}>
-              <Suspense fallback={
-                <div className="w-full h-full bg-[#eae6de] flex items-center justify-center">
-                  <div className="w-8 h-8 border border-[#2c4a3e] border-t-transparent rounded-full animate-spin" />
-                </div>
-              }>
-                <ModelViewer url={project.model3d} />
-              </Suspense>
+            <div className="w-full border border-[#253d32]/10 overflow-hidden" style={{ height: "480px" }}>
+              <ModelViewer url={project.model3d} />
             </div>
           </motion.div>
         )}
