@@ -270,7 +270,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] transition-colors duration-300"
+                    className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] active:opacity-80 transition-colors duration-300"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     Envoyer le Message

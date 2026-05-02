@@ -154,7 +154,7 @@ export default function BriefPage() {
                             key={t}
                             type="button"
                             onClick={() => setForm({ ...form, type: t })}
-                            className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-all duration-300 ${
+                            className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-all duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2c4a3e] ${
                               form.type === t
                                 ? "border-[#2c4a3e] text-[#2c4a3e] bg-[#2c4a3e]/8"
                                 : "border-[#2c4a3e]/20 text-[#5e5e56] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
@@ -181,7 +181,7 @@ export default function BriefPage() {
                           placeholder="0"
                           value={form.surface}
                           onChange={(e) => setForm({ ...form, surface: e.target.value })}
-                          className="w-full bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 pr-10 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#b0aba3]"
+                          className="w-full bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 pr-10 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#6a6460]"
                           style={{ fontFamily: "var(--font-inter)" }}
                         />
                         <span
@@ -209,7 +209,7 @@ export default function BriefPage() {
                             tabIndex={0}
                             onClick={() => setForm({ ...form, budget: b })}
                             onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setForm({ ...form, budget: b }); } }}
-                            className="flex items-center gap-4 cursor-pointer group"
+                            className="flex items-center gap-4 cursor-pointer group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2c4a3e] rounded-sm"
                           >
                             <span
                               className={`w-4 h-4 rounded-full border transition-all duration-300 shrink-0 flex items-center justify-center ${
@@ -255,7 +255,7 @@ export default function BriefPage() {
                     placeholder="Partagez votre vision, vos contraintes, vos inspirations..."
                     value={form.description}
                     onChange={(e) => setForm({ ...form, description: e.target.value })}
-                    className="w-full mt-4 bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#b0aba3] resize-none leading-relaxed"
+                    className="w-full mt-4 bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#6a6460] resize-none leading-relaxed"
                     style={{ fontFamily: "var(--font-inter)" }}
                   />
                 </motion.div>
@@ -269,7 +269,7 @@ export default function BriefPage() {
                 >
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-4 text-[10px] tracking-[0.35em] uppercase font-medium px-10 py-4 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] transition-colors duration-300"
+                    className="group inline-flex items-center gap-4 text-[10px] tracking-[0.35em] uppercase font-medium px-10 py-4 bg-[#2c4a3e] text-[#f7f5f0] hover:bg-[#4a7c68] hover:text-[#f7f5f0] active:opacity-80 transition-colors duration-300"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     Envoyer
@@ -330,7 +330,7 @@ function SectionLabel({
 function FieldLabel({ label }: { label: string }) {
   return (
     <p
-      className="text-[10px] tracking-[0.35em] uppercase text-[#5e5e56]"
+      className="text-[10px] tracking-[0.35em] uppercase text-[#3a3832]"
       style={{ fontFamily: "var(--font-inter)" }}
     >
       {label}
@@ -370,7 +370,7 @@ function FormField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full mt-4 bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#b0aba3]"
+        className="w-full mt-4 bg-transparent border-b border-[#2c4a3e]/20 text-[#1a1a1a] pb-3 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#6a6460]"
         style={{ fontFamily: "var(--font-inter)" }}
       />
     </motion.div>

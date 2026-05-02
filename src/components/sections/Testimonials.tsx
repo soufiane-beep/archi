@@ -57,7 +57,7 @@ export default function Testimonials() {
             className="lg:col-span-2 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-8"
           >
             <div
-              className="font-light text-[#1a1a1a]/10 leading-none select-none"
+              className="font-light text-[#253d32]/25 leading-none select-none"
               style={{
                 fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(4rem, 8vw, 8rem)",

@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Réalisations", href: "/projects" },
+  { label: "Références", href: "/references" },
   { label: "Domaines d'intervention", href: "/domaines" },
   { label: "Le Bureau", href: "/le-bureau" },
   { label: "Méthode", href: "/methode" },
@@ -88,7 +89,7 @@ export default function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative w-11 h-11 flex flex-col items-center justify-center gap-[7px] -mr-2"
+            className="md:hidden relative w-11 h-11 flex flex-col items-center justify-center gap-[7px] -mr-2 hover:opacity-70 active:opacity-50 transition-opacity duration-200"
             aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={menuOpen}
           >
@@ -131,10 +132,15 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
-                    className="font-display text-5xl font-light text-[#141414] hover:text-[#253d32] transition-colors duration-300"
+                    className={`font-display text-5xl font-light transition-colors duration-300 hover:text-[#253d32] ${
+                      pathname === link.href ? "text-[#253d32]" : "text-[#141414]"
+                    }`}
                     style={{ fontFamily: "var(--font-cormorant)" }}
                   >
                     {link.label}
+                    {pathname === link.href && (
+                      <span className="block h-px bg-[#253d32] mt-1 opacity-60" />
+                    )}
                   </Link>
                 </motion.div>
               ))}
