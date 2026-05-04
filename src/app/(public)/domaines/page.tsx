@@ -27,7 +27,7 @@ export default function DomainesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <div data-header-theme="dark" className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <Image
           src="/projets/fayt/1.png"
           alt="Domaines d'intervention Premier Art"
@@ -67,7 +67,7 @@ export default function DomainesPage() {
       </div>
 
       {/* 4 domains grid */}
-      <section className="py-32 px-8 max-w-[1400px] mx-auto">
+      <section data-header-theme="light" className="py-32 px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, i) => (
             <motion.div

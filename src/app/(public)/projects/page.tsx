@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
   const projects = await getProjects();
 
   return (
-    <div className="pt-32 pb-20 min-h-screen">
+    <div data-header-theme="light" className="pt-32 pb-20 min-h-screen">
       <div className="max-w-[1400px] mx-auto px-8 mb-8">
         <div className="flex items-center gap-4 mb-6">
           <span className="block w-8 h-px bg-accent" />

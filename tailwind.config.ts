@@ -26,8 +26,8 @@ const config: Config = {
         editorial: "#141414",
       },
       fontFamily: {
-        display: ["var(--font-cormorant)", "Georgia", "serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["Arial", "Helvetica", "sans-serif"],
+        body: ["Arial", "Helvetica", "sans-serif"],
       },
       fontSize: {
         "fluid-xl": "clamp(3rem, 8vw, 7rem)",

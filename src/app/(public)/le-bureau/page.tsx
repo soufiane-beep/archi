@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { stats } from "@/lib/data";
 
 export default function LeBureauPage() {
@@ -13,7 +15,7 @@ export default function LeBureauPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div ref={heroRef} className="relative h-[70vh] min-h-[500px] overflow-hidden">
+      <div ref={heroRef} data-header-theme="dark" className="relative h-[70vh] min-h-[500px] overflow-hidden">
         <motion.div style={{ y: imageY }} className="absolute inset-0">
           <Image
             src="/projets/rue-des-nobles/0.JPG"
@@ -209,7 +211,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-8 border-t border-accent/10">
+      <section data-header-theme="light" className="py-24 px-8 border-t border-accent/10">
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -230,6 +232,20 @@ export default function LeBureauPage() {
           >
             Transformation, extension, construction neuve ou réaffectation — chaque projet commence par un premier échange pour comprendre vos besoins et explorer les possibilités.
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link
+              href="/brief"
+              className="font-body inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 border border-accent text-accent hover:bg-accent hover:text-white transition-colors duration-300"
+            >
+              Parler de votre projet
+              <ArrowUpRight size={14} />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>
@@ -244,7 +260,7 @@ function ProfileSection() {
   const photoY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <section ref={profileRef} className="py-32 px-8 max-w-[1400px] mx-auto">
+    <section ref={profileRef} data-header-theme="light" className="py-32 px-8 max-w-[1400px] mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         {/* Photo */}
         <div className="lg:col-span-5">

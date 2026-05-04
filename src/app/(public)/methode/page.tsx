@@ -61,7 +61,7 @@ export default function MethodePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <div data-header-theme="dark" className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <Image
           src="/projets/raymond-noel/0.png"
           alt="Méthode Premier Art Architecture"
@@ -101,7 +101,7 @@ export default function MethodePage() {
       </div>
 
       {/* Intro */}
-      <section className="py-24 px-8 max-w-[1400px] mx-auto">
+      <section data-header-theme="light" className="py-24 px-8 max-w-[1400px] mx-auto">
         <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}

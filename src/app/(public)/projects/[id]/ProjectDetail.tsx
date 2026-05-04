@@ -32,7 +32,7 @@ export default function ProjectDetail({
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div ref={heroRef} className="relative h-screen overflow-hidden">
+      <div ref={heroRef} data-header-theme="dark" className="relative h-screen overflow-hidden">
         {project.model3d ? (
           <>
             <div className="absolute inset-0 bg-bg-alt" />
@@ -124,7 +124,7 @@ export default function ProjectDetail({
       </div>
 
       {/* Content: text + specs */}
-      <div ref={contentRef} className="max-w-[1400px] mx-auto px-8 py-24">
+      <div ref={contentRef} data-header-theme="light" className="max-w-[1400px] mx-auto px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Main text */}
           <div className="lg:col-span-7">

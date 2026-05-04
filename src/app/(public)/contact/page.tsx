@@ -34,7 +34,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div className="relative h-[55vh] min-h-[380px] overflow-hidden">
+      <div data-header-theme="dark" className="relative h-[55vh] min-h-[380px] overflow-hidden">
         <Image
           src="/projets/vollickstraat/0.png"
           alt="Contact Premier Art"
@@ -73,7 +73,7 @@ export default function ContactPage() {
       </div>
 
       {/* Main content */}
-      <div className="max-w-[1400px] mx-auto px-8 py-24">
+      <div data-header-theme="light" className="max-w-[1400px] mx-auto px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Contact info */}
           <motion.div

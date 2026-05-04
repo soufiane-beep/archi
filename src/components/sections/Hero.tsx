@@ -90,8 +90,10 @@ export default function Hero() {
               className="font-display font-light leading-none tracking-tight"
               style={{
                 fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
-                color: "rgba(255,255,255,0.75)",
-                textShadow: "0 2px 12px rgba(0,0,0,0.5)",
+                background: "linear-gradient(135deg, #f9f7f4 0%, #d8d3c8 50%, #f9f7f4 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
               }}
             >
               {slides[current].subtitle}

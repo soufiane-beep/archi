@@ -14,7 +14,7 @@ const navLinks = [
   { label: "Références", href: "/references" },
 ];
 
-const DARK_HERO_PATHS = ["/", "/le-bureau", "/methode", "/domaines"];
+const DARK_HERO_PATHS = ["/", "/le-bureau", "/methode", "/domaines", "/contact"];
 
 function hasDarkHero(pathname: string) {
   return DARK_HERO_PATHS.includes(pathname) || /^\/projects\/.+/.test(pathname);
@@ -90,7 +90,7 @@ export default function Header() {
   const isOverDark = isTransparent && isDark;
   const isScrolledOnDark = scrolled && isDark && !menuOpen;
 
-  const barColor = isOverDark || isScrolledOnDark ? "bg-bg" : "bg-ink";
+  const barColor = isOverDark || isScrolledOnDark ? "bg-white" : "bg-ink";
 
   return (
     <>

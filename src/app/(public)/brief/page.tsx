@@ -27,7 +27,7 @@ export default function BriefPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f5f0] pt-32 pb-24 px-8 md:px-16">
+    <div data-header-theme="light" className="min-h-screen bg-[#f7f5f0] pt-32 pb-24 px-8 md:px-16">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Title row */}

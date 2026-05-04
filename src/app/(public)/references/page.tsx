@@ -28,7 +28,7 @@ export default function ReferencesPage() {
     : references.filter((r) => r.secteur.includes(filtre));
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div data-header-theme="light" className="min-h-screen bg-bg">
       {/* Hero */}
       <div className="pt-40 pb-20 px-8 max-w-[1400px] mx-auto">
         <motion.div

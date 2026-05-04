@@ -65,8 +65,15 @@ export default function ContactCTA() {
             initial={{ y: "100%" }}
             animate={isInView ? { y: "0%" } : {}}
             transition={{ duration: 1, delay: 0.07, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-light text-white/80"
-            style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)", lineHeight: 1 }}
+            className="font-display font-light"
+            style={{
+              fontSize: "clamp(3rem, 7vw, 6.5rem)",
+              background: "linear-gradient(135deg, #f9f7f4 0%, #d8c9a8 55%, #f9f7f4 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              lineHeight: 1,
+            }}
           >
             en Belgique ?
           </motion.h2>
