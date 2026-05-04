@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { references } from "@/lib/data";
 
 const STATUT_STYLES: Record<string, string> = {
-  "Réalisé":       "bg-[#253d32]/10 text-[#253d32]",
+  "Réalisé":       "bg-accent/10 text-accent",
   "Permis Obtenu": "bg-[#4a7c6f]/10 text-[#4a7c6f]",
   "En cours":      "bg-[#c9a96e]/15 text-[#8a6a30]",
   "Étude":         "bg-[#5e5e56]/10 text-[#5e5e56]",
@@ -28,7 +28,7 @@ export default function ReferencesPage() {
     : references.filter((r) => r.secteur.includes(filtre));
 
   return (
-    <div className="min-h-screen bg-[#f9f7f4]">
+    <div className="min-h-screen bg-bg">
       {/* Hero */}
       <div className="pt-40 pb-20 px-8 max-w-[1400px] mx-auto">
         <motion.div
@@ -37,11 +37,8 @@ export default function ReferencesPage() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-8"
         >
-          <span className="block w-8 h-px bg-[#253d32]" />
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
+          <span className="block w-8 h-px bg-accent" />
+          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
             Depuis 2020
           </span>
         </motion.div>
@@ -51,12 +48,8 @@ export default function ReferencesPage() {
             initial={{ y: "100%" }}
             animate={{ y: "0%" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-light text-[#1a1a1a]"
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              fontSize: "clamp(3rem, 8vw, 6rem)",
-              lineHeight: 0.95,
-            }}
+            className="font-display font-light text-ink"
+            style={{ fontSize: "clamp(3rem, 8vw, 6rem)", lineHeight: 0.95 }}
           >
             Références
           </motion.h1>
@@ -66,8 +59,7 @@ export default function ReferencesPage() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-[#5e5e56] max-w-xl text-sm leading-relaxed"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="font-body text-[#5e5e56] max-w-xl text-sm leading-relaxed"
         >
           Une sélection de projets réalisés ou en cours à travers la Belgique — rénovation, extension, nouvelle construction et reconversion, en secteur résidentiel, médical et industriel.
         </motion.p>
@@ -85,12 +77,11 @@ export default function ReferencesPage() {
             <button
               key={s}
               onClick={() => setFiltre(s)}
-              className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-colors duration-300 ${
+              className={`font-body text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-colors duration-300 ${
                 filtre === s
-                  ? "bg-[#253d32] text-[#f9f7f4] border-[#253d32]"
-                  : "bg-transparent text-[#5e5e56] border-[#253d32]/20 hover:border-[#253d32]/60"
+                  ? "bg-accent text-bg border-accent"
+                  : "bg-transparent text-[#5e5e56] border-accent/20 hover:border-accent/60"
               }`}
-              style={{ fontFamily: "var(--font-inter)" }}
             >
               {s}
             </button>
@@ -101,12 +92,11 @@ export default function ReferencesPage() {
       {/* Table */}
       <div className="px-8 max-w-[1400px] mx-auto pb-32">
         {/* En-tête */}
-        <div className="hidden md:grid grid-cols-[80px_1fr_160px_180px_160px_100px_130px] gap-4 pb-4 border-b border-[#253d32]/10 mb-2">
+        <div className="hidden md:grid grid-cols-[80px_1fr_160px_180px_160px_100px_130px] gap-4 pb-4 border-b border-accent/10 mb-2">
           {["Année", "Projet", "Secteur", "Type", "Localisation", "Surface", "Statut"].map((col) => (
             <span
               key={col}
-              className="text-[9px] tracking-[0.3em] uppercase text-[#8c8c84]"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="font-body text-[9px] tracking-[0.3em] uppercase text-ink-muted"
             >
               {col}
             </span>
@@ -121,53 +111,37 @@ export default function ReferencesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-5%" }}
             transition={{ duration: 0.4, delay: Math.min(i * 0.03, 0.3) }}
-            className="group grid grid-cols-1 md:grid-cols-[80px_1fr_160px_180px_160px_100px_130px] gap-4 py-5 border-b border-[#253d32]/8 hover:bg-[#f0ece4] transition-colors duration-200 items-center"
+            className="group grid grid-cols-1 md:grid-cols-[80px_1fr_160px_180px_160px_100px_130px] gap-4 py-5 border-b border-accent/[0.08] hover:bg-bg-alt transition-colors duration-200 items-center"
           >
-            <span
-              className="text-[#8c8c84] text-sm"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="font-body text-ink-muted text-sm">
               {ref.annee}
             </span>
 
             <span
-              className="font-light text-[#1a1a1a] group-hover:text-[#253d32] transition-colors duration-200"
-              style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.15rem" }}
+              className="font-display font-light text-ink group-hover:text-accent transition-colors duration-200"
+              style={{ fontSize: "1.15rem" }}
             >
               {ref.nom}
             </span>
 
-            <span
-              className="text-[#5e5e56] text-xs hidden md:block"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="font-body text-[#5e5e56] text-xs hidden md:block">
               {ref.secteur}
             </span>
 
-            <span
-              className="text-[#5e5e56] text-xs hidden md:block"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="font-body text-[#5e5e56] text-xs hidden md:block">
               {ref.type}
             </span>
 
-            <span
-              className="text-[#5e5e56] text-xs"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="font-body text-[#5e5e56] text-xs">
               {ref.localisation}
             </span>
 
-            <span
-              className="text-[#5e5e56] text-xs hidden md:block"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="font-body text-[#5e5e56] text-xs hidden md:block">
               {ref.surface}
             </span>
 
             <span
-              className={`text-[9px] tracking-[0.2em] uppercase px-2.5 py-1.5 inline-block w-fit ${statutStyle(ref.statut)}`}
-              style={{ fontFamily: "var(--font-inter)" }}
+              className={`font-body text-[9px] tracking-[0.2em] uppercase px-2.5 py-1.5 inline-block w-fit ${statutStyle(ref.statut)}`}
             >
               {ref.statut}
             </span>
@@ -180,8 +154,7 @@ export default function ReferencesPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-8 text-[10px] tracking-[0.25em] uppercase text-[#8c8c84] text-right"
-          style={{ fontFamily: "var(--font-inter)" }}
+          className="font-body mt-8 text-[10px] tracking-[0.25em] uppercase text-ink-muted text-right"
         >
           {liste.length} projet{liste.length > 1 ? "s" : ""}
           {filtre !== "Tous" ? ` · ${filtre}` : ""}

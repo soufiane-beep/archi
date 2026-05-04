@@ -36,14 +36,15 @@ export default function ContactPage() {
       {/* Hero */}
       <div className="relative h-[55vh] min-h-[380px] overflow-hidden">
         <Image
-          src="https://www.premierart.be/assets/img/slide-01.jpg"
+          src="/projets/vollickstraat/0.png"
           alt="Contact Premier Art"
           fill
           className="object-cover"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="absolute bottom-16 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -52,8 +53,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-5"
           >
-            <span className="block w-8 h-px bg-[#f9f7f4]/50" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-bg/50" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-bg/70">
               Parlons de Votre Projet
             </span>
           </motion.div>
@@ -62,8 +63,8 @@ export default function ContactPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f9f7f4]"
-              style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 7vw, 6rem)", lineHeight: 0.95 }}
+              className="font-display font-light text-bg"
+              style={{ fontSize: "clamp(3rem, 7vw, 6rem)", lineHeight: 0.95, textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}
             >
               Nous Contacter
             </motion.h1>
@@ -86,8 +87,8 @@ export default function ContactPage() {
                 initial={{ y: "100%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="font-light text-[#1a1a1a]"
-                style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", lineHeight: 1.1 }}
+                className="font-display font-light text-ink"
+                style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", lineHeight: 1.1 }}
               >
                 Commençons une
                 <br />
@@ -106,8 +107,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-[#5e5e56] text-sm leading-relaxed mb-12"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="font-body text-[#5e5e56] text-sm leading-relaxed mb-12"
             >
               Que vous ayez un projet précis ou simplement une envie à explorer, nous sommes là pour vous accompagner. La première consultation est toujours gratuite.
             </motion.p>
@@ -145,14 +145,11 @@ export default function ContactPage() {
                   transition={{ duration: 0.6, delay: 0.4 + i * 0.07 }}
                   className="flex items-start gap-5"
                 >
-                  <div className="w-10 h-10 border border-[#2c4a3e]/10 flex items-center justify-center text-[#2c4a3e] shrink-0 mt-0.5">
+                  <div className="w-10 h-10 border border-accent/10 flex items-center justify-center text-accent shrink-0 mt-0.5">
                     {item.icon}
                   </div>
                   <div>
-                    <span
-                      className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-1.5"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <span className="font-body block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-1.5">
                       {item.label}
                     </span>
                     {item.lines.map((line) =>
@@ -160,16 +157,14 @@ export default function ContactPage() {
                         <a
                           key={line}
                           href={item.href}
-                          className="block text-sm text-[#4a4a4a] hover:text-[#2c4a3e] transition-colors duration-300"
-                          style={{ fontFamily: "var(--font-inter)" }}
+                          className="font-body block text-sm text-ink-mid hover:text-accent transition-colors duration-300"
                         >
                           {line}
                         </a>
                       ) : (
                         <p
                           key={line}
-                          className="text-sm text-[#4a4a4a]"
-                          style={{ fontFamily: "var(--font-inter)" }}
+                          className="font-body text-sm text-ink-mid"
                         >
                           {line}
                         </p>
@@ -190,16 +185,16 @@ export default function ContactPage() {
                 transition={{ duration: 0.6 }}
                 className="flex flex-col items-center justify-center h-full text-center py-24"
               >
-                <div className="w-16 h-16 border border-[#2c4a3e]/30 flex items-center justify-center mb-8">
-                  <CheckCircle size={28} className="text-[#2c4a3e]" />
+                <div className="w-16 h-16 border border-accent/30 flex items-center justify-center mb-8">
+                  <CheckCircle size={28} className="text-accent" />
                 </div>
                 <h3
-                  className="font-light text-[#1a1a1a] mb-4"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "2.5rem" }}
+                  className="font-display font-light text-ink mb-4"
+                  style={{ fontSize: "2.5rem" }}
                 >
                   Message Envoyé
                 </h3>
-                <p className="text-[#5e5e56] max-w-md" style={{ fontFamily: "var(--font-inter)", fontSize: "0.9rem", lineHeight: 1.7 }}>
+                <p className="font-body text-[#5e5e56] max-w-md" style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
                   Merci pour votre message. Notre équipe vous contactera dans les 24 heures pour donner suite à votre demande.
                 </p>
               </motion.div>
@@ -221,28 +216,27 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <FormField label="Téléphone" placeholder="+32 " value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
                   <div>
-                    <label className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+                    <label className="font-body block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3">
                       Type de Projet
                     </label>
                     <div className="relative">
-                    <select
-                      value={form.type}
-                      onChange={(e) => setForm({ ...form, type: e.target.value })}
-                      className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 pr-10 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 appearance-none"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
-                      <option value="">Sélectionnez un type</option>
-                      {projectTypes.map((t) => (
-                        <option key={t} value={t}>{t}</option>
-                      ))}
-                    </select>
-                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#2c4a3e]">
-                      <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
-                        <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </span>
+                      <select
+                        value={form.type}
+                        onChange={(e) => setForm({ ...form, type: e.target.value })}
+                        className="font-body w-full bg-bg-card border border-accent/10 text-ink-mid px-4 py-3.5 pr-10 text-sm focus:outline-none focus:border-accent transition-colors duration-300 appearance-none"
+                      >
+                        <option value="">Sélectionnez un type</option>
+                        {projectTypes.map((t) => (
+                          <option key={t} value={t}>{t}</option>
+                        ))}
+                      </select>
+                      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-accent">
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none">
+                          <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                    </div>
                   </div>
-                </div>
                 </div>
 
                 {/* Subject */}
@@ -250,7 +244,7 @@ export default function ContactPage() {
 
                 {/* Message */}
                 <div>
-                  <label className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+                  <label className="font-body block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3">
                     Message *
                   </label>
                   <textarea
@@ -259,19 +253,17 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Décrivez votre projet, vos aspirations, votre budget indicatif..."
-                    className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 resize-none placeholder:text-[#5e5e56]"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    className="font-body w-full bg-bg-card border border-accent/10 text-ink-mid px-4 py-3.5 text-sm focus:outline-none focus:border-accent transition-colors duration-300 resize-none placeholder:text-[#5e5e56]"
                   />
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <p className="text-[10px] text-[#5e5e56]" style={{ fontFamily: "var(--font-inter)" }}>
+                  <p className="font-body text-[10px] text-[#5e5e56]">
                     * Champs obligatoires
                   </p>
                   <button
                     type="submit"
-                    className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] active:opacity-80 transition-colors duration-300"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    className="font-body group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-accent text-bg hover:bg-accent-warm active:opacity-80 transition-colors duration-300"
                   >
                     Envoyer le Message
                     <Send size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
@@ -303,7 +295,7 @@ function FormField({
 }) {
   return (
     <div>
-      <label className="block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3" style={{ fontFamily: "var(--font-inter)" }}>
+      <label className="font-body block text-[10px] tracking-[0.25em] uppercase text-[#5e5e56] mb-3">
         {label}
       </label>
       <input
@@ -312,8 +304,7 @@ function FormField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-[#eae6de] border border-[#2c4a3e]/10 text-[#4a4a4a] px-4 py-3.5 text-sm focus:outline-none focus:border-[#2c4a3e] transition-colors duration-300 placeholder:text-[#5e5e56]"
-        style={{ fontFamily: "var(--font-inter)" }}
+        className="font-body w-full bg-bg-card border border-accent/10 text-ink-mid px-4 py-3.5 text-sm focus:outline-none focus:border-accent transition-colors duration-300 placeholder:text-[#5e5e56]"
       />
     </div>
   );

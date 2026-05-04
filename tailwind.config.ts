@@ -16,7 +16,7 @@ const config: Config = {
         // Texte
         ink: "#141414",
         "ink-mid": "#4a4a46",
-        "ink-muted": "#8c8c84",
+        "ink-muted": "#6e6e64",
         // Accent vert forêt
         accent: "#253d32",
         "accent-warm": "#3a5e4e",

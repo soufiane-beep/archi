@@ -1,4 +1,3 @@
-const BASE = "https://www.premierart.be/assets/img";
 
 export const projects = [
   {

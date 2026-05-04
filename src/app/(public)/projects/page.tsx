@@ -10,28 +10,20 @@ export default async function ProjectsPage() {
     <div className="pt-32 pb-20 min-h-screen">
       <div className="max-w-[1400px] mx-auto px-8 mb-8">
         <div className="flex items-center gap-4 mb-6">
-          <span className="block w-8 h-px bg-[#2c4a3e]" />
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#2c4a3e]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
+          <span className="block w-8 h-px bg-accent" />
+          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
             Portfolio
           </span>
         </div>
         <h1
-          className="font-light mb-6"
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            fontSize: "clamp(3rem, 7vw, 6rem)",
-            color: "#1a1a1a",
-            lineHeight: 1,
-          }}
+          className="font-display font-light text-ink mb-6"
+          style={{ fontSize: "clamp(3rem, 7vw, 6rem)", lineHeight: 1 }}
         >
           Nos Réalisations
         </h1>
         <p
-          className="max-w-xl text-[#5e5e56]"
-          style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem", lineHeight: 1.7 }}
+          className="font-body max-w-xl text-[#5e5e56]"
+          style={{ fontSize: "0.9375rem", lineHeight: 1.7 }}
         >
           Vingt années de créations architecturales en Belgique et au-delà. Chaque projet est une histoire unique, une réponse précise à un lieu et à ses habitants.
         </p>

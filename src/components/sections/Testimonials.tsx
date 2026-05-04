@@ -15,20 +15,20 @@ export default function Testimonials() {
   return (
     <section
       ref={ref}
-      className="py-36 px-8 relative overflow-hidden bg-[#f9f7f4]"
+      data-header-theme="light"
+      className="py-36 px-8 relative overflow-hidden bg-bg"
     >
       {/* Decorative large letter */}
       <div
         className="absolute -top-12 left-8 md:left-16 select-none pointer-events-none font-display leading-none"
         style={{
-          fontFamily: "var(--font-cormorant)",
           fontSize: "clamp(200px, 30vw, 380px)",
           color: "#253d32",
           opacity: 0.028,
           lineHeight: 1,
         }}
       >
-        "
+        &ldquo;
       </div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
@@ -38,11 +38,8 @@ export default function Testimonials() {
           animate={isInView ? { opacity: 1 } : {}}
           className="flex items-center gap-4 mb-20"
         >
-          <span className="block w-8 h-px bg-[#253d32]" />
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
+          <span className="block w-8 h-px bg-accent" />
+          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
             Témoignages
           </span>
         </motion.div>
@@ -57,11 +54,8 @@ export default function Testimonials() {
             className="lg:col-span-2 flex lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-8"
           >
             <div
-              className="font-light text-[#253d32]/25 leading-none select-none"
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "clamp(4rem, 8vw, 8rem)",
-              }}
+              className="font-display font-light text-accent/25 leading-none select-none"
+              style={{ fontSize: "clamp(4rem, 8vw, 8rem)" }}
             >
               {String(current + 1).padStart(2, "0")}
             </div>
@@ -76,8 +70,8 @@ export default function Testimonials() {
                   <span
                     className={`block transition-all duration-500 rounded-full ${
                       i === current
-                        ? "w-2 h-2 bg-[#253d32]"
-                        : "w-1.5 h-1.5 bg-[#253d32]/20 hover:bg-[#253d32]/40"
+                        ? "w-2 h-2 bg-accent"
+                        : "w-1.5 h-1.5 bg-accent/20 hover:bg-accent/40"
                     }`}
                   />
                 </button>
@@ -96,31 +90,22 @@ export default function Testimonials() {
                 transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p
-                  className="font-light text-[#1a1a1a] leading-[1.2] mb-12"
-                  style={{
-                    fontFamily: "var(--font-cormorant)",
-                    fontSize: "clamp(1.7rem, 4vw, 3.2rem)",
-                  }}
+                  className="font-display font-light text-ink leading-[1.2] mb-12"
+                  style={{ fontSize: "clamp(1.7rem, 4vw, 3.2rem)" }}
                 >
                   &ldquo;{testimonials[current].quote}&rdquo;
                 </p>
 
                 <footer className="flex items-center gap-6">
-                  <span className="block w-10 h-px bg-[#253d32]/30" />
+                  <span className="block w-10 h-px bg-accent/30" />
                   <div>
                     <span
-                      className="block font-light text-[#1a1a1a] leading-tight"
-                      style={{
-                        fontFamily: "var(--font-cormorant)",
-                        fontSize: "1.3rem",
-                      }}
+                      className="font-display block font-light text-ink leading-tight"
+                      style={{ fontSize: "1.3rem" }}
                     >
                       {testimonials[current].author}
                     </span>
-                    <span
-                      className="block text-[10px] tracking-[0.3em] uppercase text-[#253d32]/70 mt-1"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
+                    <span className="font-body block text-[10px] tracking-[0.3em] uppercase text-accent/70 mt-1">
                       {testimonials[current].project}
                     </span>
                   </div>
@@ -139,7 +124,7 @@ export default function Testimonials() {
         >
           <button
             onClick={prev}
-            className="group w-12 h-12 border border-[#253d32]/15 flex items-center justify-center text-[#5e5e56] hover:border-[#253d32] hover:text-[#253d32] transition-all duration-300"
+            className="group w-12 h-12 border border-accent/15 flex items-center justify-center text-[#5e5e56] hover:border-accent hover:text-accent transition-all duration-300"
             aria-label="Témoignage précédent"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:-translate-x-0.5 transition-transform duration-300">
@@ -148,7 +133,7 @@ export default function Testimonials() {
           </button>
           <button
             onClick={next}
-            className="group w-12 h-12 border border-[#253d32]/15 flex items-center justify-center text-[#5e5e56] hover:border-[#253d32] hover:text-[#253d32] transition-all duration-300"
+            className="group w-12 h-12 border border-accent/15 flex items-center justify-center text-[#5e5e56] hover:border-accent hover:text-accent transition-all duration-300"
             aria-label="Témoignage suivant"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-300">

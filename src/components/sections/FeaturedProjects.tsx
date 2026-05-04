@@ -15,7 +15,7 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
   if (!featured.length) return null;
 
   return (
-    <section ref={ref} className="py-32 px-8 max-w-[1400px] mx-auto">
+    <section ref={ref} data-header-theme="light" className="py-32 px-8 max-w-[1400px] mx-auto">
       {/* Section header */}
       <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
         <div>
@@ -25,11 +25,8 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex items-center gap-4 mb-4"
           >
-            <span className="block w-8 h-px bg-[#253d32]" />
-            <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="block w-8 h-px bg-accent" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
               Réalisations
             </span>
           </motion.div>
@@ -38,13 +35,8 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
               initial={{ y: "100%" }}
               animate={isInView ? { y: "0%" } : {}}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light"
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "clamp(2.5rem, 6vw, 5rem)",
-                color: "#1a1a1a",
-                lineHeight: 1.1,
-              }}
+              className="font-display font-light text-ink"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", lineHeight: 1.1 }}
             >
               Projets en Vedette
             </motion.h2>
@@ -57,16 +49,15 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
         >
           <Link
             href="/projects"
-            className="group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#253d32] hover:text-[#1a1a1a] transition-colors duration-300"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="font-body group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-accent hover:text-ink transition-colors duration-300"
           >
             Voir tous les projets
-            <span className="w-8 h-px bg-[#253d32] group-hover:w-12 transition-all duration-400" />
+            <span className="w-8 h-px bg-accent group-hover:w-12 transition-all duration-400" />
           </Link>
         </motion.div>
       </div>
 
-      {/* Projects grid — asymétrique avec décalage vertical */}
+      {/* Projects grid — asymétrique */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Large featured project */}
         <motion.div
@@ -135,14 +126,12 @@ function ProjectCard({
         fill
         className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
         sizes={large ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 1024px) 100vw, 42vw"}
+        priority={index === 0}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/90 via-[#1e3530]/20 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+      <div className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-90" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%)" }} />
 
       <div className="absolute top-6 left-6 z-10">
-        <span
-          className="text-[9px] tracking-[0.35em] uppercase text-[#8aaf9f] bg-[#1e3530]/70 backdrop-blur-sm px-3 py-1.5"
-          style={{ fontFamily: "var(--font-inter)" }}
-        >
+        <span className="font-body text-[9px] tracking-[0.35em] uppercase text-white bg-black/50 backdrop-blur-sm px-3 py-1.5">
           {project.category}
         </span>
       </div>
@@ -152,24 +141,21 @@ function ProjectCard({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isHovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="w-10 h-10 bg-[#253d32] flex items-center justify-center"
+          className="w-10 h-10 bg-accent flex items-center justify-center"
         >
-          <ArrowUpRight size={16} className="text-[#f9f7f4]" />
+          <ArrowUpRight size={16} className="text-bg" />
         </motion.div>
       </div>
 
       <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-        <p
-          className="text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f] mb-2"
-          style={{ fontFamily: "var(--font-inter)" }}
-        >
+        <p className="font-body text-[10px] tracking-[0.3em] uppercase text-white/70 mb-2">
           {project.location} · {project.year}
         </p>
         <h3
-          className={`font-light text-[#f9f7f4] leading-tight transition-all duration-500 ${
+          className={`font-display font-light text-white leading-tight transition-all duration-500 ${
             large ? "text-4xl md:text-5xl" : "text-2xl md:text-3xl"
           }`}
-          style={{ fontFamily: "var(--font-cormorant)" }}
+          style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}
         >
           {project.title}
         </h3>
@@ -178,8 +164,7 @@ function ProjectCard({
             initial={{ opacity: 0, y: 10 }}
             animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
             transition={{ duration: 0.4 }}
-            className="mt-3 text-sm text-[#d6d1c7] leading-relaxed max-w-md"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="font-body mt-3 text-sm text-[#d6d1c7] leading-relaxed max-w-md"
           >
             {project.description}
           </motion.p>

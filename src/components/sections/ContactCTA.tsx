@@ -19,20 +19,20 @@ export default function ContactCTA() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section ref={ref} className="relative py-40 overflow-hidden">
+    <section ref={ref} data-header-theme="dark" className="relative py-40 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <motion.div style={{ y: imageY }} className="absolute inset-[-10%]">
           <Image
-            src="https://www.premierart.be/assets/img/slide-03.jpg"
+            src="/projets/rue-des-nobles/6.JPG"
             alt="Projet architectural Premier Art"
             fill
             className="object-cover"
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-[#1e3530]/70" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e26]/40 via-transparent to-[#1a2e26]/40" />
+        <div className="absolute inset-0 bg-[#1e3530]/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e26]/50 via-[#1a2e26]/20 to-[#1a2e26]/50" />
       </div>
 
       <div ref={textRef} className="relative z-10 max-w-[1400px] mx-auto px-8 text-center">
@@ -43,10 +43,7 @@ export default function ContactCTA() {
           className="flex items-center justify-center gap-4 mb-8"
         >
           <span className="block w-8 h-px bg-[#8aaf9f]" />
-          <span
-            className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
+          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f]">
             Parlons de Votre Projet
           </span>
           <span className="block w-8 h-px bg-[#8aaf9f]" />
@@ -57,13 +54,8 @@ export default function ContactCTA() {
             initial={{ y: "100%" }}
             animate={isInView ? { y: "0%" } : {}}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-light"
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              fontSize: "clamp(3rem, 7vw, 6.5rem)",
-              color: "#f7f5f0",
-              lineHeight: 1,
-            }}
+            className="font-display font-light text-bg"
+            style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)", lineHeight: 1 }}
           >
             Vous avez un projet
           </motion.h2>
@@ -73,11 +65,10 @@ export default function ContactCTA() {
             initial={{ y: "100%" }}
             animate={isInView ? { y: "0%" } : {}}
             transition={{ duration: 1, delay: 0.07, ease: [0.16, 1, 0.3, 1] }}
-            className="font-light"
+            className="font-display font-light"
             style={{
-              fontFamily: "var(--font-cormorant)",
               fontSize: "clamp(3rem, 7vw, 6.5rem)",
-              background: "linear-gradient(135deg, #8aaf9f 0%, #c2d9cf 60%, #8aaf9f 100%)",
+              background: "linear-gradient(135deg, #f9f7f4 0%, #d8c9a8 55%, #f9f7f4 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -92,34 +83,27 @@ export default function ContactCTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[#f9f7f4]/75 max-w-xl mx-auto mb-14 leading-relaxed"
-          style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+          className="font-body max-w-xl mx-auto mb-14 leading-relaxed"
+          style={{ fontSize: "0.9375rem", color: "rgba(249,247,244,0.85)" }}
         >
           Qu'il s'agisse d'une transformation, d'une extension, d'une construction neuve ou d'une réaffectation, nous vous accompagnons dans le développement d'un projet clair, cohérent et adapté à vos objectifs.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/brief"
-            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#f9f7f4] text-[#1a2e26] hover:bg-[#8aaf9f] transition-colors duration-400"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="font-body group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#f9f7f4] text-[#1a2e26] hover:bg-[#8aaf9f] hover:text-[#f9f7f4] transition-colors duration-400"
           >
             Parler de Votre Projet
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </Link>
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 border border-white/20 text-[#f9f7f4] hover:border-white/50 transition-all duration-400"
-            style={{ fontFamily: "var(--font-inter)" }}
+            className="font-body group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 border border-white/50 text-[#f9f7f4] hover:border-white/80 hover:bg-white/10 transition-all duration-400"
           >
             Voir nos Réalisations
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -26,6 +26,7 @@ export default function Manifesto() {
   return (
     <section
       ref={ref}
+      data-header-theme="dark"
       className="relative py-48 px-8 overflow-hidden bg-[#1e3530]"
     >
       {/* Horizontal lines background texture */}
@@ -58,10 +59,7 @@ export default function Manifesto() {
             className="lg:col-span-1 flex lg:flex-col items-center lg:items-start gap-4"
           >
             <span className="block w-10 h-px bg-[#8aaf9f]/60" />
-            <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f] lg:[writing-mode:vertical-rl] lg:rotate-180"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-[#8aaf9f] lg:[writing-mode:vertical-rl] lg:rotate-180">
               Notre Philosophie
             </span>
           </motion.div>
@@ -79,9 +77,8 @@ export default function Manifesto() {
                       delay: i * 0.06,
                       ease: [0.16, 1, 0.3, 1],
                     }}
-                    className="font-light leading-[1.08]"
+                    className="font-display font-light leading-[1.08]"
                     style={{
-                      fontFamily: "var(--font-cormorant)",
                       fontSize: "clamp(2.8rem, 6.5vw, 6rem)",
                       color: line.accent ? "#8aaf9f" : "#f9f7f4",
                     }}
@@ -96,15 +93,14 @@ export default function Manifesto() {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
               transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-12 w-24 h-px bg-[#f9f7f4]/15 origin-left"
+              className="mt-12 w-24 h-px bg-white/15 origin-left"
             />
 
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 text-sm leading-relaxed text-[#8aaf9f]/70 max-w-xl"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="font-body mt-6 text-sm leading-relaxed text-[#8aaf9f]/70 max-w-xl"
             >
               Particuliers · Investisseurs · Promoteurs · Entreprises — Partout en Belgique
             </motion.p>
@@ -115,7 +111,7 @@ export default function Manifesto() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 flex lg:flex-col gap-12 lg:gap-14 lg:border-l lg:border-[#f9f7f4]/10 lg:pl-8"
+            className="lg:col-span-2 flex lg:flex-col gap-12 lg:gap-14 lg:border-l lg:border-white/10 lg:pl-8"
           >
             {[
               { value: "9+", label: "Projets" },
@@ -124,15 +120,12 @@ export default function Manifesto() {
             ].map((stat) => (
               <div key={stat.label} className="text-center lg:text-right">
                 <span
-                  className="block font-light text-[#8aaf9f] leading-none"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 5vw, 5rem)" }}
+                  className="font-display block font-light text-[#8aaf9f] leading-none"
+                  style={{ fontSize: "clamp(3rem, 5vw, 5rem)" }}
                 >
                   {stat.value}
                 </span>
-                <span
-                  className="block mt-1 text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/50"
-                  style={{ fontFamily: "var(--font-inter)" }}
-                >
+                <span className="font-body block mt-1 text-[10px] tracking-[0.3em] uppercase text-[#8aaf9f]/50">
                   {stat.label}
                 </span>
               </div>

@@ -23,10 +23,11 @@ export default function MarqueeBand({
 
   return (
     <div
+      data-header-theme={dark ? "dark" : "light"}
       className={`overflow-hidden py-[18px] border-y ${
         dark
           ? "bg-[#1e3530] border-white/5"
-          : "bg-[#eae6de] border-[#253d32]/8"
+          : "bg-bg-card border-accent/[0.08]"
       }`}
     >
       <div
@@ -38,10 +39,9 @@ export default function MarqueeBand({
             className="inline-flex items-center shrink-0"
           >
             <span
-              className={`text-[10px] tracking-[0.45em] uppercase px-8 ${
-                dark ? "text-[#8aaf9f]/55" : "text-[#253d32]/50"
+              className={`font-body text-[10px] tracking-[0.45em] uppercase px-8 ${
+                dark ? "text-[#8aaf9f]/55" : "text-accent/50"
               }`}
-              style={{ fontFamily: "var(--font-inter)" }}
             >
               {item}
             </span>

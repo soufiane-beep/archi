@@ -31,7 +31,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#141414]">
+    <section data-header-theme="dark" className="relative w-full h-screen min-h-[700px] overflow-hidden bg-ink">
       {/* Background slides */}
       {slides.map((slide, i) => (
         <div
@@ -49,7 +49,6 @@ export default function Hero() {
             priority={i === 0}
             sizes="100vw"
           />
-          {/* Overlay bottom-only pour lisibilité du texte */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
         </div>
       ))}
@@ -64,11 +63,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-12 h-px bg-[#f9f7f4]/50" />
-            <span
-              className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
+            <span className="block w-12 h-px bg-white/50" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-white/75">
               Cabinet d'Architecture · Bruxelles
             </span>
           </motion.div>
@@ -79,34 +75,27 @@ export default function Hero() {
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light leading-none tracking-tight mb-2"
-              style={{
-                fontFamily: "var(--font-cormorant)",
-                fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
-                color: "#f7f5f0",
-              }}
+              className="font-display font-light leading-none tracking-tight mb-2 text-white"
+              style={{ fontSize: "clamp(3.5rem, 10vw, 8.5rem)", textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
             >
               {slides[current].title}
             </motion.h1>
           </div>
           <div className="overflow-hidden">
-            <motion.h1
+            <motion.p
               key={`subtitle-${current}`}
               initial={{ y: "100%", opacity: 0 }}
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 1, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light leading-none tracking-tight"
+              className="font-display font-light leading-none tracking-tight"
               style={{
-                fontFamily: "var(--font-cormorant)",
                 fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
-                background: "linear-gradient(135deg, #f9f7f4 0%, #d8d3c8 50%, #f9f7f4 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: "rgba(255,255,255,0.75)",
+                textShadow: "0 2px 12px rgba(0,0,0,0.5)",
               }}
             >
               {slides[current].subtitle}
-            </motion.h1>
+            </motion.p>
           </div>
         </div>
 
@@ -121,15 +110,13 @@ export default function Hero() {
           >
             <Link
               href="/brief"
-              className="group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-[#f9f7f4] font-medium px-8 py-4 bg-[#253d32] hover:bg-[#3a5e4e] transition-colors duration-400"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="font-body group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-white font-medium px-8 py-4 bg-accent hover:bg-accent-warm transition-colors duration-400"
             >
               Parler de Votre Projet
             </Link>
             <Link
               href="/projects"
-              className="group text-[11px] tracking-[0.3em] uppercase text-[#f9f7f4]/70 hover:text-[#f9f7f4] hover-line transition-colors duration-300"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="font-body group text-[11px] tracking-[0.3em] uppercase text-white/70 hover:text-white hover-line transition-colors duration-300"
             >
               Nos Réalisations
             </Link>
@@ -147,8 +134,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-[11px] tracking-[0.3em] text-[#f9f7f4]/60 uppercase"
-              style={{ fontFamily: "var(--font-inter)" }}
+              className="font-body text-[11px] tracking-[0.3em] text-bg/60 uppercase"
             >
               {slides[current].location}
             </motion.p>
@@ -177,29 +163,23 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
-        <span
-          className="text-[9px] tracking-[0.4em] uppercase text-[#f9f7f4]/50"
-          style={{ fontFamily: "var(--font-inter)" }}
-        >
+        <span className="font-body text-[9px] tracking-[0.4em] uppercase text-bg/50">
           Scroll
         </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown size={16} className="text-[#f9f7f4]/60" />
+          <ArrowDown size={16} className="text-bg/60" />
         </motion.div>
       </motion.div>
 
       {/* Vertical text */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-6">
-        <span
-          className="text-[9px] tracking-[0.5em] uppercase text-[#f9f7f4]/40 [writing-mode:vertical-rl]"
-          style={{ fontFamily: "var(--font-inter)" }}
-        >
+        <span className="font-body text-[9px] tracking-[0.5em] uppercase text-bg/40 [writing-mode:vertical-rl]">
           Architecture · Design · Belgique
         </span>
-        <span className="block w-px h-16 bg-gradient-to-b from-transparent to-[#f9f7f4]/30" />
+        <span className="block w-px h-16 bg-gradient-to-b from-transparent to-bg/30" />
       </div>
     </section>
   );

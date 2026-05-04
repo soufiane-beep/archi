@@ -9,19 +9,17 @@ import type { Project } from "@/lib/types";
 
 const ALL_CATEGORIES = "Tous";
 
-// Pattern éditorial : définit la hauteur et la largeur relative de chaque carte selon sa position dans le groupe de 3
+// Pattern éditorial : cycles de 7 items formant des rangées valides dans une grille 3 colonnes
+// Chaque rangée = somme des col-span égale 3 (2+1, 1+2, 1+1+1)
 function getCardConfig(indexInGroup: number): { height: string; colSpan: string } {
-  // Groupe de 3 : grand (2/3) | petit (1/3) | puis 2 medium | puis inverse
   const patterns = [
-    { height: "480px", colSpan: "md:col-span-2" },   // grande
-    { height: "320px", colSpan: "md:col-span-1" },   // petite
-    { height: "280px", colSpan: "md:col-span-1" },   // petite
-    { height: "420px", colSpan: "md:col-span-2" },   // grande
-    { height: "360px", colSpan: "md:col-span-1" },   // medium
-    { height: "360px", colSpan: "md:col-span-2" },   // medium large
-    { height: "300px", colSpan: "md:col-span-1" },   // petite
-    { height: "460px", colSpan: "md:col-span-1" },   // grande
-    { height: "320px", colSpan: "md:col-span-2" },   // large
+    { height: "480px", colSpan: "md:col-span-2" }, // rangée A : 2
+    { height: "340px", colSpan: "md:col-span-1" }, // rangée A : 1 → total 3 ✓
+    { height: "300px", colSpan: "md:col-span-1" }, // rangée B : 1
+    { height: "440px", colSpan: "md:col-span-2" }, // rangée B : 2 → total 3 ✓
+    { height: "380px", colSpan: "md:col-span-1" }, // rangée C : 1
+    { height: "320px", colSpan: "md:col-span-1" }, // rangée C : 1
+    { height: "360px", colSpan: "md:col-span-1" }, // rangée C : 1 → total 3 ✓
   ];
   return patterns[indexInGroup % patterns.length];
 }
@@ -43,26 +41,25 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="flex flex-wrap gap-3 mt-12 pt-8 border-t border-[#2c4a3e]/10"
+        className="flex flex-wrap gap-3 mt-12 pt-8 border-t border-accent/10"
       >
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 transition-all duration-300 ${
+            className={`font-body text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 transition-all duration-300 ${
               activeCategory === cat
-                ? "bg-[#2c4a3e] text-[#f7f5f0]"
-                : "border border-[#2c4a3e]/20 text-[#5e5e56] hover:border-[#2c4a3e]/50 hover:text-[#2c4a3e]"
+                ? "bg-accent text-bg"
+                : "border border-accent/20 text-[#5e5e56] hover:border-accent/50 hover:text-accent"
             }`}
-            style={{ fontFamily: "var(--font-inter)" }}
           >
             {cat}
           </button>
         ))}
       </motion.div>
 
-      {/* Projects grid — layout éditorial asymétrique */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 items-start">
+      {/* Projects grid — layout éditorial asymétrique, grid-flow-dense évite les trous */}
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 items-start grid-flow-dense">
         {filtered.map((project, i) => {
           const { height, colSpan } = getCardConfig(i);
           return (
@@ -90,29 +87,20 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/88 via-[#1e3530]/15 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
 
                 <div className="absolute top-5 left-5 z-10">
-                  <span
-                    className="text-[9px] tracking-[0.3em] uppercase text-[#8aaf9f] bg-[#1e3530]/70 backdrop-blur-sm px-3 py-1.5"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
+                  <span className="font-body text-[9px] tracking-[0.3em] uppercase text-[#8aaf9f] bg-[#1e3530]/70 backdrop-blur-sm px-3 py-1.5">
                     {project.category}
                   </span>
                 </div>
 
-                <div className="absolute top-5 right-5 w-9 h-9 bg-[#2c4a3e] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight size={14} className="text-[#f7f5f0]" />
+                <div className="absolute top-5 right-5 w-9 h-9 bg-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ArrowUpRight size={14} className="text-bg" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <p
-                    className="text-[10px] tracking-[0.25em] uppercase text-[#8aaf9f] mb-2"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
+                  <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#8aaf9f] mb-2">
                     {project.location} · {project.year}
                   </p>
-                  <h2
-                    className="font-light text-[#f7f5f0] text-3xl"
-                    style={{ fontFamily: "var(--font-cormorant)" }}
-                  >
+                  <h2 className="font-display font-light text-bg text-3xl">
                     {project.title}
                   </h2>
                 </div>

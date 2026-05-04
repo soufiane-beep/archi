@@ -3,9 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { stats } from "@/lib/data";
-import { ArrowUpRight } from "lucide-react";
 
 export default function LeBureauPage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -18,7 +16,7 @@ export default function LeBureauPage() {
       <div ref={heroRef} className="relative h-[70vh] min-h-[500px] overflow-hidden">
         <motion.div style={{ y: imageY }} className="absolute inset-0">
           <Image
-            src="https://www.premierart.be/assets/img/slide-01.jpg"
+            src="/projets/rue-des-nobles/0.JPG"
             alt="Ahmed Chedly ISMAIL — Architecte"
             fill
             className="object-cover"
@@ -26,7 +24,8 @@ export default function LeBureauPage() {
             sizes="100vw"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
           <motion.div
@@ -35,8 +34,8 @@ export default function LeBureauPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-[#f9f7f4]/50" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#f9f7f4]/70" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-bg/50" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-bg/70">
               Le Bureau
             </span>
           </motion.div>
@@ -45,8 +44,8 @@ export default function LeBureauPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#f9f7f4]"
-              style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95 }}
+              className="font-display font-light text-bg"
+              style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95, textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}
             >
               Une architecture
               <br />rigoureuse, pensée
@@ -60,7 +59,7 @@ export default function LeBureauPage() {
       <ProfileSection />
 
       {/* À propos cards */}
-      <section className="py-24 px-8 bg-[#eae6de]">
+      <section className="py-24 px-8 bg-bg-card">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -68,8 +67,8 @@ export default function LeBureauPage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-12"
           >
-            <span className="block w-8 h-px bg-[#253d32]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-accent" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
               Ma Pratique
             </span>
           </motion.div>
@@ -98,15 +97,15 @@ export default function LeBureauPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-[#f1ede6] p-8 border-t-2 border-[#253d32]/20"
+                className="bg-bg-alt p-8 border-t-2 border-accent/20"
               >
-                <h2
-                  className="font-light text-[#1a1a1a] mb-4"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.7rem" }}
+                <h3
+                  className="font-display font-light text-ink mb-4"
+                  style={{ fontSize: "1.7rem" }}
                 >
                   {item.title}
-                </h2>
-                <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                </h3>
+                <p className="font-body text-[#5e5e56] text-sm leading-relaxed">
                   {item.text}
                 </p>
               </motion.div>
@@ -124,8 +123,8 @@ export default function LeBureauPage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-12"
           >
-            <span className="block w-8 h-px bg-[#253d32]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-accent" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
               En chiffres
             </span>
           </motion.div>
@@ -134,20 +133,17 @@ export default function LeBureauPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-15%" }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 border border-[#253d32]/10"
+            className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-accent/10"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-[#f9f7f4] p-8 text-center">
+              <div key={stat.label} className="bg-bg p-8 text-center">
                 <span
-                  className="block font-light text-[#253d32] mb-2"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "3.5rem" }}
+                  className="font-display block font-light text-accent mb-2"
+                  style={{ fontSize: "3.5rem" }}
                 >
                   {stat.value}
                 </span>
-                <span
-                  className="text-[10px] tracking-[0.25em] uppercase text-[#5e5e56]"
-                  style={{ fontFamily: "var(--font-inter)" }}
-                >
+                <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#5e5e56]">
                   {stat.label}
                 </span>
               </div>
@@ -157,7 +153,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="py-24 px-8 bg-[#eae6de]">
+      <section className="py-24 px-8 bg-bg-card">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -165,8 +161,8 @@ export default function LeBureauPage() {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-12"
           >
-            <span className="block w-8 h-px bg-[#253d32]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-accent" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
               Ce qui guide mes projets
             </span>
           </motion.div>
@@ -195,15 +191,15 @@ export default function LeBureauPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="border-t border-[#253d32]/10 pt-8"
+                className="border-t border-accent/10 pt-8"
               >
-                <h2
-                  className="font-light text-[#1a1a1a] mb-4"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.8rem" }}
+                <h3
+                  className="font-display font-light text-ink mb-4"
+                  style={{ fontSize: "1.8rem" }}
                 >
                   {item.title}
-                </h2>
-                <p className="text-[#5e5e56] text-sm leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
+                </h3>
+                <p className="font-body text-[#5e5e56] text-sm leading-relaxed">
                   {item.text}
                 </p>
               </motion.div>
@@ -213,14 +209,14 @@ export default function LeBureauPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-8 border-t border-[#253d32]/10">
+      <section className="py-24 px-8 border-t border-accent/10">
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-light text-[#1a1a1a] mb-6"
-            style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
+            className="font-display font-light text-ink mb-6"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
           >
             Parlons de votre projet
           </motion.h2>
@@ -229,26 +225,11 @@ export default function LeBureauPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[#5e5e56] mb-10 max-w-md mx-auto text-sm"
-            style={{ fontFamily: "var(--font-inter)", lineHeight: 1.7 }}
+            className="font-body text-[#5e5e56] mb-10 max-w-md mx-auto text-sm"
+            style={{ lineHeight: 1.7 }}
           >
             Transformation, extension, construction neuve ou réaffectation — chaque projet commence par un premier échange pour comprendre vos besoins et explorer les possibilités.
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#253d32] text-[#f9f7f4] hover:bg-[#3a5e4e] hover:text-[#f9f7f4] transition-colors duration-300"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              Me Contacter
-              <ArrowUpRight size={14} />
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>
@@ -279,17 +260,14 @@ function ProfileSection() {
               />
             </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 bg-[#f9f7f4] border-t border-r border-[#253d32]/10 px-6 py-4">
+            <div className="absolute bottom-0 left-0 bg-bg border-t border-r border-accent/10 px-6 py-4">
               <p
-                className="text-[#1a1a1a] font-light"
-                style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.15rem" }}
+                className="font-display text-ink font-light"
+                style={{ fontSize: "1.15rem" }}
               >
                 Ahmed Chedly ISMAIL
               </p>
-              <p
-                className="text-[10px] tracking-[0.25em] uppercase text-[#253d32] mt-1"
-                style={{ fontFamily: "var(--font-inter)" }}
-              >
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-accent mt-1">
                 Architecte Indépendant
               </p>
             </div>
@@ -303,8 +281,8 @@ function ProfileSection() {
             animate={isInView ? { opacity: 1 } : {}}
             className="flex items-center gap-4 mb-8"
           >
-            <span className="block w-8 h-px bg-[#253d32]" />
-            <span className="text-[10px] tracking-[0.4em] uppercase text-[#253d32]" style={{ fontFamily: "var(--font-inter)" }}>
+            <span className="block w-8 h-px bg-accent" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
               À Propos
             </span>
           </motion.div>
@@ -314,8 +292,8 @@ function ProfileSection() {
               initial={{ y: "100%" }}
               animate={isInView ? { y: "0%" } : {}}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="font-light text-[#1a1a1a] leading-tight"
-              style={{ fontFamily: "var(--font-cormorant)", fontSize: "clamp(2rem, 4vw, 3rem)" }}
+              className="font-display font-light text-ink leading-tight"
+              style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Concevoir avec justesse.
               <br />
@@ -327,8 +305,8 @@ function ProfileSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-[#4a4a4a] leading-relaxed mb-10"
-            style={{ fontFamily: "var(--font-inter)", fontSize: "0.9375rem" }}
+            className="font-body text-ink-mid leading-relaxed mb-10"
+            style={{ fontSize: "0.9375rem" }}
           >
             Architecte basé en Belgique, je développe une approche de l'architecture centrée sur la justesse des espaces, la qualité des usages et la maîtrise du projet dans sa globalité. Mon travail s'inscrit dans une recherche d'équilibre entre esthétique, fonctionnalité et durabilité, avec une attention constante portée aux détails qui font la qualité d'un lieu.
           </motion.p>
@@ -337,13 +315,13 @@ function ProfileSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="border-t border-[#253d32]/10 pt-8 grid grid-cols-3 gap-6"
+            className="border-t border-accent/10 pt-8 grid grid-cols-3 gap-6"
           >
             {["Rigueur", "Écoute", "Transparence"].map((val) => (
               <div key={val} className="text-center">
                 <p
-                  className="font-light text-[#253d32]"
-                  style={{ fontFamily: "var(--font-cormorant)", fontSize: "1.4rem" }}
+                  className="font-display font-light text-accent"
+                  style={{ fontSize: "1.4rem" }}
                 >
                   {val}
                 </p>
