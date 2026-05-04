@@ -208,7 +208,7 @@ export default function DomainesPage() {
           </p>
           <Link
             href="/brief"
-            className="font-body inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-accent text-bg hover:bg-accent-warm transition-colors duration-300"
+            className="font-body inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-accent text-white hover:bg-accent-warm transition-colors duration-300"
           >
             Parler de votre projet
             <ArrowUpRight size={14} />

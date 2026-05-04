@@ -80,7 +80,7 @@ export default function Manifesto() {
                     className="font-display font-light leading-[1.08]"
                     style={{
                       fontSize: "clamp(2.8rem, 6.5vw, 6rem)",
-                      color: line.accent ? "#8aaf9f" : "#f9f7f4",
+                      color: line.accent ? "#8aaf9f" : "#ffffff",
                     }}
                   >
                     {line.text}

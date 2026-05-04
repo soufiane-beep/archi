@@ -53,8 +53,8 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-5"
           >
-            <span className="block w-8 h-px bg-bg/50" />
-            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-bg/70">
+            <span className="block w-8 h-px bg-white/50" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-white/75">
               Parlons de Votre Projet
             </span>
           </motion.div>
@@ -63,7 +63,7 @@ export default function ContactPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-light text-bg"
+              className="font-display font-light text-white"
               style={{ fontSize: "clamp(3rem, 7vw, 6rem)", lineHeight: 0.95, textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}
             >
               Nous Contacter
@@ -263,7 +263,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     type="submit"
-                    className="font-body group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-accent text-bg hover:bg-accent-warm active:opacity-80 transition-colors duration-300"
+                    className="font-body group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-accent text-white hover:bg-accent-warm active:opacity-80 transition-colors duration-300"
                   >
                     Envoyer le Message
                     <Send size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />

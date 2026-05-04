@@ -143,7 +143,7 @@ function ProjectCard({
           transition={{ duration: 0.3 }}
           className="w-10 h-10 bg-accent flex items-center justify-center"
         >
-          <ArrowUpRight size={16} className="text-bg" />
+          <ArrowUpRight size={16} className="text-white" />
         </motion.div>
       </div>
 

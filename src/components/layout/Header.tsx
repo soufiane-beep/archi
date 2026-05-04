@@ -130,14 +130,14 @@ export default function Header() {
                 href={link.href}
                 className={`font-body group relative text-[11px] tracking-[0.2em] uppercase font-light transition-colors duration-200 ${
                   isOverDark || isScrolledOnDark
-                    ? "text-bg/70 hover:text-bg"
+                    ? "text-white/70 hover:text-white"
                     : "text-ink-mid hover:text-ink"
                 }`}
               >
                 {link.label}
                 <span
                   className={`absolute -bottom-1 left-0 h-px transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                    isOverDark || isScrolledOnDark ? "bg-bg" : "bg-accent"
+                    isOverDark || isScrolledOnDark ? "bg-white" : "bg-accent"
                   } ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </Link>
@@ -159,7 +159,7 @@ export default function Header() {
               <motion.span
                 className="absolute inset-0"
                 style={{
-                  backgroundColor: isOverDark || isScrolledOnDark ? "#f9f7f4" : "#253d32",
+                  backgroundColor: isOverDark || isScrolledOnDark ? "#ffffff" : "#253d32",
                   transformOrigin: "left",
                 }}
                 initial={false}
@@ -170,8 +170,8 @@ export default function Header() {
                 className="relative z-10"
                 animate={{
                   color: ctaHovered
-                    ? (isOverDark || isScrolledOnDark ? "#253d32" : "#f9f7f4")
-                    : (isOverDark || isScrolledOnDark ? "#f9f7f4" : "#253d32"),
+                    ? (isOverDark || isScrolledOnDark ? "#253d32" : "#ffffff")
+                    : (isOverDark || isScrolledOnDark ? "#ffffff" : "#253d32"),
                 }}
                 transition={{ duration: 0.25, delay: ctaHovered ? 0.1 : 0 }}
               >

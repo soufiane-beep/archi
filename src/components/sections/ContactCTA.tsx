@@ -54,7 +54,7 @@ export default function ContactCTA() {
             initial={{ y: "100%" }}
             animate={isInView ? { y: "0%" } : {}}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-light text-bg"
+            className="font-display font-light text-white"
             style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)", lineHeight: 1 }}
           >
             Vous avez un projet
@@ -65,15 +65,8 @@ export default function ContactCTA() {
             initial={{ y: "100%" }}
             animate={isInView ? { y: "0%" } : {}}
             transition={{ duration: 1, delay: 0.07, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-light"
-            style={{
-              fontSize: "clamp(3rem, 7vw, 6.5rem)",
-              background: "linear-gradient(135deg, #f9f7f4 0%, #d8c9a8 55%, #f9f7f4 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              lineHeight: 1,
-            }}
+            className="font-display font-light text-white/80"
+            style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)", lineHeight: 1 }}
           >
             en Belgique ?
           </motion.h2>
@@ -84,7 +77,7 @@ export default function ContactCTA() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="font-body max-w-xl mx-auto mb-14 leading-relaxed"
-          style={{ fontSize: "0.9375rem", color: "rgba(249,247,244,0.85)" }}
+          style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.85)" }}
         >
           Qu'il s'agisse d'une transformation, d'une extension, d'une construction neuve ou d'une réaffectation, nous vous accompagnons dans le développement d'un projet clair, cohérent et adapté à vos objectifs.
         </motion.p>

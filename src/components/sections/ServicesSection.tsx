@@ -32,7 +32,7 @@ export default function ServicesSection() {
                 initial={{ y: "100%" }}
                 animate={isInView ? { y: "0%" } : {}}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                className="font-display font-light text-bg"
+                className="font-display font-light text-white"
                 style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", lineHeight: 1.1 }}
               >
                 Un Savoir-Faire Global
@@ -47,7 +47,7 @@ export default function ServicesSection() {
           >
             <Link
               href="/domaines"
-              className="font-body group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#8aaf9f] hover:text-bg transition-colors duration-300"
+              className="font-body group flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-[#8aaf9f] hover:text-white transition-colors duration-300"
             >
               Toutes nos expertises
               <ArrowUpRight size={14} />
@@ -82,7 +82,7 @@ export default function ServicesSection() {
                 {/* Title */}
                 <h3
                   className={`font-display font-light transition-colors duration-300 ${
-                    hovered === i ? "text-[#8aaf9f]" : "text-bg"
+                    hovered === i ? "text-[#8aaf9f]" : "text-white"
                   }`}
                   style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)" }}
                 >

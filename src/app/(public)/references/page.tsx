@@ -79,7 +79,7 @@ export default function ReferencesPage() {
               onClick={() => setFiltre(s)}
               className={`font-body text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 border transition-colors duration-300 ${
                 filtre === s
-                  ? "bg-accent text-bg border-accent"
+                  ? "bg-accent text-white border-accent"
                   : "bg-transparent text-[#5e5e56] border-accent/20 hover:border-accent/60"
               }`}
             >

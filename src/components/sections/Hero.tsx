@@ -134,7 +134,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="font-body text-[11px] tracking-[0.3em] text-bg/60 uppercase"
+              className="font-body text-[11px] tracking-[0.3em] text-white/60 uppercase"
             >
               {slides[current].location}
             </motion.p>
@@ -163,20 +163,20 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
-        <span className="font-body text-[9px] tracking-[0.4em] uppercase text-bg/50">
+        <span className="font-body text-[9px] tracking-[0.4em] uppercase text-white/50">
           Scroll
         </span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ArrowDown size={16} className="text-bg/60" />
+          <ArrowDown size={16} className="text-white/60" />
         </motion.div>
       </motion.div>
 
       {/* Vertical text */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col items-center gap-6">
-        <span className="font-body text-[9px] tracking-[0.5em] uppercase text-bg/40 [writing-mode:vertical-rl]">
+        <span className="font-body text-[9px] tracking-[0.5em] uppercase text-white/40 [writing-mode:vertical-rl]">
           Architecture · Design · Belgique
         </span>
         <span className="block w-px h-16 bg-gradient-to-b from-transparent to-bg/30" />

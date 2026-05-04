@@ -73,7 +73,7 @@ export default function ProjectDetail({
         <div className="absolute top-28 left-8 z-10">
           <Link
             href="/projects"
-            className="font-body group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-bg/70 hover:text-bg transition-colors duration-300"
+            className="font-body group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-white/70 hover:text-white transition-colors duration-300"
           >
             <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-300" />
             Tous les projets
@@ -89,7 +89,7 @@ export default function ProjectDetail({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-body inline-block text-[10px] tracking-[0.35em] uppercase text-bg/80 bg-black/20 border border-white/20 px-4 py-2 mb-6"
+            className="font-body inline-block text-[10px] tracking-[0.35em] uppercase text-white/80 bg-black/20 border border-white/20 px-4 py-2 mb-6"
           >
             {project.category}
           </motion.span>
@@ -98,7 +98,7 @@ export default function ProjectDetail({
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-light text-bg"
+              className="font-display font-light text-white"
               style={{ fontSize: "clamp(3rem, 9vw, 8rem)", lineHeight: 0.9 }}
             >
               {project.title}
@@ -110,13 +110,13 @@ export default function ProjectDetail({
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex items-center gap-6 mt-6"
           >
-            <span className="font-body flex items-center gap-2 text-[11px] text-bg/70">
-              <MapPin size={12} className="text-bg/60" />
+            <span className="font-body flex items-center gap-2 text-[11px] text-white/70">
+              <MapPin size={12} className="text-white/60" />
               {project.location}
             </span>
             <span className="text-white/30">·</span>
-            <span className="font-body flex items-center gap-2 text-[11px] text-bg/70">
-              <Calendar size={12} className="text-bg/60" />
+            <span className="font-body flex items-center gap-2 text-[11px] text-white/70">
+              <Calendar size={12} className="text-white/60" />
               {project.year}
             </span>
           </motion.div>
@@ -273,8 +273,8 @@ export default function ProjectDetail({
                     <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="font-body text-[9px] tracking-[0.3em] uppercase text-bg/60 mb-1">{p.category}</p>
-                      <h3 className="font-display font-light text-bg text-2xl">{p.title}</h3>
+                      <p className="font-body text-[9px] tracking-[0.3em] uppercase text-white/60 mb-1">{p.category}</p>
+                      <h3 className="font-display font-light text-white text-2xl">{p.title}</h3>
                     </div>
                   </Link>
                 </motion.div>

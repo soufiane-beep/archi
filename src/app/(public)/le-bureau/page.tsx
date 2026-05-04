@@ -34,8 +34,8 @@ export default function LeBureauPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center gap-4 mb-6"
           >
-            <span className="block w-8 h-px bg-bg/50" />
-            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-bg/70">
+            <span className="block w-8 h-px bg-white/50" />
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-white/75">
               Le Bureau
             </span>
           </motion.div>
@@ -44,7 +44,7 @@ export default function LeBureauPage() {
               initial={{ y: "100%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-light text-bg"
+              className="font-display font-light text-white"
               style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 0.95, textShadow: "0 2px 24px rgba(0,0,0,0.5)" }}
             >
               Une architecture

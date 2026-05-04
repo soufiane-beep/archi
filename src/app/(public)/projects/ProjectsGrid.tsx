@@ -49,7 +49,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
             onClick={() => setActiveCategory(cat)}
             className={`font-body text-[10px] tracking-[0.25em] uppercase px-5 py-2.5 transition-all duration-300 ${
               activeCategory === cat
-                ? "bg-accent text-bg"
+                ? "bg-accent text-white"
                 : "border border-accent/20 text-[#5e5e56] hover:border-accent/50 hover:text-accent"
             }`}
           >
@@ -84,23 +84,23 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
                   className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1e3530]/88 via-[#1e3530]/15 to-transparent transition-opacity duration-500 group-hover:opacity-80" />
+                <div className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-90" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 55%)" }} />
 
                 <div className="absolute top-5 left-5 z-10">
-                  <span className="font-body text-[9px] tracking-[0.3em] uppercase text-[#8aaf9f] bg-[#1e3530]/70 backdrop-blur-sm px-3 py-1.5">
+                  <span className="font-body text-[9px] tracking-[0.3em] uppercase text-white bg-black/50 backdrop-blur-sm px-3 py-1.5">
                     {project.category}
                   </span>
                 </div>
 
                 <div className="absolute top-5 right-5 w-9 h-9 bg-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ArrowUpRight size={14} className="text-bg" />
+                  <ArrowUpRight size={14} className="text-white" />
                 </div>
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
                   <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#8aaf9f] mb-2">
                     {project.location} · {project.year}
                   </p>
-                  <h2 className="font-display font-light text-bg text-3xl">
+                  <h2 className="font-display font-light text-white text-3xl" style={{ textShadow: "0 1px 6px rgba(0,0,0,0.4)" }}>
                     {project.title}
                   </h2>
                 </div>

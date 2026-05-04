@@ -146,7 +146,7 @@ export default function AboutTeaser() {
             >
               <Link
                 href="/le-bureau"
-                className="font-body group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-accent border border-accent/30 px-8 py-4 hover:border-accent hover:bg-accent hover:text-bg transition-all duration-400"
+                className="font-body group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase text-accent border border-accent/30 px-8 py-4 hover:border-accent hover:bg-accent hover:text-white transition-all duration-400"
               >
                 Découvrir le Bureau
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
