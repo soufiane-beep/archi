@@ -30,7 +30,7 @@ export default function ReferencesPage() {
   return (
     <div data-header-theme="light" className="min-h-screen bg-bg">
       {/* Hero */}
-      <div className="pt-40 pb-20 px-8 max-w-[1400px] mx-auto">
+      <div className="pt-24 md:pt-40 pb-12 md:pb-20 px-4 md:px-8 max-w-[1400px] mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -66,7 +66,7 @@ export default function ReferencesPage() {
       </div>
 
       {/* Filtres */}
-      <div className="px-8 max-w-[1400px] mx-auto mb-12">
+      <div className="px-4 md:px-8 max-w-[1400px] mx-auto mb-8 md:mb-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -90,7 +90,7 @@ export default function ReferencesPage() {
       </div>
 
       {/* Table */}
-      <div className="px-8 max-w-[1400px] mx-auto pb-32">
+      <div className="px-4 md:px-8 max-w-[1400px] mx-auto pb-16 md:pb-32">
         {/* En-tête */}
         <div className="hidden md:grid grid-cols-[80px_1fr_160px_180px_160px_100px_130px] gap-4 pb-4 border-b border-accent/10 mb-2">
           {["Année", "Projet", "Secteur", "Type", "Localisation", "Surface", "Statut"].map((col) => (

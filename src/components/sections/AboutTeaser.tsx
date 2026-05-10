@@ -19,9 +19,9 @@ export default function AboutTeaser() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <section ref={ref} data-header-theme="light" className="py-32 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section ref={ref} data-header-theme="light" className="py-16 md:py-32 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
           {/* Image side */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -30,7 +30,7 @@ export default function AboutTeaser() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-sm" style={{ height: "600px" }}>
+            <div className="relative overflow-hidden rounded-sm" style={{ height: "clamp(320px, 70vh, 600px)" }}>
               <motion.div style={{ y: imageY }} className="absolute inset-0">
                 <Image
                   src="/profil/photo-profil.png"
@@ -49,7 +49,7 @@ export default function AboutTeaser() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -bottom-8 -right-8 bg-[#1e3530] border border-white/5 p-8 max-w-[220px]"
+              className="absolute -bottom-4 md:-bottom-8 -right-4 md:-right-8 bg-[#1e3530] border border-white/5 p-6 md:p-8 max-w-[200px] md:max-w-[220px]"
             >
               <span
                 className="font-display block text-5xl font-light text-[#8aaf9f] mb-1"
@@ -118,7 +118,7 @@ export default function AboutTeaser() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-3 gap-6 my-10 pt-10 border-t border-accent/10"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-8 md:my-10 pt-8 md:pt-10 border-t border-accent/10"
             >
               {[
                 { label: "Rigueur", desc: "Méthode & précision" },

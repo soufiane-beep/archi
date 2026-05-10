@@ -15,9 +15,9 @@ export default function FeaturedProjects({ featured }: { featured: Project[] }) 
   if (!featured.length) return null;
 
   return (
-    <section ref={ref} data-header-theme="light" className="py-32 px-8 max-w-[1400px] mx-auto">
+    <section ref={ref} data-header-theme="light" className="py-16 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
       {/* Section header */}
-      <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-20 gap-8">
+      <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 md:mb-20 gap-8">
         <div>
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -116,7 +116,7 @@ function ProjectCard({
     <Link
       href={`/projects/${project.id}`}
       className="group block relative overflow-hidden rounded-sm"
-      style={{ height: large ? "clamp(480px, 65vh, 780px)" : "clamp(230px, 30vh, 380px)" }}
+      style={{ height: large ? "clamp(320px, 65vh, 780px)" : "clamp(200px, 45vh, 380px)" }}
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
     >
@@ -137,11 +137,14 @@ function ProjectCard({
       </div>
 
       <div className="absolute top-6 right-6 z-10">
+        <div className="block md:hidden w-10 h-10 bg-accent flex items-center justify-center">
+          <ArrowUpRight size={16} className="text-white" />
+        </div>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={isHovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
-          className="w-10 h-10 bg-accent flex items-center justify-center"
+          className="hidden md:flex w-10 h-10 bg-accent items-center justify-center"
         >
           <ArrowUpRight size={16} className="text-white" />
         </motion.div>
@@ -160,14 +163,19 @@ function ProjectCard({
           {project.title}
         </h3>
         {large && (
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: 0.4 }}
-            className="font-body mt-3 text-sm text-[#d6d1c7] leading-relaxed max-w-md"
-          >
-            {project.description}
-          </motion.p>
+          <>
+            <p className="block md:hidden font-body mt-2 text-sm text-[#d6d1c7] leading-relaxed line-clamp-2">
+              {project.description}
+            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={isHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ duration: 0.4 }}
+              className="hidden md:block font-body mt-3 text-sm text-[#d6d1c7] leading-relaxed max-w-md"
+            >
+              {project.description}
+            </motion.p>
+          </>
         )}
       </div>
     </Link>

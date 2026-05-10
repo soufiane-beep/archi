@@ -27,7 +27,7 @@ export default function DomainesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div data-header-theme="dark" className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <div data-header-theme="dark" className="relative h-[60vh] min-h-[320px] md:min-h-[400px] overflow-hidden">
         <Image
           src="/projets/fayt/1.png"
           alt="Domaines d'intervention Premier Art"
@@ -39,7 +39,7 @@ export default function DomainesPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-        <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
+        <div className="absolute bottom-12 md:bottom-20 left-4 md:left-8 right-4 md:right-8 max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -67,7 +67,7 @@ export default function DomainesPage() {
       </div>
 
       {/* 4 domains grid */}
-      <section data-header-theme="light" className="py-32 px-8 max-w-[1400px] mx-auto">
+      <section data-header-theme="light" className="py-16 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, i) => (
             <motion.div
@@ -76,7 +76,7 @@ export default function DomainesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="group border border-accent/10 p-10 hover:border-accent/30 transition-all duration-500 bg-bg-card hover:bg-bg-alt"
+              className="group border border-accent/10 p-6 md:p-10 hover:border-accent/30 transition-all duration-500 bg-bg-card hover:bg-bg-alt"
             >
               <span className="font-body block text-[11px] tracking-[0.3em] text-[#5e5e56] mb-6">
                 {service.number}
@@ -96,7 +96,7 @@ export default function DomainesPage() {
       </section>
 
       {/* Typologies */}
-      <section className="py-24 px-8 bg-bg-card">
+      <section className="py-14 md:py-24 px-4 md:px-8 bg-bg-card">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -143,7 +143,7 @@ export default function DomainesPage() {
       </section>
 
       {/* Pour qui */}
-      <section className="py-24 px-8 max-w-[1400px] mx-auto">
+      <section className="py-14 md:py-24 px-4 md:px-8 max-w-[1400px] mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -176,7 +176,7 @@ export default function DomainesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="border border-accent/10 p-8 bg-bg-card"
+              className="border border-accent/10 p-6 md:p-8 bg-bg-card"
             >
               <h3
                 className="font-display font-light text-accent mb-3"
@@ -193,7 +193,7 @@ export default function DomainesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-8 border-t border-accent/10 text-center">
+      <section className="py-12 md:py-20 px-4 md:px-8 border-t border-accent/10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

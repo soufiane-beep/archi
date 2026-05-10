@@ -105,7 +105,7 @@ export default function Header() {
             : "bg-bg/95 backdrop-blur-md border-b border-rule/60 shadow-[0_2px_20px_rgba(0,0,0,0.15)]"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-between">
 
           {/* Logo — inversé (blanc) sur fond sombre, normal sinon */}
           <Link href="/" aria-label="Premier Art — Accueil">
@@ -226,7 +226,7 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
-                    className={`font-display text-5xl font-light transition-colors duration-300 hover:text-accent ${
+                    className={`font-display text-4xl sm:text-5xl font-light transition-colors duration-300 hover:text-accent ${
                       pathname === link.href ? "text-accent" : "text-ink"
                     }`}
                   >
@@ -250,7 +250,7 @@ export default function Header() {
                 </span>
                 <Link
                   href="/brief"
-                  className="font-display text-5xl font-light text-accent hover:text-ink transition-colors duration-300"
+                  className="font-display text-4xl sm:text-5xl font-light text-accent hover:text-ink transition-colors duration-300"
                 >
                   Votre Projet
                 </Link>

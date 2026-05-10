@@ -13,13 +13,13 @@ const ALL_CATEGORIES = "Tous";
 // Chaque rangée = somme des col-span égale 3 (2+1, 1+2, 1+1+1)
 function getCardConfig(indexInGroup: number): { height: string; colSpan: string } {
   const patterns = [
-    { height: "480px", colSpan: "md:col-span-2" }, // rangée A : 2
-    { height: "340px", colSpan: "md:col-span-1" }, // rangée A : 1 → total 3 ✓
-    { height: "300px", colSpan: "md:col-span-1" }, // rangée B : 1
-    { height: "440px", colSpan: "md:col-span-2" }, // rangée B : 2 → total 3 ✓
-    { height: "380px", colSpan: "md:col-span-1" }, // rangée C : 1
-    { height: "320px", colSpan: "md:col-span-1" }, // rangée C : 1
-    { height: "360px", colSpan: "md:col-span-1" }, // rangée C : 1 → total 3 ✓
+    { height: "clamp(250px, 55vh, 480px)", colSpan: "md:col-span-2" }, // rangée A : 2
+    { height: "clamp(220px, 42vh, 340px)", colSpan: "md:col-span-1" }, // rangée A : 1 → total 3 ✓
+    { height: "clamp(200px, 38vh, 300px)", colSpan: "md:col-span-1" }, // rangée B : 1
+    { height: "clamp(240px, 50vh, 440px)", colSpan: "md:col-span-2" }, // rangée B : 2 → total 3 ✓
+    { height: "clamp(220px, 44vh, 380px)", colSpan: "md:col-span-1" }, // rangée C : 1
+    { height: "clamp(200px, 38vh, 320px)", colSpan: "md:col-span-1" }, // rangée C : 1
+    { height: "clamp(210px, 40vh, 360px)", colSpan: "md:col-span-1" }, // rangée C : 1 → total 3 ✓
   ];
   return patterns[indexInGroup % patterns.length];
 }
@@ -92,7 +92,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
                   </span>
                 </div>
 
-                <div className="absolute top-5 right-5 w-9 h-9 bg-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-5 right-5 w-9 h-9 bg-accent flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                   <ArrowUpRight size={14} className="text-white" />
                 </div>
 

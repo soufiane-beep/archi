@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-        <div className="absolute bottom-16 left-8 right-8 max-w-[1400px] mx-auto">
+        <div className="absolute bottom-16 left-4 md:left-8 right-4 md:right-8 max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -73,8 +73,8 @@ export default function ContactPage() {
       </div>
 
       {/* Main content */}
-      <div data-header-theme="light" className="max-w-[1400px] mx-auto px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div data-header-theme="light" className="max-w-[1400px] mx-auto px-4 md:px-8 py-12 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
           {/* Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -257,13 +257,13 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <p className="font-body text-[10px] text-[#5e5e56]">
                     * Champs obligatoires
                   </p>
                   <button
                     type="submit"
-                    className="font-body group inline-flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-4 bg-accent text-white hover:bg-accent-warm active:opacity-80 transition-colors duration-300"
+                    className="font-body group inline-flex items-center justify-center gap-4 text-[11px] tracking-[0.3em] uppercase font-medium w-full sm:w-auto px-8 md:px-10 py-4 bg-accent text-white hover:bg-accent-warm active:opacity-80 transition-colors duration-300"
                   >
                     Envoyer le Message
                     <Send size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />

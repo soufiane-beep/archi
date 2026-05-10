@@ -12,7 +12,7 @@ export default function ServicesSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section data-header-theme="dark" className="py-32 px-8 bg-[#1e3530]" style={{ clipPath: "polygon(0 2%, 100% 0%, 100% 100%, 0 100%)" }}>
+    <section data-header-theme="dark" className="py-16 md:py-32 px-4 md:px-8 bg-[#1e3530]" style={{ clipPath: "polygon(0 2%, 100% 0%, 100% 100%, 0 100%)" }}>
       <div ref={ref} className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20 pt-8">
@@ -69,11 +69,11 @@ export default function ServicesSection() {
               }}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              className={`group flex items-start md:items-center justify-between gap-8 py-8 pl-4 pr-0 border-b border-white/10 cursor-default transition-all duration-500 border-l-2 ${
+              className={`group flex items-start md:items-center justify-between gap-4 md:gap-8 py-6 md:py-8 pl-4 pr-0 border-b border-white/10 cursor-default transition-all duration-500 border-l-2 ${
                 hovered === i ? "border-l-[#8aaf9f]" : "border-l-transparent"
               }`}
             >
-              <div className="flex items-start md:items-center gap-8 md:gap-12 flex-1">
+              <div className="flex items-start md:items-center gap-4 md:gap-12 flex-1">
                 {/* Number */}
                 <span className="font-body text-[11px] tracking-[0.2em] text-[#8aaf9f]/40 font-light mt-1 md:mt-0 shrink-0">
                   {service.number}

@@ -19,7 +19,7 @@ export default function ContactCTA() {
   const imageY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section ref={ref} data-header-theme="dark" className="relative py-40 overflow-hidden">
+    <section ref={ref} data-header-theme="dark" className="relative py-20 md:py-40 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <motion.div style={{ y: imageY }} className="absolute inset-[-10%]">
@@ -35,7 +35,7 @@ export default function ContactCTA() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e26]/50 via-[#1a2e26]/20 to-[#1a2e26]/50" />
       </div>
 
-      <div ref={textRef} className="relative z-10 max-w-[1400px] mx-auto px-8 text-center">
+      <div ref={textRef} className="relative z-10 max-w-[1400px] mx-auto px-4 md:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -55,7 +55,7 @@ export default function ContactCTA() {
             animate={isInView ? { y: "0%" } : {}}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-light text-white"
-            style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)", lineHeight: 1 }}
+            style={{ fontSize: "clamp(2rem, 7vw, 6.5rem)", lineHeight: 1 }}
           >
             Vous avez un projet
           </motion.h2>
@@ -67,7 +67,7 @@ export default function ContactCTA() {
             transition={{ duration: 1, delay: 0.07, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-light"
             style={{
-              fontSize: "clamp(3rem, 7vw, 6.5rem)",
+              fontSize: "clamp(2rem, 7vw, 6.5rem)",
               background: "linear-gradient(135deg, #f9f7f4 0%, #d8c9a8 55%, #f9f7f4 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -92,14 +92,14 @@ export default function ContactCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/brief"
-            className="font-body group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 bg-[#f9f7f4] text-[#1a2e26] hover:bg-[#8aaf9f] hover:text-[#f9f7f4] transition-colors duration-400"
+            className="font-body group inline-flex items-center justify-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-[#f9f7f4] text-[#1a2e26] hover:bg-[#8aaf9f] hover:text-[#f9f7f4] transition-colors duration-400"
           >
             Parler de Votre Projet
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
           </Link>
           <Link
             href="/projects"
-            className="font-body group inline-flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium px-10 py-5 border border-white/50 text-[#f9f7f4] hover:border-white/80 hover:bg-white/10 transition-all duration-400"
+            className="font-body group inline-flex items-center justify-center gap-3 text-[11px] tracking-[0.3em] uppercase font-medium w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 border border-white/50 text-[#f9f7f4] hover:border-white/80 hover:bg-white/10 transition-all duration-400"
           >
             Voir nos Réalisations
           </Link>

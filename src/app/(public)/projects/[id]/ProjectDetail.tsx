@@ -70,7 +70,7 @@ export default function ProjectDetail({
         )}
 
         {/* Back link */}
-        <div className="absolute top-28 left-8 z-10">
+        <div className="absolute top-28 left-4 md:left-8 z-10">
           <Link
             href="/projects"
             className="font-body group flex items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-white/70 hover:text-white transition-colors duration-300"
@@ -83,7 +83,7 @@ export default function ProjectDetail({
         {/* Hero content */}
         <motion.div
           style={{ opacity }}
-          className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto z-10"
+          className="absolute bottom-12 md:bottom-20 left-4 md:left-8 right-4 md:right-8 max-w-[1400px] mx-auto z-10"
         >
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -124,8 +124,8 @@ export default function ProjectDetail({
       </div>
 
       {/* Content: text + specs */}
-      <div ref={contentRef} data-header-theme="light" className="max-w-[1400px] mx-auto px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div ref={contentRef} data-header-theme="light" className="max-w-[1400px] mx-auto px-4 md:px-8 py-12 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16">
           {/* Main text */}
           <div className="lg:col-span-7">
             <motion.div
@@ -166,7 +166,7 @@ export default function ProjectDetail({
             transition={{ duration: 0.8, delay: 0.3 }}
             className="lg:col-span-5"
           >
-            <div className="border border-accent/10 p-8 bg-bg-card">
+            <div className="border border-accent/10 p-4 md:p-8 bg-bg-card">
               <h3 className="font-body text-[10px] tracking-[0.4em] uppercase text-accent mb-8">
                 Données du Projet
               </h3>
@@ -199,7 +199,7 @@ export default function ProjectDetail({
       </div>
 
       {/* Gallery */}
-      <div className="max-w-[1400px] mx-auto px-8 pb-24">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 pb-12 md:pb-24">
         {project.model3d && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -214,7 +214,7 @@ export default function ProjectDetail({
                 Plan 3D Interactif
               </span>
             </div>
-            <div className="w-full border border-accent/10 overflow-hidden" style={{ height: "480px" }}>
+            <div className="w-full border border-accent/10 overflow-hidden h-64 md:h-[480px]">
               <ModelViewer url={project.model3d} />
             </div>
           </motion.div>
@@ -228,7 +228,7 @@ export default function ProjectDetail({
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className={`relative overflow-hidden ${i === 0 ? "md:col-span-2" : ""}`}
-              style={{ height: i === 0 ? "500px" : "360px" }}
+              style={{ height: i === 0 ? "clamp(280px, 55vh, 500px)" : "clamp(220px, 40vh, 360px)" }}
             >
               <Image
                 src={img}
@@ -244,9 +244,9 @@ export default function ProjectDetail({
 
       {/* Related projects */}
       {relatedProjects.length > 0 && (
-        <div className="py-24 border-t border-accent/10">
-          <div className="max-w-[1400px] mx-auto px-8">
-            <div className="flex items-center justify-between mb-16">
+        <div className="py-14 md:py-24 border-t border-accent/10">
+          <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div className="flex items-center justify-between mb-8 md:mb-16">
               <h2
                 className="font-display font-light text-ink"
                 style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
@@ -269,7 +269,7 @@ export default function ProjectDetail({
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
                 >
-                  <Link href={`/projects/${p.id}`} className="group block relative overflow-hidden" style={{ height: "280px" }}>
+                  <Link href={`/projects/${p.id}`} className="group block relative overflow-hidden" style={{ height: "clamp(200px, 40vh, 280px)" }}>
                     <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-5">

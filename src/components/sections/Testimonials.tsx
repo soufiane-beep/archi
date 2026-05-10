@@ -16,13 +16,13 @@ export default function Testimonials() {
     <section
       ref={ref}
       data-header-theme="light"
-      className="py-36 px-8 relative overflow-hidden bg-bg"
+      className="py-20 md:py-36 px-4 md:px-8 relative overflow-hidden bg-bg"
     >
       {/* Decorative large letter */}
       <div
         className="absolute -top-12 left-8 md:left-16 select-none pointer-events-none font-display leading-none"
         style={{
-          fontSize: "clamp(200px, 30vw, 380px)",
+          fontSize: "clamp(100px, 25vw, 380px)",
           color: "#253d32",
           opacity: 0.028,
           lineHeight: 1,
@@ -36,7 +36,7 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          className="flex items-center gap-4 mb-20"
+          className="flex items-center gap-4 mb-10 md:mb-20"
         >
           <span className="block w-8 h-px bg-accent" />
           <span className="font-body text-[10px] tracking-[0.4em] uppercase text-accent">
@@ -45,7 +45,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Quote area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-end">
           {/* Left: counter + navigation */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -91,7 +91,7 @@ export default function Testimonials() {
               >
                 <p
                   className="font-display font-light text-ink leading-[1.2] mb-12"
-                  style={{ fontSize: "clamp(1.7rem, 4vw, 3.2rem)" }}
+                  style={{ fontSize: "clamp(1.2rem, 4vw, 3.2rem)" }}
                 >
                   &ldquo;{testimonials[current].quote}&rdquo;
                 </p>
@@ -120,7 +120,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex items-center gap-3 mt-20 justify-end"
+          className="flex items-center gap-3 mt-10 md:mt-20 justify-center md:justify-end"
         >
           <button
             onClick={prev}

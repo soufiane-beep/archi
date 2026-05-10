@@ -18,7 +18,7 @@ export default function Footer() {
       {/* Large display title — decorative ghost text */}
       <div
         ref={titleRef}
-        className="relative overflow-hidden border-b border-white/[0.06] px-8 pt-16 pb-4"
+        className="relative overflow-hidden border-b border-white/[0.06] px-4 md:px-8 pt-8 md:pt-16 pb-4"
       >
         <div className="max-w-[1400px] mx-auto">
           <motion.div
@@ -38,7 +38,7 @@ export default function Footer() {
               animate={titleInView ? { y: "0%" } : {}}
               transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display font-light text-white/[0.07] leading-[0.88] tracking-tight select-none"
-              style={{ fontSize: "clamp(5rem, 15vw, 14rem)" }}
+              style={{ fontSize: "clamp(2.5rem, 12vw, 14rem)" }}
             >
               Premier Art
             </motion.p>
@@ -47,9 +47,9 @@ export default function Footer() {
       </div>
 
       {/* Main footer content */}
-      <div ref={ref} className="pt-16 pb-10 px-8">
+      <div ref={ref} className="pt-8 md:pt-16 pb-8 md:pb-10 px-4 md:px-8">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-14 pb-14 border-b border-white/[0.08]">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-14 pb-8 md:pb-14 border-b border-white/[0.08]">
 
             {/* Brand */}
             <motion.div

@@ -54,7 +54,7 @@ export default function Hero() {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-24 px-8 md:px-16 max-w-[1400px] mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-16 md:pb-24 px-4 md:px-16 max-w-[1400px] mx-auto">
         {/* Main title */}
         <div className="mb-8">
           <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
               animate={{ y: "0%", opacity: 1 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display font-light leading-none tracking-tight mb-2 text-white"
-              style={{ fontSize: "clamp(3.5rem, 10vw, 8.5rem)", textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
+              style={{ fontSize: "clamp(2.2rem, 10vw, 8.5rem)", textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
             >
               {slides[current].title}
             </motion.h1>
@@ -89,7 +89,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="font-display font-light leading-none tracking-tight"
               style={{
-                fontSize: "clamp(3.5rem, 10vw, 8.5rem)",
+                fontSize: "clamp(2.2rem, 10vw, 8.5rem)",
                 background: "linear-gradient(135deg, #f9f7f4 0%, #d8d3c8 50%, #f9f7f4 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -108,7 +108,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={loaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-6"
+            className="flex flex-wrap items-center gap-4 md:gap-6"
           >
             <Link
               href="/brief"

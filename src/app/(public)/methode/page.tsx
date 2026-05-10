@@ -61,7 +61,7 @@ export default function MethodePage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div data-header-theme="dark" className="relative h-[60vh] min-h-[400px] overflow-hidden">
+      <div data-header-theme="dark" className="relative h-[60vh] min-h-[320px] md:min-h-[400px] overflow-hidden">
         <Image
           src="/projets/raymond-noel/0.png"
           alt="Méthode Premier Art Architecture"
@@ -73,7 +73,7 @@ export default function MethodePage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-        <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
+        <div className="absolute bottom-12 md:bottom-20 left-4 md:left-8 right-4 md:right-8 max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -101,7 +101,7 @@ export default function MethodePage() {
       </div>
 
       {/* Intro */}
-      <section data-header-theme="light" className="py-24 px-8 max-w-[1400px] mx-auto">
+      <section data-header-theme="light" className="py-12 md:py-24 px-4 md:px-8 max-w-[1400px] mx-auto">
         <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ export default function MethodePage() {
       </section>
 
       {/* Steps */}
-      <section className="pb-32 px-8 max-w-[1400px] mx-auto">
+      <section className="pb-16 md:pb-32 px-4 md:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
           {steps.map((step, i) => (
             <motion.div
@@ -125,7 +125,7 @@ export default function MethodePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.7, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className="border border-accent/10 p-10 bg-bg-card hover:bg-bg-alt transition-colors duration-500"
+              className="border border-accent/10 p-6 md:p-10 bg-bg-card hover:bg-bg-alt transition-colors duration-500"
             >
               <span className="font-body block text-[11px] tracking-[0.3em] text-accent mb-5">
                 {step.step}
@@ -146,7 +146,7 @@ export default function MethodePage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 px-8 bg-bg-card">
+      <section className="py-14 md:py-24 px-4 md:px-8 bg-bg-card">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -198,7 +198,7 @@ export default function MethodePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-8 border-t border-accent/10 text-center">
+      <section className="py-12 md:py-20 px-4 md:px-8 border-t border-accent/10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

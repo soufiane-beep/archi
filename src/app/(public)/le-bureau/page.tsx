@@ -15,7 +15,7 @@ export default function LeBureauPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <div ref={heroRef} data-header-theme="dark" className="relative h-[70vh] min-h-[500px] overflow-hidden">
+      <div ref={heroRef} data-header-theme="dark" className="relative h-[70vh] min-h-[380px] md:min-h-[500px] overflow-hidden">
         <motion.div style={{ y: imageY }} className="absolute inset-0">
           <Image
             src="/projets/rue-des-nobles/0.JPG"
@@ -29,7 +29,7 @@ export default function LeBureauPage() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
-        <div className="absolute bottom-20 left-8 right-8 max-w-[1400px] mx-auto">
+        <div className="absolute bottom-12 md:bottom-20 left-4 md:left-8 right-4 md:right-8 max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -61,7 +61,7 @@ export default function LeBureauPage() {
       <ProfileSection />
 
       {/* À propos cards */}
-      <section className="py-24 px-8 bg-bg-card">
+      <section className="py-14 md:py-24 px-4 md:px-8 bg-bg-card">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -117,7 +117,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-24 px-8">
+      <section className="py-14 md:py-24 px-4 md:px-8">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -135,10 +135,10 @@ export default function LeBureauPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-15%" }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-accent/10"
+            className="grid grid-cols-2 md:grid-cols-4 gap-px bg-rule border border-accent/10 overflow-hidden"
           >
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-bg p-8 text-center">
+              <div key={stat.label} className="bg-bg p-4 md:p-8 text-center">
                 <span
                   className="font-display block font-light text-accent mb-2"
                   style={{ fontSize: "3.5rem" }}
@@ -155,7 +155,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="py-24 px-8 bg-bg-card">
+      <section className="py-14 md:py-24 px-4 md:px-8 bg-bg-card">
         <div className="max-w-[1400px] mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -211,7 +211,7 @@ export default function LeBureauPage() {
       </section>
 
       {/* CTA */}
-      <section data-header-theme="light" className="py-24 px-8 border-t border-accent/10">
+      <section data-header-theme="light" className="py-14 md:py-24 px-4 md:px-8 border-t border-accent/10">
         <div className="max-w-[1400px] mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -260,11 +260,11 @@ function ProfileSection() {
   const photoY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <section ref={profileRef} data-header-theme="light" className="py-32 px-8 max-w-[1400px] mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+    <section ref={profileRef} data-header-theme="light" className="py-16 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-start">
         {/* Photo */}
         <div className="lg:col-span-5">
-          <div className="relative overflow-hidden" style={{ height: "560px" }}>
+          <div className="relative overflow-hidden" style={{ height: "clamp(300px, 65vh, 560px)" }}>
             <motion.div style={{ y: photoY }} className="absolute inset-0 scale-110">
               <Image
                 src="/profil/photo-profil.png"
@@ -331,7 +331,7 @@ function ProfileSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="border-t border-accent/10 pt-8 grid grid-cols-3 gap-6"
+            className="border-t border-accent/10 pt-8 grid grid-cols-3 sm:grid-cols-3 gap-4 md:gap-6"
           >
             {["Rigueur", "Écoute", "Transparence"].map((val) => (
               <div key={val} className="text-center">

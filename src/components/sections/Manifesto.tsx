@@ -27,7 +27,7 @@ export default function Manifesto() {
     <section
       ref={ref}
       data-header-theme="dark"
-      className="relative py-48 px-8 overflow-hidden bg-[#1e3530]"
+      className="relative py-24 md:py-48 px-4 md:px-8 overflow-hidden bg-[#1e3530]"
     >
       {/* Horizontal lines background texture */}
       <motion.div
@@ -49,7 +49,7 @@ export default function Manifesto() {
       </motion.div>
 
       <div ref={textRef} className="relative max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-16 items-center">
 
           {/* Left: vertical label */}
           <motion.div
@@ -79,7 +79,7 @@ export default function Manifesto() {
                     }}
                     className="font-display font-light leading-[1.08]"
                     style={{
-                      fontSize: "clamp(2.8rem, 6.5vw, 6rem)",
+                      fontSize: "clamp(1.8rem, 6.5vw, 6rem)",
                       color: line.accent ? "#8aaf9f" : "#ffffff",
                     }}
                   >
@@ -111,7 +111,7 @@ export default function Manifesto() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-2 flex lg:flex-col gap-12 lg:gap-14 lg:border-l lg:border-white/10 lg:pl-8"
+            className="lg:col-span-2 flex lg:flex-col gap-8 lg:gap-14 lg:border-l lg:border-white/10 lg:pl-8"
           >
             {[
               { value: "9+", label: "Projets" },
@@ -121,7 +121,7 @@ export default function Manifesto() {
               <div key={stat.label} className="text-center lg:text-right">
                 <span
                   className="font-display block font-light text-[#8aaf9f] leading-none"
-                  style={{ fontSize: "clamp(3rem, 5vw, 5rem)" }}
+                  style={{ fontSize: "clamp(2rem, 5vw, 5rem)" }}
                 >
                   {stat.value}
                 </span>
